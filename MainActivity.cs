@@ -7,6 +7,7 @@ using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
+using Android.Support.V7.Widget;
 using Android.Views;
 
 namespace Datafine
@@ -19,7 +20,7 @@ namespace Datafine
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
@@ -67,7 +68,7 @@ namespace Datafine
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
             View view = (View) sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
+            Snackbar.Make(view, "Add database", Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
 
@@ -75,29 +76,34 @@ namespace Datafine
         {
             int id = item.ItemId;
 
-            if (id == Resource.Id.nav_camera)
+            if (id == Resource.Id.nav_add)
             {
-                // Handle the camera action
+                //handle the add action
             }
-            else if (id == Resource.Id.nav_gallery)
+            else if (id == Resource.Id.nav_delete)
             {
+                //handle the delete action
 
             }
-            else if (id == Resource.Id.nav_slideshow)
+            else if (id == Resource.Id.nav_upload)
             {
-
+                //handle the upload action
             }
-            else if (id == Resource.Id.nav_manage)
+            else if (id == Resource.Id.nav_download)
             {
-
+                //handle the download action
             }
             else if (id == Resource.Id.nav_share)
             {
-
+                //handle the share action
             }
-            else if (id == Resource.Id.nav_send)
+            else if (id == Resource.Id.nav_export)
             {
-
+                //handle the export action
+            }
+            else if (id == Resource.Id.nav_setting)
+            {
+                //handle the settings
             }
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
