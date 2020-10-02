@@ -19,7 +19,7 @@ namespace Datafine
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your application here
+            // class that will display and show database entries
         }
     }
 }

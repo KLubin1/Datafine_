@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -9,18 +11,23 @@ using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
+using Android.Widget;
 
 namespace Datafine
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
+        //list that holds the list of databases
+        IList<DatabaseInfo> itemList = null;
+        ListView listView;
+        DateTime now = DateTime.Now;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
@@ -33,7 +40,24 @@ namespace Datafine
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            listView = FindViewById<ListView>(Resource.Id.databaseListView);
+
+            //populate with dummy data
+            itemList = new List<DatabaseInfo>();
+            //DatabaseInfo dummy = new DatabaseInfo("Dummy Database", now.ToString(),"This is a test database.");
+            //itemList.Add(dummy);
+
+            //list databases
+            listView.Adapter = new DatabaseListAdapter(this, itemList);
+            //execute on click; launch the entries OnClick and start new activity that shows database entries
+            listView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+            {
+                Toast.MakeText(this, "To be Databased", ToastLength.Short).Show();
+            };
         }
+
+        
 
         public override void OnBackPressed()
         {
@@ -72,9 +96,14 @@ namespace Datafine
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
-            View view = (View) sender;
+            /*View view = (View) sender;
             Snackbar.Make(view, "Add database", Snackbar.LengthLong)
-                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();*/
+
+            //launch entry creation page
+            Intent intent = new Intent(this, typeof(DatabaseCreation));
+            StartActivity(intent);
+
         }
 
         public bool OnNavigationItemSelected(IMenuItem item)

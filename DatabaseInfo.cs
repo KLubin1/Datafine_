@@ -12,7 +12,22 @@ using Android.Widget;
 
 namespace Datafine
 {
-    class DatabaseInfo
+    public class DatabaseInfo
     {
+        public string title { get; set; }
+        public string dateAdded { get; set; }
+        public string description { get; set; }
+        
+        public DatabaseInfo() { }
+        public DatabaseInfo(string _title, string _dateAdded, string _description)
+        {
+            _title = title;
+            _dateAdded = dateAdded;
+            _description = description;
+        }
+        public static explicit operator DatabaseInfo(Java.Lang.Object v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
