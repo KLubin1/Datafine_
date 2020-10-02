@@ -62,6 +62,11 @@ namespace Datafine
                 return true;
             }
 
+            if (id == Resource.Id.action_about)
+            {
+                return true;
+            }
+
             return base.OnOptionsItemSelected(item);
         }
 
