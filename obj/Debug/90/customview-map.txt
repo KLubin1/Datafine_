@@ -27,6 +27,7 @@ item;obj\Debug\90\res\menu\menu_main.xml
 item;obj\Debug\90\res\values\drawables.xml
 item;obj\Debug\90\res\values\styles.xml
 item;obj\Debug\90\res\values-v21\styles.xml
+LinearLayout;obj\Debug\90\res\layout\listview_database_main.xml
 LinearLayout;obj\Debug\90\res\layout\nav_header_main.xml
 menu;obj\Debug\90\res\menu\activity_main_drawer.xml
 menu;obj\Debug\90\res\menu\menu_main.xml
@@ -50,6 +51,7 @@ string;obj\Debug\90\res\values\strings.xml
 style;obj\Debug\90\res\values\styles.xml
 style;obj\Debug\90\res\values-v21\styles.xml
 TextView;obj\Debug\90\res\layout\content_main.xml
+TextView;obj\Debug\90\res\layout\listview_database_main.xml
 TextView;obj\Debug\90\res\layout\nav_header_main.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_camera.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_gallery.xml
