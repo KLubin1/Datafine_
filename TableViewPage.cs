@@ -37,7 +37,8 @@ namespace Datafine
         {
             DBHelper dbVals = new DBHelper(this);
             //load data...
-           
+            itemList = dbVals.GetAllContacts();
+
             listView.Adapter = new TableListAdapter(this, itemList);
             listView.ItemLongClick += listView_ItemLongClick;
         }

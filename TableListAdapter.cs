@@ -21,8 +21,8 @@ namespace Datafine
         public TableListAdapter(Context _context, IList<TableInfo> _tableList)
         {
             this.activity = _context;
-            tableList = _tableList;
-            mInflater = (LayoutInflater)activity.GetSystemService(Context.LayoutInflaterService);
+            this.tableList = _tableList;
+            this.mInflater = (LayoutInflater)activity.GetSystemService(Context.LayoutInflaterService);
         }
         public override TableInfo this[int position] 
         {
@@ -41,23 +41,28 @@ namespace Datafine
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            DatabaseViewHolder holder = null;
+            TableViewHolder holder = null;
 
             //initialize the data
             if (convertView == null)
             {
-                convertView = mInflater.Inflate(Resource.Layout.table_creation_page, null);
-                holder = new DatabaseViewHolder();
+                convertView = mInflater.Inflate(Resource.Layout.listview_table, null);
+                holder = new TableViewHolder();
+                
 
+                //at this point these are null, so they will throw null at the next block
                 holder.name = convertView.FindViewById<TextView>(Resource.Id.tableName);
                 holder.phoneNumber = convertView.FindViewById<TextView>(Resource.Id.tablePhoneNumber);
                 holder.dateAdded = convertView.FindViewById<TextView>(Resource.Id.tableDateAdded);
-                holder.location = convertView.FindViewById<TextView>(Resource.Id.tableName);
+                holder.location = convertView.FindViewById<TextView>(Resource.Id.tableLocation);
                 holder.age = convertView.FindViewById<TextView>(Resource.Id.tableAge);
+
+                convertView.Tag = holder;
+              
             }
             else
             {
-                holder = convertView.Tag as DatabaseViewHolder;
+                holder = convertView.Tag as TableViewHolder;
             }
 
             //set the data
@@ -76,7 +81,7 @@ namespace Datafine
         }
 
 
-        public class DatabaseViewHolder : Java.Lang.Object
+        public class TableViewHolder : Java.Lang.Object
         {
 
             public TextView name { get; set; }

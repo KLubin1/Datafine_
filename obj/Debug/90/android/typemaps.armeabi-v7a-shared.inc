@@ -27008,8 +27008,8 @@
 	.section	.rodata.java_type_name.4501,"aMS",%progbits,1
 	.type	.L.java_type_name.4501, %object
 .L.java_type_name.4501:
-	.asciz	"crc64ccef0fc746faa48b/TableListAdapter_DatabaseViewHolder"
-	.size	.L.java_type_name.4501, 58
+	.asciz	"crc64ccef0fc746faa48b/TableListAdapter_TableViewHolder"
+	.size	.L.java_type_name.4501, 55
 
 	.section	.rodata.java_type_name.4502,"aMS",%progbits,1
 	.type	.L.java_type_name.4502, %object
@@ -65341,8 +65341,8 @@
 	.section	.rodata.managed_type_name.4792,"aMS",%progbits,1
 	.type	.L.managed_type_name.4792, %object
 .L.managed_type_name.4792:
-	.asciz	"Datafine.TableListAdapter+DatabaseViewHolder, Datafine"
-	.size	.L.managed_type_name.4792, 55
+	.asciz	"Datafine.TableListAdapter+TableViewHolder, Datafine"
+	.size	.L.managed_type_name.4792, 52
 	.section	.rodata.managed_type_name.4793,"aMS",%progbits,1
 	.type	.L.managed_type_name.4793, %object
 .L.managed_type_name.4793:

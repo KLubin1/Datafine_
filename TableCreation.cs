@@ -54,6 +54,7 @@ namespace Datafine
                     numberEditText.Text = cData.GetString(cData.GetColumnIndex("PhoneNumber"));
                     locationEditText.Text = cData.GetString(cData.GetColumnIndex("Location"));
                     ageEditText.Text = cData.GetString(cData.GetColumnIndex("Age"));
+
                 }
             }
 
