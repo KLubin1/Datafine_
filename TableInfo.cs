@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Datafine
 {
-    class TableInfo
+    public class TableInfo
     {
         public int id { get; set; }
         public string name { get; set; }

@@ -12,26 +12,26 @@ using Android.Widget;
 
 namespace Datafine
 {
-    public partial class DatabaseListAdapter : BaseAdapter<DatabaseInfo>
+    public partial class TableListAdapter : BaseAdapter<TableInfo>
     {
-        IList<DatabaseInfo> databaseList;
+        IList<TableInfo> tableList;
         private LayoutInflater mInflater;
         private Context activity;
 
-        public DatabaseListAdapter(Context _context, IList<DatabaseInfo> _databaseList)
+        public TableListAdapter(Context _context, IList<TableInfo> _tableList)
         {
             this.activity = _context;
-            databaseList = _databaseList;
+            tableList = _tableList;
             mInflater = (LayoutInflater)activity.GetSystemService(Context.LayoutInflaterService);
         }
-        public override DatabaseInfo this[int position] 
+        public override TableInfo this[int position] 
         {
-            get { return databaseList[position]; }
+            get { return tableList[position]; }
         }
 
         public override int Count 
         {
-            get { return databaseList.Count; }
+            get { return tableList.Count; }
         }
 
         public override long GetItemId(int position)
@@ -46,12 +46,14 @@ namespace Datafine
             //initialize the data
             if (convertView == null)
             {
-                convertView = mInflater.Inflate(Resource.Layout.listview_database_main, null);
+                convertView = mInflater.Inflate(Resource.Layout.listview_table, null);
                 holder = new DatabaseViewHolder();
 
-                holder.databaseName = convertView.FindViewById<TextView>(Resource.Id.databaseName);
-                holder.dateAdded = convertView.FindViewById<TextView>(Resource.Id.dateAdded);
-                holder.description = convertView.FindViewById<TextView>(Resource.Id.description);
+                holder.name = convertView.FindViewById<TextView>(Resource.Id.tableName);
+                holder.phoneNumber = convertView.FindViewById<TextView>(Resource.Id.tablePhoneNumber);
+                holder.dateAdded = convertView.FindViewById<TextView>(Resource.Id.tableDateAdded);
+                holder.location = convertView.FindViewById<TextView>(Resource.Id.tableName);
+                holder.age = convertView.FindViewById<TextView>(Resource.Id.tableAge);
             }
             else
             {
@@ -59,26 +61,29 @@ namespace Datafine
             }
 
             //set the data
-            holder.databaseName.Text = databaseList[position].title.ToString();
-            holder.dateAdded.Text = databaseList[position].dateAdded.ToString();
-            holder.description.Text = databaseList[position].description.ToString();
-
-            
+            holder.name.Text = tableList[position].name.ToString();
+            holder.dateAdded.Text = tableList[position].dateAdded.ToString();
+            holder.phoneNumber.Text = tableList[position].phoneNumber.ToString();
+            holder.location.Text = tableList[position].location.ToString();
+            holder.age.Text = tableList[position].age.ToString();
+           
             return convertView;
+        }
+
+        public IList<TableInfo> GetAllData()
+        {
+            return tableList;
         }
 
 
         public class DatabaseViewHolder : Java.Lang.Object
         {
-            public TextView databaseName { get; set; }
+
+            public TextView name { get; set; }
+            public TextView phoneNumber { get; set; }
+            public TextView location { get; set; }
+            public TextView age { get; set; }
             public TextView dateAdded { get; set; }
-            public TextView description { get; set; }
-        }
-
-
-        public IList<DatabaseInfo> GetAllData()
-        {
-            return databaseList;
         }
 
 

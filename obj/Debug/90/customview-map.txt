@@ -13,12 +13,14 @@ cache-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\
 color;obj\Debug\90\res\values\colors.xml
 color;obj\Debug\90\res\values\ic_launcher_background.xml
 dimen;obj\Debug\90\res\values\dimens.xml
+EditText;obj\Debug\90\res\layout\table_creation_page.xml
 external-cache-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 gradient;obj\Debug\90\res\drawable\side_nav_bar.xml
 group;obj\Debug\90\res\menu\activity_main_drawer.xml
+ImageButton;obj\Debug\90\res\layout\table_creation_page.xml
 ImageView;obj\Debug\90\res\layout\nav_header_main.xml
 include;obj\Debug\90\res\layout\activity_main.xml
 include;obj\Debug\90\res\layout\app_bar_main.xml
@@ -42,6 +44,7 @@ path;obj\Debug\90\res\drawable-v21\ic_menu_share.xml
 path;obj\Debug\90\res\drawable-v21\ic_menu_slideshow.xml
 paths;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RelativeLayout;obj\Debug\90\res\layout\content_main.xml
+RelativeLayout;obj\Debug\90\res\layout\table_creation_page.xml
 resources;obj\Debug\90\res\values\colors.xml
 resources;obj\Debug\90\res\values\dimens.xml
 resources;obj\Debug\90\res\values\drawables.xml
@@ -49,15 +52,19 @@ resources;obj\Debug\90\res\values\ic_launcher_background.xml
 resources;obj\Debug\90\res\values\strings.xml
 resources;obj\Debug\90\res\values\styles.xml
 resources;obj\Debug\90\res\values-v21\styles.xml
+ScrollView;obj\Debug\90\res\layout\table_creation_page.xml
 shape;obj\Debug\90\res\drawable\side_nav_bar.xml
 string;obj\Debug\90\res\values\strings.xml
 style;obj\Debug\90\res\values\styles.xml
 style;obj\Debug\90\res\values-v21\styles.xml
+TableLayout;obj\Debug\90\res\layout\table_creation_page.xml
+TableRow;obj\Debug\90\res\layout\table_creation_page.xml
 TextView;obj\Debug\90\res\layout\content_main.xml
 TextView;obj\Debug\90\res\layout\database_creation_page.xml
 TextView;obj\Debug\90\res\layout\listview_database_main.xml
 TextView;obj\Debug\90\res\layout\listview_table.xml
 TextView;obj\Debug\90\res\layout\nav_header_main.xml
+TextView;obj\Debug\90\res\layout\table_creation_page.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_camera.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_gallery.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_manage.xml
