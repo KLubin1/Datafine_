@@ -4245,6 +4245,9 @@ namespace Datafine
 			// aapt resource value: 0x7F0B003D
 			public const int table_creation_page = 2131427389;
 			
+			// aapt resource value: 0x7F0B003E
+			public const int table_view_layout = 2131427390;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
