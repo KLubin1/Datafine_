@@ -99,7 +99,7 @@ namespace Datafine
                 pb.phoneNumber = numberEditText.Text;
                 pb.location = locationEditText.Text;
                 pb.age = ageEditText.Text;
-                pb.dateAdded = now.ToString();
+                pb.dateAdded = "Date Created: " + now.ToString();
 
                 try
                 {

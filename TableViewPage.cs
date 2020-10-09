@@ -39,11 +39,17 @@ namespace Datafine
             //load data...
             itemList = dbVals.GetAllContacts();
 
+            if(listView == null)
+            {
+                //add a message saying the database is empty make a entry to start 
+            }
+
             listView.Adapter = new TableListAdapter(this, itemList);
             listView.ItemLongClick += listView_ItemLongClick;
         }
 
         //execute view on data in listview on long click
+        //*But what I want this to really do is to disable the control command until it is long pressed, meaning that it's ready for editing and managing.
         private void listView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
             TableInfo pb = itemList[e.Position];
