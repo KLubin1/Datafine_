@@ -65,10 +65,12 @@
     <Compile Include="DatabaseInfo.cs" />
     <Compile Include="DatabaseListAdapter.cs" />
     <Compile Include="DatabaseView.cs" />
+    <Compile Include="DBHelper.cs" />
     <Compile Include="EntryListAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
