@@ -46,7 +46,7 @@ namespace Datafine
             //initialize the data
             if (convertView == null)
             {
-                convertView = mInflater.Inflate(Resource.Layout.listview_table, null);
+                convertView = mInflater.Inflate(Resource.Layout.table_creation_page, null);
                 holder = new DatabaseViewHolder();
 
                 holder.name = convertView.FindViewById<TextView>(Resource.Id.tableName);

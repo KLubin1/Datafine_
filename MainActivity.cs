@@ -19,9 +19,8 @@ namespace Datafine
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
         //list that holds the list of databases
-        IList<DatabaseInfo> itemList = null;
-        ListView listView;
-        DateTime now = DateTime.Now;
+        Button tableButton;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -41,20 +40,25 @@ namespace Datafine
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
-            listView = FindViewById<ListView>(Resource.Id.databaseListView);
+            tableButton = FindViewById<Button>(Resource.Id.tableButton);
+
+            //launch the table view page
+            tableButton.Click += TableButtonLaunch;
+
+            //listView = FindViewById<ListView>(Resource.Id.databaseListView);
 
             //populate with dummy data
-            itemList = new List<DatabaseInfo>();
+            //itemList = new List<DatabaseInfo>();
             //DatabaseInfo dummy = new DatabaseInfo("Dummy Database", now.ToString(),"This is a test database.");
             //itemList.Add(dummy);
 
             //list databases
-            listView.Adapter = new TableListAdapter(this, itemList);
+            //listView.Adapter = new TableListAdapter(this, itemList);
             //execute on click; launch the entries OnClick and start new activity that shows database entries
-            listView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
-            {
-                Toast.MakeText(this, "To be Databased", ToastLength.Short).Show();
-            };
+            //listView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+            //{
+               // Toast.MakeText(this, "To be Databased", ToastLength.Short).Show();
+            //};
         }
 
         
@@ -101,8 +105,8 @@ namespace Datafine
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();*/
 
             //launch entry creation page
-            Intent intent = new Intent(this, typeof(DatabaseCreation));
-            StartActivity(intent);
+           // Intent intent = new Intent(this, typeof(DatabaseCreation));
+            //StartActivity(intent);
 
         }
 
@@ -143,6 +147,12 @@ namespace Datafine
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
+        }
+
+        public void TableButtonLaunch(object sender, EventArgs eventArgs)
+        {
+            var intent = new Intent(this, typeof(TableViewPage));
+            StartActivity(intent);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
