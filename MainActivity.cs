@@ -49,7 +49,7 @@ namespace Datafine
             //itemList.Add(dummy);
 
             //list databases
-            listView.Adapter = new DatabaseListAdapter(this, itemList);
+            listView.Adapter = new TableListAdapter(this, itemList);
             //execute on click; launch the entries OnClick and start new activity that shows database entries
             listView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
             {

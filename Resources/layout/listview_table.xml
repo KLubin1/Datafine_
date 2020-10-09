@@ -4,25 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="DatabaseName"
+        android:text="Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minWidth="25px"
         android:minHeight="25px"
         android:textSize="20dp"
-        android:id="@+id/databaseName"
+        android:id="@+id/tableName"
         android:textStyle="bold"/>
+
+    <TextView
+        android:text="Phone Number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tablePhoneNumber" />
+
+    <TextView
+        android:text="Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableLocation" />
+
+    <TextView
+        android:text="Age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableAge" />
     <TextView
         android:text="DateAdded"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/dateAdded" 
+        android:id="@+id/tableDateAdded" 
         android:textStyle="italic"/>
-    <TextView
-        android:text="Description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/description" />
+
 
 
 
