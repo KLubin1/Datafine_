@@ -82,6 +82,8 @@ TextView;obj\Debug\90\res\layout\listview_database_main.xml
 TextView;obj\Debug\90\res\layout\listview_table.xml
 TextView;obj\Debug\90\res\layout\nav_header_main.xml
 TextView;obj\Debug\90\res\layout\table_creation_page.xml
+TextView;obj\Debug\90\res\layout\table_view_control_command.xml
+TextView;obj\Debug\90\res\layout\table_view_layout.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_camera.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_gallery.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_manage.xml

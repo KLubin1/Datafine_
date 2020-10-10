@@ -286,3 +286,4 @@ C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\an
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\res\layout\table_view_control_command.xml
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\res\drawable-v21\baseline_compare_arrows_black_18dp.png
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\res\drawable-v21\baseline_help_outline_black_18dp.png
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\res\drawable-v21\baseline_edit_black_18dp.png
