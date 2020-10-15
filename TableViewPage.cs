@@ -6,6 +6,7 @@ using System.Text;
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Preferences;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Views;
@@ -74,6 +75,12 @@ namespace Datafine
             var selectedItem = itemList[e.Position];
             DBHelper db = new DBHelper(this);
 
+            //shared preferences to make a flag to direct the upgrade functionality in TableCreation
+            //ISharedPreferences sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
+            ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = sharedPreferences.Edit();
+            
+
             var commandControl = new PopupMenu(this, (View)sender);
             commandControl.Inflate(Resource.Menu.command_control);
             commandControl.Show();
@@ -83,10 +90,19 @@ namespace Datafine
                 switch (a.Item.ItemId)
                 {
                     case Resource.Id.cc_Edit:
-                        var activityAddEdit = new Intent(this, typeof(TableCreation));
-                        activityAddEdit.PutExtra("Id", selectedItem.id.ToString());
-                        activityAddEdit.PutExtra("Name", selectedItem.name);
-                        StartActivity(activityAddEdit);
+                        var intent = new Intent(this, typeof(TableCreation));
+
+                        //this is "saving" the entry so to display it in table creation page on update
+                        intent.PutExtra("Id", selectedItem.id.ToString());
+                        intent.PutExtra("Name", selectedItem.name);
+
+                        intent.PutExtra("PhoneNumber", selectedItem.phoneNumber);
+                        intent.PutExtra("Location", selectedItem.location);
+                        intent.PutExtra("Age", selectedItem.age);
+                        //set the flag 
+                        editor.PutBoolean("UpgradeFlag", true);
+                        editor.Apply();
+                        StartActivity(intent);
                         // db.UpdateContact(selectedItem);
                         break;
                     case Resource.Id.cc_Delete:

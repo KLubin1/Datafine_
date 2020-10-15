@@ -7,7 +7,9 @@ using Android.App;
 using Android.Content;
 using Android.Database;
 using Android.OS;
+using Android.Preferences;
 using Android.Runtime;
+using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
 
@@ -18,6 +20,7 @@ namespace Datafine
     {
         EditText nameEditText, numberEditText, locationEditText, ageEditText;
         ImageButton saveButton;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -42,6 +45,29 @@ namespace Datafine
                 // idEditText.Text = editId;
                 LoadDataForEdit(editId);
             }
+
+            //get the UpgradeFlag 
+            ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
+            var editor = sharedPreferences.Edit();
+            bool upgrade = sharedPreferences.GetBoolean("UpgradeFlag", true);
+
+            if (upgrade == true)
+            {
+                string theId = Intent.Extras.GetString("Id");
+                Toast.MakeText(this, "Update is On.", ToastLength.Short).Show();
+
+                LoadDataForEdit(theId);
+                
+               /* string oldName = Intent.Extras.GetString("Name");
+                string oldNumber = Intent.Extras.GetString("PhoneNumber");
+                string oldLocation = Intent.Extras.GetString("Location");
+                string oldAge = Intent.Extras.GetString("Age");
+
+                nameEditText.Text = oldName;
+                numberEditText.Text = oldNumber;
+                locationEditText.Text = oldLocation;
+                ageEditText.Text = oldAge;*/
+            }
         }
             //Load the data when its under editing
             private void LoadDataForEdit(string contactId)
@@ -55,7 +81,7 @@ namespace Datafine
                     locationEditText.Text = cData.GetString(cData.GetColumnIndex("Location"));
                     ageEditText.Text = cData.GetString(cData.GetColumnIndex("Age"));
 
-                }
+                }     
             }
 
             //save the data on click, load and set the entered values
@@ -65,8 +91,13 @@ namespace Datafine
                 DateTime now = DateTime.Now;
                 DBHelper db = new DBHelper(this);
 
-                //if no data was entered, call error
-                if (nameEditText.Text.Trim().Length < 1)
+                //get the UpgradeFlag 
+                ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
+                var editor = sharedPreferences.Edit();
+                bool upgrade = sharedPreferences.GetBoolean("UpgradeFlag", true);
+
+            //if no data was entered, call error
+            if (nameEditText.Text.Trim().Length < 1)
                 {
                     Toast.MakeText(this, "Enter Name.", ToastLength.Short).Show();
                     return;
@@ -94,19 +125,43 @@ namespace Datafine
 
                 TableInfo pb = new TableInfo();
 
-                //enter in text and timestamp
-                pb.name = nameEditText.Text;
-                pb.phoneNumber = numberEditText.Text;
-                pb.location = locationEditText.Text;
-                pb.age = ageEditText.Text;
-                pb.dateAdded = "Date Created: " + now.ToString();
+               
+                    //enter in text and timestamp
+                    if(upgrade == true)
+                    {
+                        pb.id = int.Parse(Intent.Extras.GetString("Id"));
+                    }   
+                    
+                    pb.name = nameEditText.Text;
+                    pb.phoneNumber = numberEditText.Text;
+                    pb.location = locationEditText.Text;
+                    pb.age = ageEditText.Text;
+                    pb.dateAdded = "Date Created: " + now.ToString();
+
+            
 
                 try
-                {
+                    {
+                    if (upgrade == true)
+                    {
+                        // string theId = Intent.Extras.GetString("Id");
+                       // ICursor cursor = db.getContactById(int.Parse(theId));
+                        
+                        //*this is getting called and worked upon, but the function doesnt know which entry to update, so it appears to do nothing.
+                        db.UpdateContact(pb);
+                        Toast.MakeText(this, "Contact Updated Successfully.", ToastLength.Short).Show();
 
-                    //add the data and return to main page
-                    db.AddContact(pb);
-                    Toast.MakeText(this, "New Contact Created", ToastLength.Short).Show();
+                        editor.PutBoolean("UpgradeFlag", false);
+                        editor.Apply();
+
+                    }
+
+                    else
+                    {
+                        //add the data and return to main page
+                        db.AddContact(pb);
+                        Toast.MakeText(this, "New Contact Created", ToastLength.Short).Show();
+                    }
 
                     Finish();
 
