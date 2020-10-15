@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         layout="@layout/table_view_control_command"
-        android:id="@+id/includeCommands" />
+        android:id="@+id/includeCommands" /> 
 
 
  

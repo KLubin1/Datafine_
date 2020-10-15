@@ -33,6 +33,7 @@ include;obj\Debug\90\res\layout\app_bar_main.xml
 include;obj\Debug\90\res\layout\table_view_control_command.xml
 include;obj\Debug\90\res\layout\table_view_layout.xml
 item;obj\Debug\90\res\menu\activity_main_drawer.xml
+item;obj\Debug\90\res\menu\command_control.xml
 item;obj\Debug\90\res\menu\menu_main.xml
 item;obj\Debug\90\res\values\drawables.xml
 item;obj\Debug\90\res\values\styles.xml
@@ -46,6 +47,7 @@ LinearLayout;obj\Debug\90\res\layout\table_view_layout.xml
 ListView;obj\Debug\90\res\layout\content_main.xml
 ListView;obj\Debug\90\res\layout\table_view_layout.xml
 menu;obj\Debug\90\res\menu\activity_main_drawer.xml
+menu;obj\Debug\90\res\menu\command_control.xml
 menu;obj\Debug\90\res\menu\menu_main.xml
 path;obj\Debug\90\res\drawable-v21\ic_menu_camera.xml
 path;obj\Debug\90\res\drawable-v21\ic_menu_gallery.xml

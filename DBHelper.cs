@@ -79,7 +79,7 @@ namespace Datafine
 
             SQLiteDatabase db = this.ReadableDatabase;
 
-            ICursor c = db.Query("TableInfo", new string[] { "Id", "Name", "PhoneNumber", "Location", "Age", "DateAdded" }, "upper(Name) LIKE ?", new string[] { "%" + nameToSearch.ToUpper() + "%" }, null, null, null, null);
+            ICursor c = db.Query("TableOne", new string[] { "Id", "Name", "PhoneNumber", "Location", "Age", "DateAdded" }, "upper(Name) LIKE ?", new string[] { "%" + nameToSearch.ToUpper() + "%" }, null, null, null, null);
 
             var contacts = new List<TableInfo>();
 
@@ -143,7 +143,7 @@ namespace Datafine
             vals.Put("DateAdded", entry.dateAdded);
 
 
-            ICursor cursor = db.Query("TableInfo",
+            ICursor cursor = db.Query("TableOne",
                     new String[] { "Id", "Name", "PhoneNumber", "Location", "Age", "DateAdded" }, "Id=?", new string[] { entry.id.ToString() }, null, null, null, null);
 
             if (cursor != null)
@@ -168,7 +168,7 @@ namespace Datafine
             }
 
             SQLiteDatabase db = this.ReadableDatabase;
-            ICursor cursor = db.Query("TableInfo",
+            ICursor cursor = db.Query("TableOne",
                     new String[] { "Id", "Name", "PhoneNumber","Location", "Age", "DateAdded" }, "Id=?", new string[] { entryId }, null, null, null, null);
 
             if (cursor != null)
