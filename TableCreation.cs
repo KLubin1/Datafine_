@@ -58,15 +58,6 @@ namespace Datafine
 
                 LoadDataForEdit(theId);
                 
-               /* string oldName = Intent.Extras.GetString("Name");
-                string oldNumber = Intent.Extras.GetString("PhoneNumber");
-                string oldLocation = Intent.Extras.GetString("Location");
-                string oldAge = Intent.Extras.GetString("Age");
-
-                nameEditText.Text = oldName;
-                numberEditText.Text = oldNumber;
-                locationEditText.Text = oldLocation;
-                ageEditText.Text = oldAge;*/
             }
         }
             //Load the data when its under editing
@@ -144,10 +135,6 @@ namespace Datafine
                     {
                     if (upgrade == true)
                     {
-                        // string theId = Intent.Extras.GetString("Id");
-                       // ICursor cursor = db.getContactById(int.Parse(theId));
-                        
-                        //*this is getting called and worked upon, but the function doesnt know which entry to update, so it appears to do nothing.
                         db.UpdateContact(pb);
                         Toast.MakeText(this, "Contact Updated Successfully.", ToastLength.Short).Show();
 

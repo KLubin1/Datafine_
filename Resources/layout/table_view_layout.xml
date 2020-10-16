@@ -3,21 +3,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
- 
-            
-    <include
-        android:layout_width="wrap_content"
+
+    <SearchView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        layout="@layout/table_view_control_command"
-        android:id="@+id/includeCommands" /> 
-
-
- 
+        android:id="@+id/entrySearchView" />
+    
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         >
     
         

@@ -3538,70 +3538,70 @@ namespace Datafine
 			public const int entryMoveButton = 2131230803;
 			
 			// aapt resource value: 0x7F080054
-			public const int entryStarButton = 2131230804;
+			public const int entrySearchView = 2131230804;
 			
 			// aapt resource value: 0x7F080055
-			public const int exitUntilCollapsed = 2131230805;
-			
-			// aapt resource value: 0x7F080057
-			public const int expanded_menu = 2131230807;
+			public const int entryStarButton = 2131230805;
 			
 			// aapt resource value: 0x7F080056
-			public const int expand_activities_button = 2131230806;
+			public const int exitUntilCollapsed = 2131230806;
 			
 			// aapt resource value: 0x7F080058
-			public const int fab = 2131230808;
+			public const int expanded_menu = 2131230808;
+			
+			// aapt resource value: 0x7F080057
+			public const int expand_activities_button = 2131230807;
 			
 			// aapt resource value: 0x7F080059
-			public const int fill = 2131230809;
-			
-			// aapt resource value: 0x7F08005C
-			public const int filled = 2131230812;
+			public const int fab = 2131230809;
 			
 			// aapt resource value: 0x7F08005A
-			public const int fill_horizontal = 2131230810;
-			
-			// aapt resource value: 0x7F08005B
-			public const int fill_vertical = 2131230811;
+			public const int fill = 2131230810;
 			
 			// aapt resource value: 0x7F08005D
-			public const int @fixed = 2131230813;
+			public const int filled = 2131230813;
+			
+			// aapt resource value: 0x7F08005B
+			public const int fill_horizontal = 2131230811;
+			
+			// aapt resource value: 0x7F08005C
+			public const int fill_vertical = 2131230812;
 			
 			// aapt resource value: 0x7F08005E
-			public const int forever = 2131230814;
+			public const int @fixed = 2131230814;
+			
+			// aapt resource value: 0x7F08005F
+			public const int forever = 2131230815;
 			
 			// aapt resource value: 0x7F080002
 			public const int FUNCTION = 2131230722;
 			
-			// aapt resource value: 0x7F08005F
-			public const int ghost_view = 2131230815;
-			
 			// aapt resource value: 0x7F080060
-			public const int group_divider = 2131230816;
+			public const int ghost_view = 2131230816;
 			
 			// aapt resource value: 0x7F080061
-			public const int home = 2131230817;
+			public const int group_divider = 2131230817;
 			
 			// aapt resource value: 0x7F080062
-			public const int homeAsUp = 2131230818;
+			public const int home = 2131230818;
 			
 			// aapt resource value: 0x7F080063
-			public const int icon = 2131230819;
+			public const int homeAsUp = 2131230819;
 			
 			// aapt resource value: 0x7F080064
-			public const int icon_group = 2131230820;
+			public const int icon = 2131230820;
 			
 			// aapt resource value: 0x7F080065
-			public const int ifRoom = 2131230821;
+			public const int icon_group = 2131230821;
 			
 			// aapt resource value: 0x7F080066
-			public const int image = 2131230822;
+			public const int ifRoom = 2131230822;
 			
 			// aapt resource value: 0x7F080067
-			public const int imageView = 2131230823;
+			public const int image = 2131230823;
 			
 			// aapt resource value: 0x7F080068
-			public const int includeCommands = 2131230824;
+			public const int imageView = 2131230824;
 			
 			// aapt resource value: 0x7F080069
 			public const int info = 2131230825;

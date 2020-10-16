@@ -100,9 +100,9 @@ public final class R {
 		public static final int bottom = 0x7f080029;
 		public static final int chronometer = 0x7f080038;
 		public static final int end = 0x7f08004c;
-		public static final int forever = 0x7f08005e;
-		public static final int icon = 0x7f080063;
-		public static final int icon_group = 0x7f080064;
+		public static final int forever = 0x7f08005f;
+		public static final int icon = 0x7f080064;
+		public static final int icon_group = 0x7f080065;
 		public static final int info = 0x7f080069;
 		public static final int italic = 0x7f08006a;
 		public static final int item_touch_helper_previous_elevation = 0x7f08006b;

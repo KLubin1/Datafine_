@@ -21,6 +21,7 @@ namespace Datafine
         IList<TableInfo> itemList = null;
         ImageButton editButton, deleteButton, moveButton, starButton;
         TextView suchEmpty;
+        SearchView search;
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -37,7 +38,13 @@ namespace Datafine
             moveButton = FindViewById<ImageButton>(Resource.Id.entryMoveButton);
             starButton = FindViewById<ImageButton>(Resource.Id.entryStarButton);
 
-          
+            //search bar
+            search = FindViewById<SearchView>(Resource.Id.entrySearchView);
+
+            search.SetQueryHint("Search Entries");
+
+
+            search.QueryTextChange += Search;
 
             //load entries
             fab.Click += FabOnClick;
@@ -50,23 +57,39 @@ namespace Datafine
 
         }
 
-         //load entries unto the listview
-        private void LoadEntries() 
+        //load entries unto the listview
+        private void LoadEntries()
         {
             DBHelper dbVals = new DBHelper(this);
             //load data...
+
+            //if(search.Query.Length > 0)
+            //{
+                //search.QueryTextChange += Search;
+                //itemList = dbVals.GetContactsBySearchName(search.QueryFormatted.ToString());
+                
+            //}
+
+            
             itemList = dbVals.GetAllContacts();
 
-            if(itemList.Count == 0)
+            if (itemList.Count == 0)
             {
                 //add a message saying the database is empty; make a entry to start 
                 suchEmpty.Visibility = ViewStates.Visible;
 
             }
 
+
+
+            //search.QueryTextChange += Search;
+
             listView.Adapter = new TableListAdapter(this, itemList);
             listView.ItemLongClick += listView_ItemLongClick;
+
+
         }
+
 
         //execute view on data in listview on long click
         //*But what I want this to really do is to disable the control command until it is long pressed, meaning that it's ready for editing and managing.
@@ -92,18 +115,12 @@ namespace Datafine
                     case Resource.Id.cc_Edit:
                         var intent = new Intent(this, typeof(TableCreation));
 
-                        //this is "saving" the entry so to display it in table creation page on update
+                        //this is "saving" the id so to refer back to this entry in the table creation page on update
                         intent.PutExtra("Id", selectedItem.id.ToString());
-                        intent.PutExtra("Name", selectedItem.name);
-
-                        intent.PutExtra("PhoneNumber", selectedItem.phoneNumber);
-                        intent.PutExtra("Location", selectedItem.location);
-                        intent.PutExtra("Age", selectedItem.age);
                         //set the flag 
                         editor.PutBoolean("UpgradeFlag", true);
                         editor.Apply();
                         StartActivity(intent);
-                        // db.UpdateContact(selectedItem);
                         break;
                     case Resource.Id.cc_Delete:
                         DeleteEntry(e.Position);
@@ -111,10 +128,6 @@ namespace Datafine
                 }
             };
 
-            //var activityAddEdit = new Intent(this, typeof(TableCreation));
-            //activityAddEdit.PutExtra("Id", pb.id.ToString());
-            //activityAddEdit.PutExtra("Name", pb.name);
-            //StartActivity(activityAddEdit);
 
             //maybe have a toggle function instead?
             /*starButton.Enabled = true;
@@ -161,6 +174,17 @@ namespace Datafine
             });
 
             confirm.Show();
+
+        }
+
+        private void Search(object s, SearchView.QueryTextChangeEventArgs e)
+        {
+            DBHelper dbVals = new DBHelper(this);
+            string searchTerm = e.NewText.ToString();
+            itemList = dbVals.GetContactsBySearchName(searchTerm);
+            listView.Adapter = new TableListAdapter(this, itemList);
+            listView.ItemLongClick += listView_ItemLongClick;
+
 
         }
     }
