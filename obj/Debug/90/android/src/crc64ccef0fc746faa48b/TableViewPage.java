@@ -2,7 +2,7 @@ package crc64ccef0fc746faa48b;
 
 
 public class TableViewPage
-	extends android.app.Activity
+	extends android.support.v7.app.AppCompatActivity
 	implements
 		mono.android.IGCUserPeer
 {

@@ -2,6 +2,8 @@
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 android.support.design.widget.AppBarLayout;obj\Debug\90\res\layout\app_bar_main.xml
+android.support.design.widget.AppBarLayout;obj\Debug\90\res\layout\table_view_layout.xml
+android.support.design.widget.AppBarLayout;obj\Debug\90\res\layout\toolbar.xml
 android.support.design.widget.CoordinatorLayout;obj\Debug\90\res\layout\app_bar_main.xml
 android.support.design.widget.CoordinatorLayout;obj\Debug\90\res\layout\table_view_layout.xml
 android.support.design.widget.FloatingActionButton;obj\Debug\90\res\layout\app_bar_main.xml
@@ -9,6 +11,8 @@ android.support.design.widget.FloatingActionButton;obj\Debug\90\res\layout\table
 android.support.design.widget.NavigationView;obj\Debug\90\res\layout\activity_main.xml
 android.support.v4.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\app_bar_main.xml
+android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\table_view_layout.xml
+android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\toolbar.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Debug\90\res\layout\content_main.xml
@@ -30,6 +34,7 @@ ImageButton;obj\Debug\90\res\layout\table_view_layout.xml
 ImageView;obj\Debug\90\res\layout\nav_header_main.xml
 include;obj\Debug\90\res\layout\activity_main.xml
 include;obj\Debug\90\res\layout\app_bar_main.xml
+include;obj\Debug\90\res\layout\table_creation_page.xml
 include;obj\Debug\90\res\layout\table_view_control_command.xml
 include;obj\Debug\90\res\layout\table_view_layout.xml
 item;obj\Debug\90\res\menu\activity_main_drawer.xml
@@ -42,8 +47,10 @@ LinearLayout;obj\Debug\90\res\layout\database_creation_page.xml
 LinearLayout;obj\Debug\90\res\layout\listview_database_main.xml
 LinearLayout;obj\Debug\90\res\layout\listview_table.xml
 LinearLayout;obj\Debug\90\res\layout\nav_header_main.xml
+LinearLayout;obj\Debug\90\res\layout\table_creation_page.xml
 LinearLayout;obj\Debug\90\res\layout\table_view_control_command.xml
 LinearLayout;obj\Debug\90\res\layout\table_view_layout.xml
+LinearLayout;obj\Debug\90\res\layout\toolbar.xml
 ListView;obj\Debug\90\res\layout\content_main.xml
 ListView;obj\Debug\90\res\layout\table_view_layout.xml
 menu;obj\Debug\90\res\menu\activity_main_drawer.xml

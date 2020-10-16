@@ -11,15 +11,16 @@ using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
+using AlertDialog = Android.App.AlertDialog;
 
 namespace Datafine
 {
     [Activity(Label = "TableViewPage")]
-    public class TableViewPage : Activity
+    public class TableViewPage : AppCompatActivity
     {
         ListView listView;
         IList<TableInfo> itemList = null;
-        ImageButton editButton, deleteButton, moveButton, starButton;
         TextView suchEmpty;
         SearchView search;
         
@@ -28,32 +29,28 @@ namespace Datafine
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.table_view_layout);
 
+            //set the toolbar
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
+
+            SupportActionBar.Title = "TableOne";
+            SupportActionBar.SetDisplayShowHomeEnabled(true);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            
+            
+
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.addEntryFab);
             listView = FindViewById<ListView>(Resource.Id.tableListView);
             suchEmpty = FindViewById<TextView>(Resource.Id.suchEmptyEntry);
 
-           
-            editButton = FindViewById<ImageButton>(Resource.Id.entryEditButton);
-            deleteButton = FindViewById<ImageButton>(Resource.Id.entryDeleteButton);
-            moveButton = FindViewById<ImageButton>(Resource.Id.entryMoveButton);
-            starButton = FindViewById<ImageButton>(Resource.Id.entryStarButton);
-
             //search bar
             search = FindViewById<SearchView>(Resource.Id.entrySearchView);
-
             search.SetQueryHint("Search Entries");
-
-
             search.QueryTextChange += Search;
 
             //load entries
             fab.Click += FabOnClick;
             LoadEntries();
-
-            /*editButton.Enabled = false;
-            deleteButton.Enabled = false;
-            moveButton.Enabled = false;
-            starButton.Enabled = false;*/
 
         }
 
@@ -61,16 +58,7 @@ namespace Datafine
         private void LoadEntries()
         {
             DBHelper dbVals = new DBHelper(this);
-            //load data...
-
-            //if(search.Query.Length > 0)
-            //{
-                //search.QueryTextChange += Search;
-                //itemList = dbVals.GetContactsBySearchName(search.QueryFormatted.ToString());
-                
-            //}
-
-            
+            //load data
             itemList = dbVals.GetAllContacts();
 
             if (itemList.Count == 0)
@@ -80,19 +68,16 @@ namespace Datafine
 
             }
 
-
-
-            //search.QueryTextChange += Search;
-
+            //set the lisy adapter
             listView.Adapter = new TableListAdapter(this, itemList);
+
+            //long click event for items in list
             listView.ItemLongClick += listView_ItemLongClick;
-
-
         }
 
 
-        //execute view on data in listview on long click
-        //*But what I want this to really do is to disable the control command until it is long pressed, meaning that it's ready for editing and managing.
+        //pulls up popup memu options for editing data in listview on long click
+        
         private void listView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
             var selectedItem = itemList[e.Position];
@@ -104,7 +89,7 @@ namespace Datafine
             ISharedPreferencesEditor editor = sharedPreferences.Edit();
             
 
-            var commandControl = new PopupMenu(this, (View)sender);
+            var commandControl = new Android.Widget.PopupMenu(this, (View)sender);
             commandControl.Inflate(Resource.Menu.command_control);
             commandControl.Show();
 
@@ -179,6 +164,7 @@ namespace Datafine
 
         private void Search(object s, SearchView.QueryTextChangeEventArgs e)
         {
+            //same as code in LoadEntries, but for getting entries via search bar
             DBHelper dbVals = new DBHelper(this);
             string searchTerm = e.NewText.ToString();
             itemList = dbVals.GetContactsBySearchName(searchTerm);

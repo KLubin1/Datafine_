@@ -12,11 +12,12 @@ using Android.Runtime;
 using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace Datafine
 {
     [Activity(Label = "DatabaseCreation")]
-    public class TableCreation : Activity
+    public class TableCreation : AppCompatActivity
     {
         EditText nameEditText, numberEditText, locationEditText, ageEditText;
         ImageButton saveButton;
@@ -26,6 +27,15 @@ namespace Datafine
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.table_creation_page);
+
+
+            //set the toolbar
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
+
+            SupportActionBar.Title = "Create New Entry";
+            SupportActionBar.SetDisplayShowHomeEnabled(true);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             // Create your application here
             //remember to throw error message for null entries 

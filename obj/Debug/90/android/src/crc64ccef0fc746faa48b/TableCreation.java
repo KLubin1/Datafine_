@@ -2,7 +2,7 @@ package crc64ccef0fc746faa48b;
 
 
 public class TableCreation
-	extends android.app.Activity
+	extends android.support.v7.app.AppCompatActivity
 	implements
 		mono.android.IGCUserPeer
 {
