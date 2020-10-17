@@ -8,6 +8,7 @@ C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\bin\Release\com
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\build.props
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\adb.props
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\Datafine.csprojAssemblyReference.cache
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\_VerifyXamarinAndroidSupportVersions.stamp
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\res.flag
@@ -75,6 +76,8 @@ C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\res\drawable-v21\baseline_compare_arrows_black_18dp.png
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\res\drawable-v21\baseline_help_outline_black_18dp.png
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\res\drawable-v21\baseline_edit_black_18dp.png
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\res\menu\command_control.xml
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\res\layout\toolbar.xml
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\uploadflags.txt
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\resolvedassemblies.hash
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\link.flag

@@ -57,9 +57,10 @@ namespace Datafine
             }
 
             //get the UpgradeFlag 
+            //set tghe upgrade flag by default to false here so that it wont crash on null when the table is first made
             ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
             var editor = sharedPreferences.Edit();
-            bool upgrade = sharedPreferences.GetBoolean("UpgradeFlag", true);
+            bool upgrade = sharedPreferences.GetBoolean("UpgradeFlag", false);
 
             if (upgrade == true)
             {

@@ -2,7 +2,6 @@
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 android.support.design.widget.AppBarLayout;obj\Debug\90\res\layout\app_bar_main.xml
-android.support.design.widget.AppBarLayout;obj\Debug\90\res\layout\table_view_layout.xml
 android.support.design.widget.AppBarLayout;obj\Debug\90\res\layout\toolbar.xml
 android.support.design.widget.CoordinatorLayout;obj\Debug\90\res\layout\app_bar_main.xml
 android.support.design.widget.CoordinatorLayout;obj\Debug\90\res\layout\table_view_layout.xml
@@ -11,12 +10,10 @@ android.support.design.widget.FloatingActionButton;obj\Debug\90\res\layout\table
 android.support.design.widget.NavigationView;obj\Debug\90\res\layout\activity_main.xml
 android.support.v4.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\app_bar_main.xml
-android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\table_view_layout.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\toolbar.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Debug\90\res\layout\content_main.xml
-Button;obj\Debug\90\res\layout\table_view_layout.xml
 cache-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\90\res\values\colors.xml
 color;obj\Debug\90\res\values\ic_launcher_background.xml
@@ -30,12 +27,10 @@ gradient;obj\Debug\90\res\drawable\side_nav_bar.xml
 group;obj\Debug\90\res\menu\activity_main_drawer.xml
 ImageButton;obj\Debug\90\res\layout\table_creation_page.xml
 ImageButton;obj\Debug\90\res\layout\table_view_control_command.xml
-ImageButton;obj\Debug\90\res\layout\table_view_layout.xml
 ImageView;obj\Debug\90\res\layout\nav_header_main.xml
 include;obj\Debug\90\res\layout\activity_main.xml
 include;obj\Debug\90\res\layout\app_bar_main.xml
 include;obj\Debug\90\res\layout\table_creation_page.xml
-include;obj\Debug\90\res\layout\table_view_control_command.xml
 include;obj\Debug\90\res\layout\table_view_layout.xml
 item;obj\Debug\90\res\menu\activity_main_drawer.xml
 item;obj\Debug\90\res\menu\command_control.xml
@@ -43,15 +38,11 @@ item;obj\Debug\90\res\menu\menu_main.xml
 item;obj\Debug\90\res\values\drawables.xml
 item;obj\Debug\90\res\values\styles.xml
 item;obj\Debug\90\res\values-v21\styles.xml
-LinearLayout;obj\Debug\90\res\layout\database_creation_page.xml
-LinearLayout;obj\Debug\90\res\layout\listview_database_main.xml
 LinearLayout;obj\Debug\90\res\layout\listview_table.xml
 LinearLayout;obj\Debug\90\res\layout\nav_header_main.xml
 LinearLayout;obj\Debug\90\res\layout\table_creation_page.xml
 LinearLayout;obj\Debug\90\res\layout\table_view_control_command.xml
 LinearLayout;obj\Debug\90\res\layout\table_view_layout.xml
-LinearLayout;obj\Debug\90\res\layout\toolbar.xml
-ListView;obj\Debug\90\res\layout\content_main.xml
 ListView;obj\Debug\90\res\layout\table_view_layout.xml
 menu;obj\Debug\90\res\menu\activity_main_drawer.xml
 menu;obj\Debug\90\res\menu\command_control.xml
@@ -64,7 +55,6 @@ path;obj\Debug\90\res\drawable-v21\ic_menu_share.xml
 path;obj\Debug\90\res\drawable-v21\ic_menu_slideshow.xml
 paths;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\lp\35\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RelativeLayout;obj\Debug\90\res\layout\content_main.xml
-RelativeLayout;obj\Debug\90\res\layout\table_creation_page.xml
 resources;obj\Debug\90\res\values\colors.xml
 resources;obj\Debug\90\res\values\dimens.xml
 resources;obj\Debug\90\res\values\drawables.xml
@@ -72,7 +62,6 @@ resources;obj\Debug\90\res\values\ic_launcher_background.xml
 resources;obj\Debug\90\res\values\strings.xml
 resources;obj\Debug\90\res\values\styles.xml
 resources;obj\Debug\90\res\values-v21\styles.xml
-ScrollView;obj\Debug\90\res\layout\table_creation_page.xml
 SearchView;obj\Debug\90\res\layout\table_view_control_command.xml
 SearchView;obj\Debug\90\res\layout\table_view_layout.xml
 shape;obj\Debug\90\res\drawable\side_nav_bar.xml
@@ -81,13 +70,9 @@ style;obj\Debug\90\res\values\styles.xml
 style;obj\Debug\90\res\values-v21\styles.xml
 TableLayout;obj\Debug\90\res\layout\table_creation_page.xml
 TableLayout;obj\Debug\90\res\layout\table_view_control_command.xml
-TableLayout;obj\Debug\90\res\layout\table_view_layout.xml
 TableRow;obj\Debug\90\res\layout\table_creation_page.xml
 TableRow;obj\Debug\90\res\layout\table_view_control_command.xml
-TableRow;obj\Debug\90\res\layout\table_view_layout.xml
 TextView;obj\Debug\90\res\layout\content_main.xml
-TextView;obj\Debug\90\res\layout\database_creation_page.xml
-TextView;obj\Debug\90\res\layout\listview_database_main.xml
 TextView;obj\Debug\90\res\layout\listview_table.xml
 TextView;obj\Debug\90\res\layout\nav_header_main.xml
 TextView;obj\Debug\90\res\layout\table_creation_page.xml

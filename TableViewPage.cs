@@ -52,6 +52,7 @@ namespace Datafine
             fab.Click += FabOnClick;
             LoadEntries();
 
+            
         }
 
         //load entries unto the listview
@@ -65,6 +66,7 @@ namespace Datafine
             {
                 //add a message saying the database is empty; make a entry to start 
                 suchEmpty.Visibility = ViewStates.Visible;
+
 
             }
 
@@ -87,6 +89,7 @@ namespace Datafine
             //ISharedPreferences sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
             ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
             ISharedPreferencesEditor editor = sharedPreferences.Edit();
+            editor.PutBoolean("UpgradeFlag", false);
             
 
             var commandControl = new Android.Widget.PopupMenu(this, (View)sender);
@@ -112,13 +115,6 @@ namespace Datafine
                         break;
                 }
             };
-
-
-            //maybe have a toggle function instead?
-            /*starButton.Enabled = true;
-            editButton.Enabled = true;
-            deleteButton.Enabled = true;
-            moveButton.Enabled = true;*/
 
         }
 
