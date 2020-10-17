@@ -57,7 +57,7 @@ namespace Datafine
             }
 
             //get the UpgradeFlag 
-            //set tghe upgrade flag by default to false here so that it wont crash on null when the table is first made
+            //set the upgrade flag by default to false here so that it wont crash on null when the table is first made
             ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
             var editor = sharedPreferences.Edit();
             bool upgrade = sharedPreferences.GetBoolean("UpgradeFlag", false);
@@ -65,7 +65,8 @@ namespace Datafine
             if (upgrade == true)
             {
                 string theId = Intent.Extras.GetString("Id");
-                Toast.MakeText(this, "Update is On.", ToastLength.Short).Show();
+                //for debugging
+                //Toast.MakeText(this, "Update is On.", ToastLength.Short).Show();
 
                 LoadDataForEdit(theId);
                 
@@ -96,7 +97,7 @@ namespace Datafine
                 //get the UpgradeFlag 
                 ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
                 var editor = sharedPreferences.Edit();
-                bool upgrade = sharedPreferences.GetBoolean("UpgradeFlag", true);
+                bool upgrade = sharedPreferences.GetBoolean("UpgradeFlag", false);
 
             //if no data was entered, call error
             if (nameEditText.Text.Trim().Length < 1)

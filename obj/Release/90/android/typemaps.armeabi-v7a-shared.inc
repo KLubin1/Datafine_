@@ -49,14 +49,14 @@
 	.section	.rodata.map_aname.8,"aMS",%progbits,1
 	.type	.L.map_aname.8, %object
 .L.map_aname.8:
-	.asciz	"Xamarin.Android.Arch.Lifecycle.Common"
-	.size	.L.map_aname.8, 38
+	.asciz	"Datafine"
+	.size	.L.map_aname.8, 9
 
 	.section	.rodata.map_aname.9,"aMS",%progbits,1
 	.type	.L.map_aname.9, %object
 .L.map_aname.9:
-	.asciz	"Datafine"
-	.size	.L.map_aname.9, 9
+	.asciz	"Xamarin.Android.Arch.Lifecycle.Common"
+	.size	.L.map_aname.9, 38
 
 	.section	.rodata.map_aname.10,"aMS",%progbits,1
 	.type	.L.map_aname.10, %object
