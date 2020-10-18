@@ -43,14 +43,14 @@
 	.section	.rodata.map_aname.7,"aMS",@progbits,1
 	.type	.L.map_aname.7, @object
 .L.map_aname.7:
-	.asciz	"Xamarin.Android.Support.v7.AppCompat"
-	.size	.L.map_aname.7, 37
+	.asciz	"Datafine"
+	.size	.L.map_aname.7, 9
 
 	.section	.rodata.map_aname.8,"aMS",@progbits,1
 	.type	.L.map_aname.8, @object
 .L.map_aname.8:
-	.asciz	"Datafine"
-	.size	.L.map_aname.8, 9
+	.asciz	"Xamarin.Android.Support.v7.AppCompat"
+	.size	.L.map_aname.8, 37
 
 	.section	.rodata.map_aname.9,"aMS",@progbits,1
 	.type	.L.map_aname.9, @object

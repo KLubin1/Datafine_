@@ -34,12 +34,10 @@ namespace Datafine
             SetSupportActionBar(toolbar);
 
             SupportActionBar.Title = "Create New Entry";
-            SupportActionBar.SetDisplayShowHomeEnabled(true);
+            //SupportActionBar.SetDisplayShowHomeEnabled(true);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             // Create your application here
-            //remember to throw error message for null entries 
-
             nameEditText = FindViewById<EditText>(Resource.Id.addEdit_Name);
             numberEditText = FindViewById<EditText>(Resource.Id.addEdit_Number);
             locationEditText = FindViewById<EditText>(Resource.Id.addEdit_Location);
@@ -88,7 +86,7 @@ namespace Datafine
             }
 
             //save the data on click, load and set the entered values
-            void saveButtonOnClick(object sender, EventArgs e) //important function
+            void saveButtonOnClick(object sender, EventArgs e)
             {
                 //get the time captured when entry was made for DateAdded
                 DateTime now = DateTime.Now;
@@ -147,6 +145,7 @@ namespace Datafine
                     {
                     if (upgrade == true)
                     {
+                        //upgrade contact
                         db.UpdateContact(pb);
                         Toast.MakeText(this, "Contact Updated Successfully.", ToastLength.Short).Show();
 
@@ -157,16 +156,16 @@ namespace Datafine
 
                     else
                     {
-                        //add the data and return to main page
+                        //add the entry to 
                         db.AddContact(pb);
                         Toast.MakeText(this, "New Contact Created", ToastLength.Short).Show();
                     }
 
-                    Finish();
-
+                        // and return to main page
+                        Finish();
+                    
                     var intent = new Intent(this, typeof(TableViewPage));
-                    StartActivity(intent); //Launch table view page; either this or backPressed()
-
+                    StartActivity(intent);
                 }
                 catch (Exception ex)
                 {
@@ -174,5 +173,19 @@ namespace Datafine
                 }
 
             }
+
+        //for the back button toolbar
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
     }
 }

@@ -34,11 +34,9 @@ namespace Datafine
             SetSupportActionBar(toolbar);
 
             SupportActionBar.Title = "TableOne";
-            SupportActionBar.SetDisplayShowHomeEnabled(true);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             
-            
-
+            //floating action bar to add new entries
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.addEntryFab);
             listView = FindViewById<ListView>(Resource.Id.tableListView);
             suchEmpty = FindViewById<TextView>(Resource.Id.suchEmptyEntry);
@@ -51,7 +49,6 @@ namespace Datafine
             //load entries
             fab.Click += FabOnClick;
             LoadEntries();
-
             
         }
 
@@ -92,6 +89,7 @@ namespace Datafine
             editor.PutBoolean("UpgradeFlag", false);
             
 
+            //set and launch the popup menu 
             var commandControl = new Android.Widget.PopupMenu(this, (View)sender);
             commandControl.Inflate(Resource.Menu.command_control);
             commandControl.Show();
@@ -105,12 +103,13 @@ namespace Datafine
 
                         //this is "saving" the id so to refer back to this entry in the table creation page on update
                         intent.PutExtra("Id", selectedItem.id.ToString());
-                        //set the flag 
+                        //set the flag to true to activate update functionality in table creation
                         editor.PutBoolean("UpgradeFlag", true);
                         editor.Apply();
                         StartActivity(intent);
                         break;
                     case Resource.Id.cc_Delete:
+                        //delete entry from position
                         DeleteEntry(e.Position);
                         break;
                 }
@@ -120,6 +119,7 @@ namespace Datafine
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
+            //launch the creation page
             Intent intent = new Intent(this, typeof(TableCreation));
             StartActivity(intent);
 
@@ -146,7 +146,6 @@ namespace Datafine
 
                 Toast.MakeText(this, "Contact Deleted", ToastLength.Short).Show();
 
-                //Finish();
                 this.Recreate();
             });
             confirm.SetButton2("Cancel", (sender, ev) =>
@@ -161,6 +160,7 @@ namespace Datafine
         private void Search(object s, SearchView.QueryTextChangeEventArgs e)
         {
             //same as code in LoadEntries, but for getting entries via search bar
+            //just to keep in mind, search can only be done by the name as of now
             DBHelper dbVals = new DBHelper(this);
             string searchTerm = e.NewText.ToString();
             itemList = dbVals.GetContactsBySearchName(searchTerm);
@@ -168,6 +168,20 @@ namespace Datafine
             listView.ItemLongClick += listView_ItemLongClick;
 
 
+        }
+
+        //for the back button toolbar
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
         }
     }
 }

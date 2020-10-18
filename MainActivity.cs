@@ -26,27 +26,29 @@ namespace Datafine
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.mainsToolbar);
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
+
+            //launch create new table page
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
 
+            //nav drawer for table manipulation
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
-
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
+            //button for table launch simulation
             tableButton = FindViewById<Button>(Resource.Id.tableButton);
-
             //launch the table view page
             tableButton.Click += TableButtonLaunch;
 
-            //listView = FindViewById<ListView>(Resource.Id.databaseListView);
 
+            //listView = FindViewById<ListView>(Resource.Id.databaseListView);
             //populate with dummy data
             //itemList = new List<DatabaseInfo>();
             //DatabaseInfo dummy = new DatabaseInfo("Dummy Database", now.ToString(),"This is a test database.");
@@ -65,6 +67,7 @@ namespace Datafine
 
         public override void OnBackPressed()
         {
+            //just additional code to close the nav drawer if its open 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             if(drawer.IsDrawerOpen(GravityCompat.Start))
             {
@@ -78,10 +81,12 @@ namespace Datafine
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
+            //create options menu
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
         }
 
+        //handler for the options menu; to be addeed later
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
@@ -151,6 +156,7 @@ namespace Datafine
 
         public void TableButtonLaunch(object sender, EventArgs eventArgs)
         {
+            //launch the table entry's page
             var intent = new Intent(this, typeof(TableViewPage));
             StartActivity(intent);
         }
