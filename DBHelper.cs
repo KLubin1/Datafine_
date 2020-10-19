@@ -14,7 +14,7 @@ using Android.Database;
 
 namespace Datafine
 {
-    class DBHelper : SQLiteOpenHelper
+    public class DBHelper : SQLiteOpenHelper
     {
         //until I can find a way to take in user input, it would have to create a dummy table with static values
         //database name
@@ -49,14 +49,14 @@ namespace Datafine
         }
 
         //retrive the info for processing and formating them to a cursor
-        public IList<TableInfo> GetAllContacts()
+        public virtual IList<EntryInfo> GetAllContacts()
         {
             SQLiteDatabase db = this.ReadableDatabase;
             ICursor c = db.Query("TableOne", new string[] { "Id", "Name", "PhoneNumber", "Location", "Age", "DateAdded" }, null, null, null, null, null); //can organize the retrieval with any values or way here
-            var contacts = new List<TableInfo>();
+            var contacts = new List<EntryInfo>();
             while (c.MoveToNext())
             {
-                contacts.Add(new TableInfo
+                contacts.Add(new EntryInfo
                 {
                     id = c.GetInt(0),
                     name = c.GetString(1),
@@ -74,18 +74,18 @@ namespace Datafine
         }
 
         //retrieve entries based off of a search pattern or term
-        public IList<TableInfo> GetContactsBySearchName(string nameToSearch)
+        public virtual IList<EntryInfo> GetContactsBySearchName(string nameToSearch)
         {
 
             SQLiteDatabase db = this.ReadableDatabase;
 
             ICursor c = db.Query("TableOne", new string[] { "Id", "Name", "PhoneNumber", "Location", "Age", "DateAdded" }, "upper(Name) LIKE ?", new string[] { "%" + nameToSearch.ToUpper() + "%" }, null, null, null, null);
 
-            var contacts = new List<TableInfo>();
+            var contacts = new List<EntryInfo>();
 
             while (c.MoveToNext())
             {
-                contacts.Add(new TableInfo
+                contacts.Add(new EntryInfo
                 {
                     id = c.GetInt(0),
                     name = c.GetString(1),
@@ -103,7 +103,7 @@ namespace Datafine
         }
 
         //add contacts to content values and insert into database
-        public void AddContact(TableInfo entry)
+        public virtual void AddContact(EntryInfo entry)
         {
             SQLiteDatabase db = this.ReadableDatabase;
             ContentValues contentValues = new ContentValues();
@@ -117,7 +117,7 @@ namespace Datafine
         }
 
         //retrieve entry by id
-        public ICursor getContactById(int id)
+        public virtual ICursor GetContactById(int id)
         {
             SQLiteDatabase db = this.ReadableDatabase;
             ICursor res = db.RawQuery("SELECT * FROM TableOne WHERE Id=" + id + "", null);
@@ -125,7 +125,7 @@ namespace Datafine
         }
 
         //update the contact on edit
-        public void UpdateContact(TableInfo entry)
+        public virtual void UpdateContact(EntryInfo entry)
         {
             if (entry == null)
             {
@@ -160,7 +160,7 @@ namespace Datafine
         }
 
         //delete entry
-        public void DeleteContact(string entryId)
+        public virtual void DeleteContact(string entryId)
         {
             if (entryId == null)
             {

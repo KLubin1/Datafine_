@@ -13,7 +13,7 @@ using Android.Widget;
 namespace Datafine
 {
     [Activity(Label = "DatabaseView")]
-    public class DatabaseView : Activity
+    public class TableView : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

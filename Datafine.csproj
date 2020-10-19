@@ -61,18 +61,19 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntryCreation.cs" />
     <Compile Include="TableCreation.cs" />
-    <Compile Include="DatabaseInfo.cs" />
+    <Compile Include="TableInfo.cs" />
     <Compile Include="TableDescriptionPage.cs" />
-    <Compile Include="TableListAdapter.cs" />
-    <Compile Include="DatabaseView.cs" />
-    <Compile Include="DBHelper.cs" />
     <Compile Include="EntryListAdapter.cs" />
+    <Compile Include="TableView.cs" />
+    <Compile Include="DBHelper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TableInfo.cs" />
-    <Compile Include="TableViewPage.cs" />
+    <Compile Include="EntryInfo.cs" />
+    <Compile Include="EntryViewPage.cs" />
+    <Compile Include="Test.cs" />
     <Compile Include="TestNewTable.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -172,12 +173,12 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\table_creation_page.xml">
+    <AndroidResource Include="Resources\layout\entry_creation_page.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\table_view_layout.xml">
+    <AndroidResource Include="Resources\layout\entry_view_layout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -205,6 +206,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\table_description_layout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\table_creation_page.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

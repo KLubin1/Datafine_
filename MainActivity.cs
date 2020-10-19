@@ -108,9 +108,9 @@ namespace Datafine
             Snackbar.Make(view, "Add database", Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();*/
 
-            //launch entry creation page
-           // Intent intent = new Intent(this, typeof(DatabaseCreation));
-            //StartActivity(intent);
+            //launch table creation page
+            Intent intent = new Intent(this, typeof(TableCreation));
+            StartActivity(intent);
 
         }
 
@@ -120,7 +120,10 @@ namespace Datafine
 
             if (id == Resource.Id.nav_add)
             {
-                //handle the add action
+
+                //launch table creation page
+                Intent intent = new Intent(this, typeof(TableCreation));
+                StartActivity(intent);
             }
             else if (id == Resource.Id.nav_delete)
             {
@@ -156,7 +159,7 @@ namespace Datafine
         public void TableButtonLaunch(object sender, EventArgs eventArgs)
         {
             //launch the table entry's page
-            var intent = new Intent(this, typeof(TableViewPage));
+            var intent = new Intent(this, typeof(EntryViewPage));
             StartActivity(intent);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

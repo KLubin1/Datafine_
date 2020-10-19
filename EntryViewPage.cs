@@ -17,17 +17,17 @@ using AlertDialog = Android.App.AlertDialog;
 namespace Datafine
 {
     [Activity(Label = "TableViewPage")]
-    public class TableViewPage : AppCompatActivity
+    public class EntryViewPage : AppCompatActivity
     {
         ListView listView;
-        IList<TableInfo> itemList = null;
+        IList<EntryInfo> itemList = null;
         TextView suchEmpty;
         SearchView search;
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.table_view_layout);
+            SetContentView(Resource.Layout.entry_view_layout);
 
             //set the toolbar
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
@@ -68,7 +68,7 @@ namespace Datafine
             }
 
             //set the lisy adapter
-            listView.Adapter = new TableListAdapter(this, itemList);
+            listView.Adapter = new EntryListAdapter(this, itemList);
 
             //long click event for items in list
             listView.ItemLongClick += listView_ItemLongClick;
@@ -99,7 +99,7 @@ namespace Datafine
                 switch (a.Item.ItemId)
                 {
                     case Resource.Id.cc_Edit:
-                        var intent = new Intent(this, typeof(TableCreation));
+                        var intent = new Intent(this, typeof(EntryCreation));
 
                         //this is "saving" the id so to refer back to this entry in the table creation page on update
                         intent.PutExtra("Id", selectedItem.id.ToString());
@@ -120,7 +120,7 @@ namespace Datafine
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
             //launch the creation page
-            Intent intent = new Intent(this, typeof(TableCreation));
+            Intent intent = new Intent(this, typeof(EntryCreation));
             StartActivity(intent);
 
         }
@@ -164,7 +164,7 @@ namespace Datafine
             DBHelper dbVals = new DBHelper(this);
             string searchTerm = e.NewText.ToString();
             itemList = dbVals.GetContactsBySearchName(searchTerm);
-            listView.Adapter = new TableListAdapter(this, itemList);
+            listView.Adapter = new EntryListAdapter(this, itemList);
             listView.ItemLongClick += listView_ItemLongClick;
 
 

@@ -14,23 +14,20 @@ namespace Datafine
 {
     public class TableInfo
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string phoneNumber { get; set; }
-        public string location { get; set; }
-        public string age { get; set; }
+        public string title { get; set; }
         public string dateAdded { get; set; }
-
+        public string description { get; set; }
+        
         public TableInfo() { }
-        public TableInfo(string _name, string _phoneNumber, string _location, string _age, string _dateAdded)
+        public TableInfo(string _title, string _dateAdded, string _description)
         {
-            _name = this.name;
-            _phoneNumber = this.phoneNumber;
-            _location = this.location;
-            _age = this.age;
-            _dateAdded = this.dateAdded;
-
+            _title = title;
+            _dateAdded = dateAdded;
+            _description = description;
         }
-
+        public static explicit operator TableInfo(Java.Lang.Object v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
