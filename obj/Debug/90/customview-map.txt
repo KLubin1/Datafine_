@@ -31,6 +31,7 @@ ImageView;obj\Debug\90\res\layout\nav_header_main.xml
 include;obj\Debug\90\res\layout\activity_main.xml
 include;obj\Debug\90\res\layout\app_bar_main.xml
 include;obj\Debug\90\res\layout\table_creation_page.xml
+include;obj\Debug\90\res\layout\table_description_layout.xml
 include;obj\Debug\90\res\layout\table_view_layout.xml
 item;obj\Debug\90\res\menu\activity_main_drawer.xml
 item;obj\Debug\90\res\menu\command_control.xml
@@ -41,6 +42,7 @@ item;obj\Debug\90\res\values-v21\styles.xml
 LinearLayout;obj\Debug\90\res\layout\listview_table.xml
 LinearLayout;obj\Debug\90\res\layout\nav_header_main.xml
 LinearLayout;obj\Debug\90\res\layout\table_creation_page.xml
+LinearLayout;obj\Debug\90\res\layout\table_description_layout.xml
 LinearLayout;obj\Debug\90\res\layout\table_view_control_command.xml
 LinearLayout;obj\Debug\90\res\layout\table_view_layout.xml
 ListView;obj\Debug\90\res\layout\table_view_layout.xml
@@ -76,6 +78,7 @@ TextView;obj\Debug\90\res\layout\content_main.xml
 TextView;obj\Debug\90\res\layout\listview_table.xml
 TextView;obj\Debug\90\res\layout\nav_header_main.xml
 TextView;obj\Debug\90\res\layout\table_creation_page.xml
+TextView;obj\Debug\90\res\layout\table_description_layout.xml
 TextView;obj\Debug\90\res\layout\table_view_control_command.xml
 TextView;obj\Debug\90\res\layout\table_view_layout.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_camera.xml

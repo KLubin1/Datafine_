@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="TableCreation.cs" />
     <Compile Include="DatabaseInfo.cs" />
+    <Compile Include="TableDescriptionPage.cs" />
     <Compile Include="TableListAdapter.cs" />
     <Compile Include="DatabaseView.cs" />
     <Compile Include="DBHelper.cs" />
@@ -199,6 +200,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\toolbar.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\table_description_layout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -46,6 +46,7 @@ namespace Datafine
             tableButton = FindViewById<Button>(Resource.Id.tableButton);
             //launch the table view page
             tableButton.Click += TableButtonLaunch;
+            tableButton.LongClick += TableButtonDetails;
 
 
             //listView = FindViewById<ListView>(Resource.Id.databaseListView);
@@ -62,8 +63,6 @@ namespace Datafine
                // Toast.MakeText(this, "To be Databased", ToastLength.Short).Show();
             //};
         }
-
-        
 
         public override void OnBackPressed()
         {
@@ -165,6 +164,14 @@ namespace Datafine
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        //launch description page
+        private void TableButtonDetails(object o, View.LongClickEventArgs e)
+        {
+            Toast.MakeText(this, "Long Clicked", ToastLength.Short).Show();
+            var intent = new Intent(this, typeof(TableDescriptionPage));
+            StartActivity(intent);
         }
     }
 }

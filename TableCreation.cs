@@ -63,8 +63,6 @@ namespace Datafine
             if (upgrade == true)
             {
                 string theId = Intent.Extras.GetString("Id");
-                //for debugging
-                //Toast.MakeText(this, "Update is On.", ToastLength.Short).Show();
 
                 LoadDataForEdit(theId);
                 
