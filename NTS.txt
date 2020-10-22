@@ -1,0 +1,3 @@
+*/ If there is issues later down the road with anything regarding the support library and the layout components, 
+try uninstalling  anything with Xamarin.AndroidX* and the Xamarin.Google.Android.Material in the NuGet Packet Manager
+and reset anything with either android.X or com.google in the components of layouts to the android.support

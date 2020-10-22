@@ -13,13 +13,17 @@ using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
 using Android.Support.V7.App;
+using Android.Support.Design.Widget;
+using Google.Android.Material.TextField;
+using TextInputEditText = Google.Android.Material.TextField.TextInputEditText;
 
 namespace Datafine
 {
     [Activity(Label = "DatabaseCreation")]
     public class EntryCreation : AppCompatActivity
     {
-        EditText nameEditText, numberEditText, locationEditText, ageEditText;
+        //EditText nameEditText, numberEditText, locationEditText, ageEditText;
+        TextInputEditText nameEditText, numberEditText, locationEditText, ageEditText;
         ImageButton saveButton;
 
 
@@ -38,10 +42,10 @@ namespace Datafine
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             // Create your application here
-            nameEditText = FindViewById<EditText>(Resource.Id.addEdit_Name);
-            numberEditText = FindViewById<EditText>(Resource.Id.addEdit_Number);
-            locationEditText = FindViewById<EditText>(Resource.Id.addEdit_Location);
-            ageEditText = FindViewById<EditText>(Resource.Id.addEdit_Age);
+            nameEditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Name);
+            numberEditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Number);
+            locationEditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Location);
+            ageEditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Age);
             saveButton = FindViewById<ImageButton>(Resource.Id.addEdit_btnSave);
 
 

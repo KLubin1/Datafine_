@@ -2,7 +2,7 @@ package crc64ccef0fc746faa48b;
 
 
 public class TableCreation
-	extends android.support.v7.app.AppCompatActivity
+	extends androidx.appcompat.app.AppCompatActivity
 	implements
 		mono.android.IGCUserPeer
 {
@@ -22,6 +22,14 @@ public class TableCreation
 		super ();
 		if (getClass () == TableCreation.class)
 			mono.android.TypeManager.Activate ("Datafine.TableCreation, Datafine", "", this, new java.lang.Object[] {  });
+	}
+
+
+	public TableCreation (int p0)
+	{
+		super (p0);
+		if (getClass () == TableCreation.class)
+			mono.android.TypeManager.Activate ("Datafine.TableCreation, Datafine", "System.Int32, mscorlib", this, new java.lang.Object[] { p0 });
 	}
 
 

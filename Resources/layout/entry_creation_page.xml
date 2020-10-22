@@ -11,12 +11,64 @@
     android:orientation="vertical">
 
     <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         layout="@layout/toolbar"/>
+    
 
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">\
+        <com.google.android.material.textfield.TextInputEditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/addEdit_Name"
+             android:hint="Name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+     <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">\
+        <com.google.android.material.textfield.TextInputEditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            android:id="@+id/addEdit_Number"
+             android:hint="Phone Number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+     <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">\
+        <com.google.android.material.textfield.TextInputEditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            android:id="@+id/addEdit_Location"
+             android:hint="Location"/>
+    </com.google.android.material.textfield.TextInputLayout>-->
+
+     <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">\
+        <com.google.android.material.textfield.TextInputEditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            android:id="@+id/addEdit_Age"
+             android:hint="Age"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+                    android:contentDescription="Done"
+                    android:id="@+id/addEdit_btnSave"
+                    android:src="@drawable/baseline_done_black_18dp"
+                    android:layout_width="283.0dp"
+                    android:layout_height="wrap_content" />
+
+    
  
-        <TableLayout
+        <!--<TableLayout
 
             android:layout_width="fill_parent"
 
@@ -121,5 +173,5 @@
                     android:layout_width="283.0dp"
                     android:layout_height="wrap_content" />
             </TableRow>
-        </TableLayout>
+        </TableLayout>-->
 </LinearLayout>

@@ -2,10 +2,10 @@ package crc64ccef0fc746faa48b;
 
 
 public class MainActivity
-	extends android.support.v7.app.AppCompatActivity
+	extends androidx.appcompat.app.AppCompatActivity
 	implements
 		mono.android.IGCUserPeer,
-		android.support.design.widget.NavigationView.OnNavigationItemSelectedListener
+		com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
 {
 /** @hide */
 	public static final String __md_methods;
@@ -16,7 +16,7 @@ public class MainActivity
 			"n_onCreateOptionsMenu:(Landroid/view/Menu;)Z:GetOnCreateOptionsMenu_Landroid_view_Menu_Handler\n" +
 			"n_onOptionsItemSelected:(Landroid/view/MenuItem;)Z:GetOnOptionsItemSelected_Landroid_view_MenuItem_Handler\n" +
 			"n_onRequestPermissionsResult:(I[Ljava/lang/String;[I)V:GetOnRequestPermissionsResult_IarrayLjava_lang_String_arrayIHandler\n" +
-			"n_onNavigationItemSelected:(Landroid/view/MenuItem;)Z:GetOnNavigationItemSelected_Landroid_view_MenuItem_Handler:Android.Support.Design.Widget.NavigationView/IOnNavigationItemSelectedListenerInvoker, Xamarin.Android.Support.Design\n" +
+			"n_onNavigationItemSelected:(Landroid/view/MenuItem;)Z:GetOnNavigationItemSelected_Landroid_view_MenuItem_Handler:Google.Android.Material.Navigation.NavigationView/IOnNavigationItemSelectedListenerInvoker, Xamarin.Google.Android.Material\n" +
 			"";
 		mono.android.Runtime.register ("Datafine.MainActivity, Datafine", MainActivity.class, __md_methods);
 	}
@@ -27,6 +27,14 @@ public class MainActivity
 		super ();
 		if (getClass () == MainActivity.class)
 			mono.android.TypeManager.Activate ("Datafine.MainActivity, Datafine", "", this, new java.lang.Object[] {  });
+	}
+
+
+	public MainActivity (int p0)
+	{
+		super (p0);
+		if (getClass () == MainActivity.class)
+			mono.android.TypeManager.Activate ("Datafine.MainActivity, Datafine", "System.Int32, mscorlib", this, new java.lang.Object[] { p0 });
 	}
 
 

@@ -183,5 +183,13 @@ namespace Datafine
                     return base.OnOptionsItemSelected(item);
             }
         }
+
+        //for the back button function
+        public override void OnBackPressed()
+        {
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            
+            base.OnBackPressed();
+        }
     }
 }
