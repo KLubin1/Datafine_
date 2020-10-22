@@ -60,11 +60,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
-                    android:contentDescription="Done"
-                    android:id="@+id/addEdit_btnSave"
-                    android:src="@drawable/baseline_done_black_18dp"
-                    android:layout_width="283.0dp"
-                    android:layout_height="wrap_content" />
+        android:contentDescription="Done"
+        android:id="@+id/addEdit_btnSave"
+        android:src="@drawable/baseline_done_black_18dp"
+        android:layout_width="283dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="60dp"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_blueGray"/>
 
     
  
