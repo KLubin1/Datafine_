@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
 
 namespace Datafine
@@ -45,5 +46,6 @@ namespace Datafine
                     return base.OnOptionsItemSelected(item);
             }
         }
+
     }
 }

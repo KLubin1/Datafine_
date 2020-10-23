@@ -8,6 +8,7 @@
     android:layout_width="match_parent"
 
     android:layout_height="match_parent"
+    android:id="@+id/entryCreation_view"
     android:orientation="vertical">
 
     <include
@@ -67,7 +68,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="60dp"
         android:layout_height="wrap_content"
-        android:background="@color/theme_blueGray"/>
+        android:background="@color/theme_midnightBlue"/>
 
     
  

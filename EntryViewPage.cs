@@ -63,8 +63,6 @@ namespace Datafine
             {
                 //add a message saying the database is empty; make a entry to start 
                 suchEmpty.Visibility = ViewStates.Visible;
-
-
             }
 
             //set the lisy adapter
@@ -144,9 +142,9 @@ namespace Datafine
                 db.DeleteContact(selectedItem.id.ToString());
                 // NotifyDataSetChanged();
 
-                Toast.MakeText(this, "Contact Deleted", ToastLength.Short).Show();
-
                 this.Recreate();
+                Toast.MakeText(this, "Contact Deleted Succesfully!", ToastLength.Long).Show();
+
             });
             confirm.SetButton2("Cancel", (sender, ev) =>
             {
@@ -166,7 +164,6 @@ namespace Datafine
             itemList = dbVals.GetContactsBySearchName(searchTerm);
             listView.Adapter = new EntryListAdapter(this, itemList);
             listView.ItemLongClick += listView_ItemLongClick;
-
 
         }
 

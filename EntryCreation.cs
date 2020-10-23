@@ -16,6 +16,10 @@ using Android.Support.V7.App;
 using Android.Support.Design.Widget;
 using Google.Android.Material.TextField;
 using TextInputEditText = Google.Android.Material.TextField.TextInputEditText;
+using Android.Views.InputMethods;
+using AndroidX.AppCompat.Widget;
+using Android.Support.V7.Widget;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace Datafine
 {
@@ -25,6 +29,7 @@ namespace Datafine
         //EditText nameEditText, numberEditText, locationEditText, ageEditText;
         TextInputEditText nameEditText, numberEditText, locationEditText, ageEditText;
         ImageButton saveButton;
+        LinearLayout view;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -34,8 +39,8 @@ namespace Datafine
 
 
             //set the toolbar
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
+           Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+           SetSupportActionBar(toolbar);
 
             SupportActionBar.Title = "Create New Entry";
             //SupportActionBar.SetDisplayShowHomeEnabled(true);
@@ -47,6 +52,10 @@ namespace Datafine
             locationEditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Location);
             ageEditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Age);
             saveButton = FindViewById<ImageButton>(Resource.Id.addEdit_btnSave);
+
+            // for view used for snackbar reference
+            view = FindViewById<LinearLayout>(Resource.Id.entryCreation_view);
+
 
 
             saveButton.Click += saveButtonOnClick;
@@ -94,6 +103,8 @@ namespace Datafine
                 DateTime now = DateTime.Now;
                 DBHelper db = new DBHelper(this);
 
+                CloseKeyboard();
+
                 //get the UpgradeFlag 
                 ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
                 var editor = sharedPreferences.Edit();
@@ -102,27 +113,34 @@ namespace Datafine
             //if no data was entered, call error
             if (nameEditText.Text.Trim().Length < 1)
                 {
-                    Toast.MakeText(this, "Enter Name.", ToastLength.Short).Show();
+                    //Toast.MakeText(this, "Enter Name.", ToastLength.Short).Show();
+                    Snackbar snackbar = Snackbar.Make(view, "Name field cannot be empty (NOT NULL)", Snackbar.LengthIndefinite);
+                    snackbar.Show();
                     return;
                 }
 
 
                 if (numberEditText.Text.Trim().Length < 1)
                 {
-                    Toast.MakeText(this, "Enter Phone Number.", ToastLength.Short).Show();
+                    //Toast.MakeText(this, "Enter Phone Number.", ToastLength.Short).Show();
+                    Snackbar snackbar = Snackbar.Make(view, "Phone Number field cannot be empty (NOT NULL)", Snackbar.LengthIndefinite);
+                    snackbar.Show();
                     return;
                 }
 
-                if (nameEditText.Text.Trim().Length < 1)
+                if (locationEditText.Text.Trim().Length < 1)
                 {
-                    Toast.MakeText(this, "Enter Location.", ToastLength.Short).Show();
+                    //Toast.MakeText(this, "Enter Location.", ToastLength.Short).Show();
+                    Snackbar snackbar = Snackbar.Make(view, "Location field cannot be empty (NOT NULL)", Snackbar.LengthIndefinite);
+                    snackbar.Show();
                     return;
                 }
 
-
-                if (numberEditText.Text.Trim().Length < 1)
+                if (ageEditText.Text.Trim().Length < 1)
                 {
-                    Toast.MakeText(this, "Enter Age.", ToastLength.Short).Show();
+                    //Toast.MakeText(this, "Enter Age.", ToastLength.Short).Show();
+                    Snackbar snackbar = Snackbar.Make(view, "Age field cannot be empty (NOT NULL)", Snackbar.LengthIndefinite);
+                    snackbar.Show();
                     return;
                 }
 
@@ -141,15 +159,13 @@ namespace Datafine
                     pb.age = ageEditText.Text;
                     pb.dateAdded = "Date Created: " + now.ToString();
 
-            
-
                 try
                     {
                     if (upgrade == true)
                     {
                         //upgrade contact
                         db.UpdateContact(pb);
-                        Toast.MakeText(this, "Contact Updated Successfully.", ToastLength.Short).Show();
+                        Toast.MakeText(this, "Contact Updated Successfully!", ToastLength.Long).Show();
 
                         editor.PutBoolean("UpgradeFlag", false);
                         editor.Apply();
@@ -160,9 +176,9 @@ namespace Datafine
                     {
                         //add the entry to 
                         db.AddContact(pb);
-                        Toast.MakeText(this, "New Contact Created", ToastLength.Short).Show();
+                        Toast.MakeText(this, "New Contact Created!", ToastLength.Long).Show();
                     }
-
+                        
                         // and return to main page
                         Finish();
                     
@@ -187,6 +203,16 @@ namespace Datafine
 
                 default:
                     return base.OnOptionsItemSelected(item);
+            }
+        }
+
+        public void CloseKeyboard()
+        {
+            View view = this.CurrentFocus;
+            if (view != null)
+            {
+                InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+                imm.HideSoftInputFromWindow(view.WindowToken, 0);
             }
         }
     }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/entryView_viewLayout">
 
 
   <include
@@ -17,15 +18,16 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/entrySearchView" />
+        android:id="@+id/entrySearchView"/>
 
 
     
-    <android.support.design.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
+        android:id="@+id/entryView_view"
         >
     
         
@@ -54,11 +56,11 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/baseline_add_white_18dp"
-        app:backgroundTint="@color/theme_blueGray"/>
+        app:backgroundTint="@color/theme_midnightBlue"/>
 
        
 
-    </android.support.design.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
    
    
 </LinearLayout>

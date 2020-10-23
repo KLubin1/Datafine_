@@ -7,14 +7,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/toolbar"/>
-
-
-
     
     <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top"
+       
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">\
         <com.google.android.material.textfield.TextInputEditText
              android:layout_width="match_parent"
@@ -42,7 +40,7 @@
         android:layout_height="wrap_content" 
         android:layout_marginTop="30dp"
         android:layout_marginLeft="60dp"
-        android:background="@color/theme_blueGray"/>-->
+        android:background="@color/theme_midnightBlue"/>-->
 
    <!-- <TextView
         android:text="Table Name"
