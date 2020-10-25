@@ -73,11 +73,11 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.VersionedParcelable.dll",
 		"Xamarin.AndroidX.ViewPager.dll",
 		"Xamarin.Google.Android.Material.dll",
-		"Datafine.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.SavedState.dll",
 		"Xamarin.Essentials.dll",
 		"Xamarin.Google.Guava.ListenableFuture.dll",
+		"Datafine.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

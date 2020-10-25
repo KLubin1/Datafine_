@@ -371,3 +371,10 @@ C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\android\src\androidx\transition\R.java
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\android\src\com\google\android\material\R.java
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\stamp\_CopyIntermediateAssemblies.stamp
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\res\drawable\splash_screen_logo.xml
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\res\drawable-v21\datafineplaceholder1.png
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\androidx\cecil\splash_screen_logo.xml
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\androidx\cecil\datafineplaceholder1.png
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\android\src\com\google\android\material\snackbar\Snackbar_SnackbarActionClickImplementor.java
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\android\src\crc64ccef0fc746faa48b\SplashScreen.java
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\android\src\mono\com\google\android\material\behavior\SwipeDismissBehavior_OnDismissListenerImplementor.java

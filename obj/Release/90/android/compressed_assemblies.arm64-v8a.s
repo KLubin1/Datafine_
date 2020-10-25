@@ -8,7 +8,7 @@
 .L.compressed_assembly_descriptors:
 	/* 0: Datafine.dll */
 	/* uncompressed_file_size */
-	.word	147968
+	.word	148992
 	/* loaded */
 	.byte	0
 	/* data */
@@ -26,7 +26,7 @@
 
 	/* 2: Mono.Android.dll */
 	/* uncompressed_file_size */
-	.word	1111552
+	.word	1125888
 	/* loaded */
 	.byte	0
 	/* data */
@@ -44,7 +44,7 @@
 
 	/* 4: System.Core.dll */
 	/* uncompressed_file_size */
-	.word	303616
+	.word	304128
 	/* loaded */
 	.byte	0
 	/* data */
@@ -179,7 +179,7 @@
 
 	/* 19: Xamarin.AndroidX.CoordinatorLayout.dll */
 	/* uncompressed_file_size */
-	.word	7168
+	.word	70144
 	/* loaded */
 	.byte	0
 	/* data */
@@ -188,7 +188,7 @@
 
 	/* 20: Xamarin.AndroidX.Core.dll */
 	/* uncompressed_file_size */
-	.word	206336
+	.word	230400
 	/* loaded */
 	.byte	0
 	/* data */
@@ -431,7 +431,7 @@
 
 	/* 47: Xamarin.Google.Android.Material.dll */
 	/* uncompressed_file_size */
-	.word	119296
+	.word	152064
 	/* loaded */
 	.byte	0
 	/* data */
@@ -449,7 +449,7 @@
 
 	/* 49: mscorlib.dll */
 	/* uncompressed_file_size */
-	.word	1891840
+	.word	1892864
 	/* loaded */
 	.byte	0
 	/* data */

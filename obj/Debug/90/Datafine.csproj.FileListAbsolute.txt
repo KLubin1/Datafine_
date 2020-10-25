@@ -391,3 +391,6 @@ C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\an
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\stamp\_AndroidXJetifyManifest.stamp
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\androidx\_AndroidXJetifyManifest.jetify
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\stamp\_CopyIntermediateAssemblies.stamp
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\res\drawable\splash_screen_logo.xml
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\res\drawable-v21\datafineplaceholder1.png
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\android\src\crc64ccef0fc746faa48b\SplashScreen.java

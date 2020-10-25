@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntryCreation.cs" />
+    <Compile Include="SplashScreen.cs" />
     <Compile Include="TableCreation.cs" />
     <Compile Include="TableInfo.cs" />
     <Compile Include="TableDescriptionPage.cs" />
@@ -225,6 +226,12 @@
     <AndroidResource Include="Resources\layout\table_creation_page.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\splash_screen_logo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\DatafinePlaceholder1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

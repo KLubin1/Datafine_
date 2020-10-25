@@ -1,6 +1,9 @@
 Datafine.EntryCreation, Datafine;crc64ccef0fc746faa48b.EntryCreation
 Datafine.EntryCreation;crc64ccef0fc746faa48b.EntryCreation
 datafine.EntryCreation;crc64ccef0fc746faa48b.EntryCreation
+Datafine.SplashScreen, Datafine;crc64ccef0fc746faa48b.SplashScreen
+Datafine.SplashScreen;crc64ccef0fc746faa48b.SplashScreen
+datafine.SplashScreen;crc64ccef0fc746faa48b.SplashScreen
 Datafine.TableCreation, Datafine;crc64ccef0fc746faa48b.TableCreation
 Datafine.TableCreation;crc64ccef0fc746faa48b.TableCreation
 datafine.TableCreation;crc64ccef0fc746faa48b.TableCreation

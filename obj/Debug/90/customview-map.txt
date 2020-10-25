@@ -7,8 +7,10 @@ androidx.coordinatorlayout.widget.CoordinatorLayout;obj\Debug\90\res\layout\entr
 androidx.drawerlayout.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
+bitmap;obj\Debug\90\res\drawable\splash_screen_logo.xml
 Button;obj\Debug\90\res\layout\content_main.xml
 cache-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\lp\38\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+color;obj\Debug\90\res\drawable\splash_screen_logo.xml
 color;obj\Debug\90\res\values\colors.xml
 color;obj\Debug\90\res\values\ic_launcher_background.xml
 com.google.android.material.appbar.AppBarLayout;obj\Debug\90\res\layout\toolbar.xml
@@ -38,12 +40,14 @@ include;obj\Debug\90\res\layout\entry_creation_page.xml
 include;obj\Debug\90\res\layout\entry_view_layout.xml
 include;obj\Debug\90\res\layout\table_creation_page.xml
 include;obj\Debug\90\res\layout\table_description_layout.xml
+item;obj\Debug\90\res\drawable\splash_screen_logo.xml
 item;obj\Debug\90\res\menu\activity_main_drawer.xml
 item;obj\Debug\90\res\menu\command_control.xml
 item;obj\Debug\90\res\menu\menu_main.xml
 item;obj\Debug\90\res\values\drawables.xml
 item;obj\Debug\90\res\values\styles.xml
 item;obj\Debug\90\res\values-v21\styles.xml
+layer-list;obj\Debug\90\res\drawable\splash_screen_logo.xml
 LinearLayout;obj\Debug\90\res\layout\entry_creation_page.xml
 LinearLayout;obj\Debug\90\res\layout\entry_view_layout.xml
 LinearLayout;obj\Debug\90\res\layout\listview_table.xml
