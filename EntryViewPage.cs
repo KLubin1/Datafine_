@@ -167,6 +167,14 @@ namespace Datafine
 
         }
 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            //create options menu
+            MenuInflater.Inflate(Resource.Menu.menu_main, menu);
+            return true;
+
+        }
+
         //for the back button toolbar and the other toolbar options
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
@@ -189,13 +197,7 @@ namespace Datafine
                     return base.OnOptionsItemSelected(item);
             }
         }
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            //create options menu
-            MenuInflater.Inflate(Resource.Menu.menu_main, menu);
-            return true;
-
-        }
+       
         //for the back button function
         public override void OnBackPressed()
         {
