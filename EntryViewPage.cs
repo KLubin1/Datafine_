@@ -167,7 +167,7 @@ namespace Datafine
 
         }
 
-        //for the back button toolbar
+        //for the back button toolbar and the other toolbar options
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
@@ -176,11 +176,26 @@ namespace Datafine
                     Finish();
                     return true;
 
+                case Resource.Id.action_settings:
+                    return true;
+
+                case Resource.Id.action_about:
+                    return true;
+
+                case Resource.Id.action_home:
+                    StartActivity(typeof(MainActivity));
+                    return true;
                 default:
                     return base.OnOptionsItemSelected(item);
             }
         }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            //create options menu
+            MenuInflater.Inflate(Resource.Menu.menu_main, menu);
+            return true;
 
+        }
         //for the back button function
         public override void OnBackPressed()
         {

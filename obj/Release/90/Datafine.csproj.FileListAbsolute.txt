@@ -378,3 +378,5 @@ C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\android\src\com\google\android\material\snackbar\Snackbar_SnackbarActionClickImplementor.java
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\android\src\crc64ccef0fc746faa48b\SplashScreen.java
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\android\src\mono\com\google\android\material\behavior\SwipeDismissBehavior_OnDismissListenerImplementor.java
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\res\drawable-v21\baseline_home_white_18dp.png
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\androidx\cecil\baseline_home_white_18dp.png

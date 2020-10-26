@@ -98,6 +98,10 @@ namespace Datafine
             {
                 return true;
             }
+            if(id == Resource.Id.action_home)
+            {
+                StartActivity(typeof(MainActivity));
+            }
 
             return base.OnOptionsItemSelected(item);
         }
