@@ -91,7 +91,8 @@ namespace Datafine
             int id = item.ItemId;
             if (id == Resource.Id.action_settings)
             {
-                return true;
+                Intent intent = new Intent(this, typeof(Settings));
+                StartActivity(intent);
             }
 
             if (id == Resource.Id.action_about)
@@ -115,6 +116,8 @@ namespace Datafine
             //launch table creation page
             Intent intent = new Intent(this, typeof(TableCreation));
             StartActivity(intent);
+
+            
 
         }
 

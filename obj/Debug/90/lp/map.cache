@@ -23,9 +23,11 @@ Xamarin.AndroidX.Lifecycle.LiveData.Core
 Xamarin.AndroidX.Lifecycle.LiveData
 Xamarin.AndroidX.Lifecycle.Runtime
 Xamarin.AndroidX.Lifecycle.ViewModel
+Xamarin.AndroidX.Lifecycle.ViewModelSavedState
 Xamarin.AndroidX.Loader
 Xamarin.AndroidX.LocalBroadcastManager
 Xamarin.AndroidX.MultiDex
+Xamarin.AndroidX.Preference
 Xamarin.AndroidX.Print
 Xamarin.AndroidX.RecyclerView
 Xamarin.AndroidX.SavedState
@@ -52,6 +54,7 @@ androidx.lifecycle.lifecycle-viewmodel
 androidx.arch.core.core-runtime
 androidx.lifecycle.lifecycle-livedata-core
 androidx.loader.loader
+androidx.lifecycle.lifecycle-viewmodel-savedstate
 androidx.activity.activity
 androidx.fragment.fragment
 androidx.transition.transition
@@ -71,5 +74,6 @@ androidx.cardview.cardview
 androidx.appcompat.appcompat-resources
 androidx.appcompat.appcompat
 com.google.android.material.material
+androidx.preference.preference
 androidx.lifecycle.lifecycle-livedata
 androidx.browser.browser

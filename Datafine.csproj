@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntryCreation.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="TableCreation.cs" />
     <Compile Include="TableInfo.cs" />
@@ -133,14 +134,23 @@
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.v7.Preference">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Browser">
       <Version>1.2.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.Fragment">
+      <Version>1.2.5.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData">
       <Version>2.2.0.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Migration">
       <Version>1.0.7.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.Preference">
+      <Version>1.1.1.5</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.Google.Android.Material">
@@ -235,6 +245,14 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-v21\baseline_home_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\settings_layout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\settings_screen.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

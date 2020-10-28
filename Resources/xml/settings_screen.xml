@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <PreferenceCategory
+    app:title="Theme">
+
+    <Preference
+        app:key="color_scheme"
+        app:title="Color Scheme"
+        app:summary="Change app's color scheme"/>
+    <Preference
+        app:key="module"
+        app:title="Module"
+        app:summary="Customize app's modules"/>
+
+  </PreferenceCategory>
+
+  <PreferenceCategory
+    app:title="Locking/Unlocking">
+
+    <Preference
+       app:key="goto_passwords"
+       app:title="Passwords"
+       app:summary="Manage access to table features"/>
+
+    <SwitchPreferenceCompat
+        app:key="read_only"
+        app:title="Enable Read-Only Table"/>
+  </PreferenceCategory>
+
+  <PreferenceCategory app:title="Search">
+
+    <Preference
+            app:key="search_type"
+            app:title="Search Type"
+            app:summary="Change search type"/>
+
+  </PreferenceCategory>
+</PreferenceScreen>
