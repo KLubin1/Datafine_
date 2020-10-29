@@ -13,4 +13,5 @@
   <string name="columnInfo5">Age (STRING, NOT NULL) </string>
   <string name="columnInfo6">Date Added (STRING, NOT NULL) [Auto]</string>
   <string name="Table_Description">First table of Datafine for building and testing. By no means official or even a real table.</string>
+  
 </resources>

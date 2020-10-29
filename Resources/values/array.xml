@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+<string-array name="search_terms">
+    <item name="">Entry Name</item>
+    <item name="">Entry Location</item>
+    <item name="">Entry Age</item>
+    <item name="">Entry Id</item>
+  </string-array>
+  <string-array name="search_terms_values">
+    <item name="">1</item>
+    <item name="">2</item>
+    <item name="">3</item>
+    <item name="">4</item>
+  </string-array> 
+</resources>

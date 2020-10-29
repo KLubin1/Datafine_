@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <PreferenceScreen
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
   <PreferenceCategory
     app:title="Theme">
 
@@ -19,9 +20,14 @@
     app:title="Locking/Unlocking">
 
     <Preference
-       app:key="goto_passwords"
-       app:title="Passwords"
-       app:summary="Manage access to table features"/>
+       app:key="create_password"
+       app:title="Enable Password"
+       app:summary="Create a password to manage access to table features"/>
+    
+     <Preference
+       app:key="set_password"
+       app:title="Set Password"
+       app:summary="Set table capabilties with password"/>
 
     <SwitchPreferenceCompat
         app:key="read_only"
@@ -30,10 +36,15 @@
 
   <PreferenceCategory app:title="Search">
 
-    <Preference
-            app:key="search_type"
-            app:title="Search Type"
-            app:summary="Change search type"/>
+    <ListPreference
+        app:key="search_type"
+        app:title="Search Type"
+        app:summary="Change search type"
+        app:defaultValue="1"
+        app:entryValues="@array/search_terms_values"
+        app:entries="@array/search_terms"
+        
+        />
 
   </PreferenceCategory>
 </PreferenceScreen>

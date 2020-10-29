@@ -5,6 +5,7 @@ androidx.appcompat.widget.Toolbar;obj\Debug\90\res\layout\toolbar.xml
 androidx.coordinatorlayout.widget.CoordinatorLayout;obj\Debug\90\res\layout\app_bar_main.xml
 androidx.coordinatorlayout.widget.CoordinatorLayout;obj\Debug\90\res\layout\entry_view_layout.xml
 androidx.drawerlayout.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main.xml
+array;obj\Debug\90\res\values\array.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 bitmap;obj\Debug\90\res\drawable\splash_screen_logo.xml
@@ -37,12 +38,14 @@ include;obj\Debug\90\res\layout\activity_main.xml
 include;obj\Debug\90\res\layout\app_bar_main.xml
 include;obj\Debug\90\res\layout\entry_creation_page.xml
 include;obj\Debug\90\res\layout\entry_view_layout.xml
+include;obj\Debug\90\res\layout\settings_layout.xml
 include;obj\Debug\90\res\layout\table_creation_page.xml
 include;obj\Debug\90\res\layout\table_description_layout.xml
 item;obj\Debug\90\res\drawable\splash_screen_logo.xml
 item;obj\Debug\90\res\menu\activity_main_drawer.xml
 item;obj\Debug\90\res\menu\command_control.xml
 item;obj\Debug\90\res\menu\menu_main.xml
+item;obj\Debug\90\res\values\array.xml
 item;obj\Debug\90\res\values\drawables.xml
 item;obj\Debug\90\res\values\styles.xml
 item;obj\Debug\90\res\values-v21\styles.xml
@@ -55,6 +58,7 @@ LinearLayout;obj\Debug\90\res\layout\settings_layout.xml
 LinearLayout;obj\Debug\90\res\layout\table_creation_page.xml
 LinearLayout;obj\Debug\90\res\layout\table_description_layout.xml
 LinearLayout;obj\Debug\90\res\layout\table_view_control_command.xml
+ListPreference;obj\Debug\90\res\xml\settings_screen.xml
 ListView;obj\Debug\90\res\layout\entry_view_layout.xml
 menu;obj\Debug\90\res\menu\activity_main_drawer.xml
 menu;obj\Debug\90\res\menu\command_control.xml
@@ -70,6 +74,7 @@ Preference;obj\Debug\90\res\xml\settings_screen.xml
 PreferenceCategory;obj\Debug\90\res\xml\settings_screen.xml
 PreferenceScreen;obj\Debug\90\res\xml\settings_screen.xml
 RelativeLayout;obj\Debug\90\res\layout\content_main.xml
+resources;obj\Debug\90\res\values\array.xml
 resources;obj\Debug\90\res\values\colors.xml
 resources;obj\Debug\90\res\values\dimens.xml
 resources;obj\Debug\90\res\values\drawables.xml
@@ -81,6 +86,7 @@ SearchView;obj\Debug\90\res\layout\entry_view_layout.xml
 SearchView;obj\Debug\90\res\layout\table_view_control_command.xml
 shape;obj\Debug\90\res\drawable\side_nav_bar.xml
 string;obj\Debug\90\res\values\strings.xml
+string-array;obj\Debug\90\res\values\array.xml
 style;obj\Debug\90\res\values\styles.xml
 style;obj\Debug\90\res\values-v21\styles.xml
 SwitchPreferenceCompat;obj\Debug\90\res\xml\settings_screen.xml

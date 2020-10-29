@@ -23,11 +23,36 @@ namespace Datafine
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.settings_layout);
 
+
+            //set the toolbar
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
+
+            SupportActionBar.Title = "Settings";
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             // Create your application here
             SettingsFragment sf = new SettingsFragment();
             FragmentTransaction fm = FragmentManager.BeginTransaction();
             fm.Replace( Resource.Id.pref_container, sf).Commit();
+            
+
+            
         }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
+
+
     }
 
 

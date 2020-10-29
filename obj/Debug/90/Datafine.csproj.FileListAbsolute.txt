@@ -415,3 +415,4 @@ C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\an
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\androidx\proguard\bb20dddb-01e3-4593-b179-181f30b18de2.txt
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\androidx\proguard\f0a6c001-eed2-4158-bbe3-fce13c49b3f8.txt
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\android\src\crc64ccef0fc746faa48b\SettingsFragment.java
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\res\values\array.xml
