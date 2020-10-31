@@ -49,7 +49,37 @@ namespace Datafine
             //load entries
             fab.Click += FabOnClick;
             LoadEntries();
-            
+
+
+
+            //test out search term change effect
+            string searchTerm = GetSetting("search_type", Application.Context);
+
+            //ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+            //string searchTerm = prefs.GetString("search_type", "1");
+
+            switch (searchTerm)
+            {
+                case "2":
+                    //tSetting("search_type", "2");
+                    Toast.MakeText(Application.Context, "Search Term is set to Location", ToastLength.Short).Show(); ;
+                    break;
+                case "3":
+                    //tSetting("search_type", "3");
+                    Toast.MakeText(this, "Search Term is set to Age", ToastLength.Short).Show(); ;
+                    break;
+                case "4":
+                    //tSetting("search_type", "4");
+                    Toast.MakeText(this, "Search Term is set to Id", ToastLength.Short).Show();
+                    break;
+
+                default:
+                    Toast.MakeText(this, "Search Term is set to Name", ToastLength.Short).Show();
+                    break;
+
+
+            }
+
         }
 
         //load entries unto the listview
@@ -204,6 +234,21 @@ namespace Datafine
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             
             base.OnBackPressed();
+        }
+
+
+        //get string-based settings
+        public string GetSetting(string key, Context context)
+        {
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(context);
+            return prefs.GetString(key, null);
+        }
+        public void SetSetting(string key, string value, Context context)
+        {
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(context);
+            ISharedPreferencesEditor editor = prefs.Edit();
+            editor.PutString(key, value);
+            editor.Commit();
         }
     }
 }

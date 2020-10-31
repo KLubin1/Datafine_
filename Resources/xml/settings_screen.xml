@@ -29,7 +29,7 @@
        app:title="Set Password"
        app:summary="Set table capabilties with password"/>
 
-    <SwitchPreferenceCompat
+    <SwitchPreference
         app:key="read_only"
         app:title="Enable Read-Only Table"/>
   </PreferenceCategory>

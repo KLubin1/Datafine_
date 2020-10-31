@@ -60,6 +60,7 @@ LinearLayout;obj\Debug\90\res\layout\table_description_layout.xml
 LinearLayout;obj\Debug\90\res\layout\table_view_control_command.xml
 ListPreference;obj\Debug\90\res\xml\settings_screen.xml
 ListView;obj\Debug\90\res\layout\entry_view_layout.xml
+ListView;obj\Debug\90\res\layout\settings_layout.xml
 menu;obj\Debug\90\res\menu\activity_main_drawer.xml
 menu;obj\Debug\90\res\menu\command_control.xml
 menu;obj\Debug\90\res\menu\menu_main.xml
@@ -89,6 +90,7 @@ string;obj\Debug\90\res\values\strings.xml
 string-array;obj\Debug\90\res\values\array.xml
 style;obj\Debug\90\res\values\styles.xml
 style;obj\Debug\90\res\values-v21\styles.xml
+SwitchPreference;obj\Debug\90\res\xml\settings_screen.xml
 SwitchPreferenceCompat;obj\Debug\90\res\xml\settings_screen.xml
 TableLayout;obj\Debug\90\res\layout\table_view_control_command.xml
 TableRow;obj\Debug\90\res\layout\table_view_control_command.xml
