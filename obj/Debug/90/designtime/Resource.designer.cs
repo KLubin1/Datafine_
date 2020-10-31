@@ -374,10 +374,16 @@ namespace Datafine
 		{
 			
 			// aapt resource value: 0x7F030000
-			public const int search_terms = 2130903040;
+			public const int password_settings = 2130903040;
 			
 			// aapt resource value: 0x7F030001
-			public const int search_terms_values = 2130903041;
+			public const int password_settings_values = 2130903041;
+			
+			// aapt resource value: 0x7F030002
+			public const int search_terms = 2130903042;
+			
+			// aapt resource value: 0x7F030003
+			public const int search_terms_values = 2130903043;
 			
 			static Array()
 			{

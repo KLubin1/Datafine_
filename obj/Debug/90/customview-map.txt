@@ -23,6 +23,8 @@ com.google.android.material.textfield.TextInputEditText;obj\Debug\90\res\layout\
 com.google.android.material.textfield.TextInputLayout;obj\Debug\90\res\layout\entry_creation_page.xml
 com.google.android.material.textfield.TextInputLayout;obj\Debug\90\res\layout\table_creation_page.xml
 dimen;obj\Debug\90\res\values\dimens.xml
+EditPreference;obj\Debug\90\res\xml\settings_screen.xml
+EditTextPreference;obj\Debug\90\res\xml\settings_screen.xml
 external-cache-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml

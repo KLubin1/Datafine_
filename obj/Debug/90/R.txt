@@ -43,8 +43,10 @@ int animator mtrl_fab_hide_motion_spec 0x7f020006
 int animator mtrl_fab_show_motion_spec 0x7f020007
 int animator mtrl_fab_transformation_sheet_collapse_spec 0x7f020008
 int animator mtrl_fab_transformation_sheet_expand_spec 0x7f020009
-int array search_terms 0x7f030000
-int array search_terms_values 0x7f030001
+int array password_settings 0x7f030000
+int array password_settings_values 0x7f030001
+int array search_terms 0x7f030002
+int array search_terms_values 0x7f030003
 int attr actionBarDivider 0x7f040000
 int attr actionBarItemBackground 0x7f040001
 int attr actionBarPopupTheme 0x7f040002

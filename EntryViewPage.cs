@@ -58,7 +58,7 @@ namespace Datafine
             //ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
             //string searchTerm = prefs.GetString("search_type", "1");
 
-            switch (searchTerm)
+            /*switch (searchTerm)
             {
                 case "2":
                     //tSetting("search_type", "2");
@@ -78,7 +78,7 @@ namespace Datafine
                     break;
 
 
-            }
+            }*/
 
         }
 

@@ -58,8 +58,10 @@ public final class R {
     public static final int mtrl_fab_transformation_sheet_expand_spec=0x7f020009;
   }
   public static final class array {
-    public static final int search_terms=0x7f030000;
-    public static final int search_terms_values=0x7f030001;
+    public static final int password_settings=0x7f030000;
+    public static final int password_settings_values=0x7f030001;
+    public static final int search_terms=0x7f030002;
+    public static final int search_terms_values=0x7f030003;
   }
   public static final class attr {
     /**

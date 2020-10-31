@@ -4,6 +4,7 @@ using Android;
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Preferences;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
@@ -165,6 +166,15 @@ namespace Datafine
 
         public void TableButtonLaunch(object sender, EventArgs eventArgs)
         {
+            //if the modififiable password flag is true
+            //ask for password first
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+            string password_viewable = prefs.GetString("set_password", null);
+            if (password_viewable == "3" || password_viewable == "4")
+            {
+                Toast.MakeText(this, "Password First!", ToastLength.Long).Show();
+            }
+
             //launch the table entry's page
             var intent = new Intent(this, typeof(EntryViewPage));
             StartActivity(intent);

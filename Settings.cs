@@ -42,7 +42,7 @@ namespace Datafine
 
 
             //test out search term change effect
-            string searchTerm = GetSetting("search_type");
+           /* string searchTerm = GetSetting("search_type");
 
             switch (searchTerm)
             {
@@ -61,7 +61,7 @@ namespace Datafine
                     break;
 
 
-            }
+            }*/
             //createPassword = FindPreference("create_password");
 
             //createPassword.PreferenceClick += CreatePassword_PreferenceClick;
