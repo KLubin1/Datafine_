@@ -176,7 +176,6 @@ namespace Datafine
             if (password_viewable == "3" || password_viewable == "4")
             {
                 //open dialog
-                //OpenDialog();
                 PasswordRequest request = new PasswordRequest();
                 request.Show(SupportFragmentManager, "Password Request");
             }
@@ -200,43 +199,6 @@ namespace Datafine
             Toast.MakeText(this, "Long Clicked", ToastLength.Short).Show();
             var intent = new Intent(this, typeof(TableDescriptionPage));
             StartActivity(intent);
-        }
-
-        private void OpenDialog()
-        {
-            //get the setting
-            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
-            string password_viewable = prefs.GetString("create_password", null);
-            //build the dialog
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            LayoutInflater inflater = this.LayoutInflater;
-            View view = inflater.Inflate(Resource.Layout.ask_password_dialog, null);
-
-            passwordField = view.FindViewById<EditText>(Resource.Id.passwordField);
-
-            builder.SetView(view);
-            builder.SetTitle("Enter Password:");
-            builder.SetPositiveButton("OK", (sender, e) =>
-                {
-                    //if the entered text is the password then launch the activity and let through to the view page
-                    if (passwordField.Text == password_viewable)
-                    {
-                        Intent intent = new Intent(this, typeof(EntryViewPage));
-                        StartActivity(intent);
-                    }
-                    //else let the user know the pass word is incorrect; done let them through.
-                    else
-                    {
-                        Toast.MakeText(this, "Password Incorrect. Try Again", ToastLength.Long);
-                    }
-
-                });
-            builder.SetNegativeButton("Cancel", (sender, e) =>
-                {
-
-                });
-            builder.Show();
-
         }
     }
 }

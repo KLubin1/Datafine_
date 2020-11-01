@@ -110,39 +110,56 @@ namespace Datafine
             var selectedItem = itemList[e.Position];
             DBHelper db = new DBHelper(this);
 
-            //shared preferences to make a flag to direct the upgrade functionality in TableCreation
-            //ISharedPreferences sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
-            ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
-            ISharedPreferencesEditor editor = sharedPreferences.Edit();
-            editor.PutBoolean("UpgradeFlag", false);
+            //disable the pop-up menu if read-only is enabled
             
-
-            //set and launch the popup menu 
-            var commandControl = new Android.Widget.PopupMenu(this, (View)sender);
-            commandControl.Inflate(Resource.Menu.command_control);
-            commandControl.Show();
-
-            commandControl.MenuItemClick += (s, a) =>
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+            bool readOnly = prefs.GetBoolean("read_only", false);
+            //if read-only is false, then execute code like normal...
+            if (readOnly == false)
             {
-                switch (a.Item.ItemId)
+
+
+
+
+                //shared preferences to make a flag to direct the upgrade functionality in TableCreation
+                //ISharedPreferences sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
+                ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
+                ISharedPreferencesEditor editor = sharedPreferences.Edit();
+                editor.PutBoolean("UpgradeFlag", false);
+
+
+                //set and launch the popup menu 
+                var commandControl = new Android.Widget.PopupMenu(this, (View)sender);
+                commandControl.Inflate(Resource.Menu.command_control);
+                commandControl.Show();
+
+                commandControl.MenuItemClick += (s, a) =>
                 {
-                    case Resource.Id.cc_Edit:
-                        var intent = new Intent(this, typeof(EntryCreation));
+                    switch (a.Item.ItemId)
+                    {
+                        case Resource.Id.cc_Edit:
+                            var intent = new Intent(this, typeof(EntryCreation));
 
                         //this is "saving" the id so to refer back to this entry in the table creation page on update
                         intent.PutExtra("Id", selectedItem.id.ToString());
                         //set the flag to true to activate update functionality in table creation
                         editor.PutBoolean("UpgradeFlag", true);
-                        editor.Apply();
-                        StartActivity(intent);
-                        break;
-                    case Resource.Id.cc_Delete:
+                            editor.Apply();
+                            StartActivity(intent);
+                            break;
+                        case Resource.Id.cc_Delete:
                         //delete entry from position
                         DeleteEntry(e.Position);
-                        break;
-                }
-            };
+                            break;
+                    }
+                };
+            }
 
+            else
+            {
+                //do nothing
+                //include a banner that says something along the lines of "read-only is enabled"
+            }
         }
 
         private void FabOnClick(object sender, EventArgs eventArgs)
