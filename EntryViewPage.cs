@@ -162,8 +162,20 @@ namespace Datafine
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
             //launch the creation page
-            Intent intent = new Intent(this, typeof(EntryCreation));
-            StartActivity(intent);
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+            bool readOnly = prefs.GetBoolean("read_only", false);
+
+            //if readonly isn't enabled execute like normal, otherwise let user know it's on readonly mode
+            if(readOnly == false)
+            {
+                Intent intent = new Intent(this, typeof(EntryCreation));
+                StartActivity(intent);
+            }
+            else
+            {
+                Toast.MakeText(this, "Read-Only is Enabled", ToastLength.Long).Show();
+            }
+            
 
         }
 
@@ -202,12 +214,10 @@ namespace Datafine
         private void Search(object s, SearchView.QueryTextChangeEventArgs e)
         {
             //same as code in LoadEntries, but for getting entries via search bar
-            //just to keep in mind, search can only be done by the name as of now
-            //now the search term can be of the other columns location, age
 
+            //get settings
             ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
             string searchType = prefs.GetString("search_type", null);
-
             
             DBHelper dbVals = new DBHelper(this);
             string searchTerm = e.NewText.ToString();
