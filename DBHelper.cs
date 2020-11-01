@@ -73,13 +73,98 @@ namespace Datafine
             return contacts;
         }
 
-        //retrieve entries based off of a search pattern or term
+        //retrieve entries based off of a search name
         public virtual IList<EntryInfo> GetContactsBySearchName(string nameToSearch)
         {
-
             SQLiteDatabase db = this.ReadableDatabase;
 
             ICursor c = db.Query("TableOne", new string[] { "Id", "Name", "PhoneNumber", "Location", "Age", "DateAdded" }, "upper(Name) LIKE ?", new string[] { "%" + nameToSearch.ToUpper() + "%" }, null, null, null, null);
+
+            var contacts = new List<EntryInfo>();
+
+            while (c.MoveToNext())
+            {
+                contacts.Add(new EntryInfo
+                {
+                    id = c.GetInt(0),
+                    name = c.GetString(1),
+                    phoneNumber = c.GetString(2),
+                    location = c.GetString(3),
+                    age = c.GetString(4),
+                    dateAdded = c.GetString(5)
+
+                });
+            }
+
+            c.Close();
+            db.Close();
+            return contacts;
+        }
+
+
+
+        //retrieve entries based off of a search location or term
+        public virtual IList<EntryInfo> GetContactsBySearchLocation(string locationToSearch)
+        {
+            SQLiteDatabase db = this.ReadableDatabase;
+
+            ICursor c = db.Query("TableOne", new string[] { "Id", "Name", "PhoneNumber", "Location", "Age", "DateAdded" }, "upper(Location) LIKE ?", new string[] { "%" + locationToSearch.ToUpper() + "%" }, null, null, null, null);
+
+            var contacts = new List<EntryInfo>();
+
+            while (c.MoveToNext())
+            {
+                contacts.Add(new EntryInfo
+                {
+                    id = c.GetInt(0),
+                    name = c.GetString(1),
+                    phoneNumber = c.GetString(2),
+                    location = c.GetString(3),
+                    age = c.GetString(4),
+                    dateAdded = c.GetString(5)
+
+                });
+            }
+
+            c.Close();
+            db.Close();
+            return contacts;
+        }
+
+
+        //retrieve entries based off of a search age
+        public virtual IList<EntryInfo> GetContactsBySearchAge(string ageToSearch)
+        {
+            SQLiteDatabase db = this.ReadableDatabase;
+
+            ICursor c = db.Query("TableOne", new string[] { "Id", "Name", "PhoneNumber", "Location", "Age", "DateAdded" }, "upper(Age) LIKE ?", new string[] { "%" + ageToSearch.ToUpper() + "%" }, null, null, null, null);
+
+            var contacts = new List<EntryInfo>();
+
+            while (c.MoveToNext())
+            {
+                contacts.Add(new EntryInfo
+                {
+                    id = c.GetInt(0),
+                    name = c.GetString(1),
+                    phoneNumber = c.GetString(2),
+                    location = c.GetString(3),
+                    age = c.GetString(4),
+                    dateAdded = c.GetString(5)
+
+                });
+            }
+
+            c.Close();
+            db.Close();
+            return contacts;
+        }
+
+        public virtual IList<EntryInfo> GetContactsBySearchId(string idToSearch)
+        {
+            SQLiteDatabase db = this.ReadableDatabase;
+
+            ICursor c = db.Query("TableOne", new string[] { "Id", "Name", "PhoneNumber", "Location", "Age", "DateAdded" }, "upper(Id) LIKE ?", new string[] { "%" + idToSearch.ToUpper() + "%" }, null, null, null, null);
 
             var contacts = new List<EntryInfo>();
 

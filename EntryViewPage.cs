@@ -203,9 +203,34 @@ namespace Datafine
         {
             //same as code in LoadEntries, but for getting entries via search bar
             //just to keep in mind, search can only be done by the name as of now
+            //now the search term can be of the other columns location, age
+
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+            string searchType = prefs.GetString("search_type", null);
+
+            
             DBHelper dbVals = new DBHelper(this);
             string searchTerm = e.NewText.ToString();
-            itemList = dbVals.GetContactsBySearchName(searchTerm);
+            //switch between the name, location, age and id(for experimental purposes) search basis; by default its based on name
+            switch (searchType)
+            {
+                case "1":
+                    itemList = dbVals.GetContactsBySearchName(searchTerm);
+                    break;
+                case "2":
+                    itemList = dbVals.GetContactsBySearchLocation(searchTerm);
+                    break;
+                case "3":
+                    itemList = dbVals.GetContactsBySearchAge(searchTerm);
+                    break;
+                case "4":
+                    itemList = dbVals.GetContactsBySearchId(searchTerm);
+                    break;
+                default:
+                    itemList = dbVals.GetContactsBySearchName(searchTerm);
+                    break;
+            }
+
             listView.Adapter = new EntryListAdapter(this, itemList);
             listView.ItemLongClick += listView_ItemLongClick;
 
