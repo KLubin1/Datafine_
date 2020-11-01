@@ -13,6 +13,7 @@ using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using AlertDialog = Android.Support.V7.App.AlertDialog;
 
 namespace Datafine
 {
@@ -21,6 +22,8 @@ namespace Datafine
     {
         //list that holds the list of databases
         Button tableButton;
+        //for the password
+        EditText passwordField;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -172,12 +175,17 @@ namespace Datafine
             string password_viewable = prefs.GetString("set_password", null);
             if (password_viewable == "3" || password_viewable == "4")
             {
-                Toast.MakeText(this, "Password First!", ToastLength.Long).Show();
+                //open dialog
+                //OpenDialog();
+                PasswordRequest request = new PasswordRequest();
+                request.Show(SupportFragmentManager, "Password Request");
             }
-
-            //launch the table entry's page
-            var intent = new Intent(this, typeof(EntryViewPage));
-            StartActivity(intent);
+            else
+            {
+                //launch the table entry's page
+                var intent = new Intent(this, typeof(EntryViewPage));
+                StartActivity(intent);
+            }
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -192,6 +200,43 @@ namespace Datafine
             Toast.MakeText(this, "Long Clicked", ToastLength.Short).Show();
             var intent = new Intent(this, typeof(TableDescriptionPage));
             StartActivity(intent);
+        }
+
+        private void OpenDialog()
+        {
+            //get the setting
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+            string password_viewable = prefs.GetString("create_password", null);
+            //build the dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            LayoutInflater inflater = this.LayoutInflater;
+            View view = inflater.Inflate(Resource.Layout.ask_password_dialog, null);
+
+            passwordField = view.FindViewById<EditText>(Resource.Id.passwordField);
+
+            builder.SetView(view);
+            builder.SetTitle("Enter Password:");
+            builder.SetPositiveButton("OK", (sender, e) =>
+                {
+                    //if the entered text is the password then launch the activity and let through to the view page
+                    if (passwordField.Text == password_viewable)
+                    {
+                        Intent intent = new Intent(this, typeof(EntryViewPage));
+                        StartActivity(intent);
+                    }
+                    //else let the user know the pass word is incorrect; done let them through.
+                    else
+                    {
+                        Toast.MakeText(this, "Password Incorrect. Try Again", ToastLength.Long);
+                    }
+
+                });
+            builder.SetNegativeButton("Cancel", (sender, e) =>
+                {
+
+                });
+            builder.Show();
+
         }
     }
 }

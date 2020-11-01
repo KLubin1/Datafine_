@@ -1,6 +1,9 @@
 Datafine.EntryCreation, Datafine;crc64ccef0fc746faa48b.EntryCreation
 Datafine.EntryCreation;crc64ccef0fc746faa48b.EntryCreation
 datafine.EntryCreation;crc64ccef0fc746faa48b.EntryCreation
+Datafine.PasswordRequest, Datafine;crc64ccef0fc746faa48b.PasswordRequest
+Datafine.PasswordRequest;crc64ccef0fc746faa48b.PasswordRequest
+datafine.PasswordRequest;crc64ccef0fc746faa48b.PasswordRequest
 Datafine.Settings, Datafine;crc64ccef0fc746faa48b.Settings
 Datafine.Settings;crc64ccef0fc746faa48b.Settings
 datafine.Settings;crc64ccef0fc746faa48b.Settings
