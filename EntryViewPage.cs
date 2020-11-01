@@ -117,10 +117,6 @@ namespace Datafine
             //if read-only is false, then execute code like normal...
             if (readOnly == false)
             {
-
-
-
-
                 //shared preferences to make a flag to direct the upgrade functionality in TableCreation
                 //ISharedPreferences sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
                 ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
@@ -157,8 +153,9 @@ namespace Datafine
 
             else
             {
-                //do nothing
+                //...do nothing
                 //include a banner that says something along the lines of "read-only is enabled"
+                Toast.MakeText(this, "Read-Only is Enabled", ToastLength.Long).Show();
             }
         }
 
