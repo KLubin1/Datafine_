@@ -12,13 +12,13 @@ using Android.Widget;
 
 namespace Datafine
 {
-    [Activity(Label = "LoginScreen")]
+    [Activity(Label = "LoginScreen", Theme ="@style/LoginTheme", NoHistory =true)]
     public class LoginScreen : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            SetContentView(Resource.Layout.login_screen);
             // Create your application here
         }
     }

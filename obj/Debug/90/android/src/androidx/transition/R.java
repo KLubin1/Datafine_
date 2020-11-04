@@ -83,27 +83,27 @@ public final class R {
 		public static final int italic = 0x7f0900a2;
 		public static final int line1 = 0x7f0900a7;
 		public static final int line3 = 0x7f0900a8;
-		public static final int normal = 0x7f0900bf;
-		public static final int notification_background = 0x7f0900c0;
-		public static final int notification_main_column = 0x7f0900c1;
-		public static final int notification_main_column_container = 0x7f0900c2;
-		public static final int parent_matrix = 0x7f0900c8;
-		public static final int right_icon = 0x7f0900d1;
-		public static final int right_side = 0x7f0900d2;
-		public static final int save_non_transition_alpha = 0x7f0900d3;
-		public static final int save_overlay_view = 0x7f0900d4;
-		public static final int tag_transition_group = 0x7f09010c;
-		public static final int tag_unhandled_key_event_manager = 0x7f09010d;
-		public static final int tag_unhandled_key_listeners = 0x7f09010e;
-		public static final int text = 0x7f09010f;
-		public static final int text2 = 0x7f090110;
-		public static final int time = 0x7f090119;
-		public static final int title = 0x7f09011a;
-		public static final int transition_current_scene = 0x7f090121;
-		public static final int transition_layout_save = 0x7f090122;
-		public static final int transition_position = 0x7f090123;
-		public static final int transition_scene_layoutid_cache = 0x7f090124;
-		public static final int transition_transform = 0x7f090125;
+		public static final int normal = 0x7f0900c1;
+		public static final int notification_background = 0x7f0900c2;
+		public static final int notification_main_column = 0x7f0900c3;
+		public static final int notification_main_column_container = 0x7f0900c4;
+		public static final int parent_matrix = 0x7f0900ca;
+		public static final int right_icon = 0x7f0900d3;
+		public static final int right_side = 0x7f0900d4;
+		public static final int save_non_transition_alpha = 0x7f0900d5;
+		public static final int save_overlay_view = 0x7f0900d6;
+		public static final int tag_transition_group = 0x7f09010e;
+		public static final int tag_unhandled_key_event_manager = 0x7f09010f;
+		public static final int tag_unhandled_key_listeners = 0x7f090110;
+		public static final int text = 0x7f090111;
+		public static final int text2 = 0x7f090112;
+		public static final int time = 0x7f09011b;
+		public static final int title = 0x7f09011c;
+		public static final int transition_current_scene = 0x7f090123;
+		public static final int transition_layout_save = 0x7f090124;
+		public static final int transition_position = 0x7f090125;
+		public static final int transition_scene_layoutid_cache = 0x7f090126;
+		public static final int transition_transform = 0x7f090127;
 	}
 	public static final class integer {
 		public static final int status_bar_notification_info_maxnum = 0x7f0a000e;
@@ -120,13 +120,13 @@ public final class R {
 		public static final int status_bar_notification_info_overflow = 0x7f0f003f;
 	}
 	public static final class style {
-		public static final int TextAppearance_Compat_Notification = 0x7f100139;
-		public static final int TextAppearance_Compat_Notification_Info = 0x7f10013a;
-		public static final int TextAppearance_Compat_Notification_Line2 = 0x7f10013b;
-		public static final int TextAppearance_Compat_Notification_Time = 0x7f10013c;
-		public static final int TextAppearance_Compat_Notification_Title = 0x7f10013d;
-		public static final int Widget_Compat_NotificationActionContainer = 0x7f1001e7;
-		public static final int Widget_Compat_NotificationActionText = 0x7f1001e8;
+		public static final int TextAppearance_Compat_Notification = 0x7f10013a;
+		public static final int TextAppearance_Compat_Notification_Info = 0x7f10013b;
+		public static final int TextAppearance_Compat_Notification_Line2 = 0x7f10013c;
+		public static final int TextAppearance_Compat_Notification_Time = 0x7f10013d;
+		public static final int TextAppearance_Compat_Notification_Title = 0x7f10013e;
+		public static final int Widget_Compat_NotificationActionContainer = 0x7f1001e8;
+		public static final int Widget_Compat_NotificationActionText = 0x7f1001e9;
 	}
 	public static final class styleable {
 		public static final int[] ColorStateListItem = new int[] { 0x010101a5, 0x0101031f, 0x7f04002b };

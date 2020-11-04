@@ -20,8 +20,10 @@ com.google.android.material.floatingactionbutton.FloatingActionButton;obj\Debug\
 com.google.android.material.floatingactionbutton.FloatingActionButton;obj\Debug\90\res\layout\entry_view_layout.xml
 com.google.android.material.navigation.NavigationView;obj\Debug\90\res\layout\activity_main.xml
 com.google.android.material.textfield.TextInputEditText;obj\Debug\90\res\layout\entry_creation_page.xml
+com.google.android.material.textfield.TextInputEditText;obj\Debug\90\res\layout\login_screen.xml
 com.google.android.material.textfield.TextInputEditText;obj\Debug\90\res\layout\table_creation_page.xml
 com.google.android.material.textfield.TextInputLayout;obj\Debug\90\res\layout\entry_creation_page.xml
+com.google.android.material.textfield.TextInputLayout;obj\Debug\90\res\layout\login_screen.xml
 com.google.android.material.textfield.TextInputLayout;obj\Debug\90\res\layout\table_creation_page.xml
 dimen;obj\Debug\90\res\values\dimens.xml
 EditPreference;obj\Debug\90\res\xml\settings_screen.xml
@@ -104,6 +106,7 @@ TableRow;obj\Debug\90\res\layout\table_view_control_command.xml
 TextView;obj\Debug\90\res\layout\content_main.xml
 TextView;obj\Debug\90\res\layout\entry_view_layout.xml
 TextView;obj\Debug\90\res\layout\listview_table.xml
+TextView;obj\Debug\90\res\layout\login_screen.xml
 TextView;obj\Debug\90\res\layout\nav_header_main.xml
 TextView;obj\Debug\90\res\layout\table_description_layout.xml
 TextView;obj\Debug\90\res\layout\table_view_control_command.xml

@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntryCreation.cs" />
+    <Compile Include="LoginScreen.cs" />
     <Compile Include="PasswordRequest.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SplashScreen.cs" />

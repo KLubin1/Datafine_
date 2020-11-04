@@ -6,6 +6,7 @@
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme">
     <activity android:name="crc64ccef0fc746faa48b.EntryCreation" android:label="DatabaseCreation" />
+    <activity android:name="crc64ccef0fc746faa48b.LoginScreen" android:label="LoginScreen" android:noHistory="true" android:theme="@style/LoginTheme" />
     <activity android:name="crc64ccef0fc746faa48b.Settings" android:label="Settings" />
     <activity android:name="crc64ccef0fc746faa48b.SplashScreen" android:noHistory="true" android:theme="@style/SplashTheme">
       <intent-filter>
