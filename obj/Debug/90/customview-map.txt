@@ -10,6 +10,7 @@ background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 bitmap;obj\Debug\90\res\drawable\splash_screen_logo.xml
 Button;obj\Debug\90\res\layout\content_main.xml
+Button;obj\Debug\90\res\layout\login_screen.xml
 cache-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\90\res\drawable\splash_screen_logo.xml
 color;obj\Debug\90\res\values\colors.xml
@@ -36,6 +37,7 @@ group;obj\Debug\90\res\menu\activity_main_drawer.xml
 ImageButton;obj\Debug\90\res\layout\entry_creation_page.xml
 ImageButton;obj\Debug\90\res\layout\table_creation_page.xml
 ImageButton;obj\Debug\90\res\layout\table_view_control_command.xml
+ImageView;obj\Debug\90\res\layout\login_screen.xml
 ImageView;obj\Debug\90\res\layout\nav_header_main.xml
 include;obj\Debug\90\res\layout\activity_main.xml
 include;obj\Debug\90\res\layout\app_bar_main.xml
@@ -57,6 +59,7 @@ LinearLayout;obj\Debug\90\res\layout\ask_password_dialog.xml
 LinearLayout;obj\Debug\90\res\layout\entry_creation_page.xml
 LinearLayout;obj\Debug\90\res\layout\entry_view_layout.xml
 LinearLayout;obj\Debug\90\res\layout\listview_table.xml
+LinearLayout;obj\Debug\90\res\layout\login_screen.xml
 LinearLayout;obj\Debug\90\res\layout\nav_header_main.xml
 LinearLayout;obj\Debug\90\res\layout\settings_layout.xml
 LinearLayout;obj\Debug\90\res\layout\table_creation_page.xml

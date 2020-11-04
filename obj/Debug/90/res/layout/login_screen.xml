@@ -1,0 +1,24 @@
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/theme_darkBlue" xmlns:android="http://schemas.android.com/apk/res/android"><ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center" android:layout_marginTop="100dp" android:src="@drawable/splash_screen_logo" /><Button android:id="@+id/login_googleBtn" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="40dp" android:padding="8dp" android:text="Login With Google" android:background="@color/theme_blueGray" /><Button android:id="@+id/login_emailBtn" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="40dp" android:padding="8dp" android:text="Login With Email" android:background="@color/theme_blueGray" /><!--Text fields login
+  <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+       
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">\
+        <com.google.android.material.textfield.TextInputEditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/addEdit_Name"
+             android:hint="Table Name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+     <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">\
+        <com.google.android.material.textfield.TextInputEditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            android:id="@+id/addEdit_Number"
+             android:hint="Table Description"/>
+    </com.google.android.material.textfield.TextInputLayout> --></LinearLayout>

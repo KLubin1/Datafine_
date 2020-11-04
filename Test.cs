@@ -31,7 +31,7 @@ namespace Datafine
 
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
-            throw new NotImplementedException();
+           
         }
     }
 }
