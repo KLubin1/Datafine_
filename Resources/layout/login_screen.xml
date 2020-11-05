@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/theme_darkBlue">
+    android:background="@color/theme_whiteSmoke">
 
 
     <ImageView
@@ -40,28 +40,31 @@
 
     <Button
         android:id="@+id/login_doneBtn"
-        android:layout_width="match_parent"
+        android:layout_width="345.5dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:layout_marginLeft="30dp"
         android:padding="8dp"
         android:text="Login"
-        android:background="@color/theme_blueGray"/>
+        android:background="@color/theme_midnightBlue"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Or"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="190dp"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:textStyle="bold"/>
     
     <Button
         android:id="@+id/login_googleBtn"
-        android:layout_width="match_parent"
+        android:layout_width="345.5dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
         android:padding="8dp"
         android:text="Login With Google"
-        android:background="@color/theme_blueGray"/>
+        android:background="@color/theme_midnightBlue"/>
 
 <!--Text fields login
   <com.google.android.material.textfield.TextInputLayout
