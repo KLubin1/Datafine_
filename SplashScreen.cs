@@ -15,13 +15,14 @@ namespace Datafine
     [Activity(Theme ="@style/SplashTheme", MainLauncher =true, NoHistory =true)]
     public class SplashScreen : Activity
     {
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             //It will show until the Main Activity is ready to show, so it works great for the first time, but quickly appear the subsequent times
             base.OnCreate(savedInstanceState);
-            //Thread.Sleep(3000);
+            Thread.Sleep(2000);
             StartActivity(typeof(LoginScreen));
-            // Create your application here
+
         }
     }
 }
