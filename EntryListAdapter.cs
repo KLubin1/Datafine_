@@ -24,12 +24,12 @@ namespace Datafine
             this.tableList = _tableList;
             this.mInflater = (LayoutInflater)activity.GetSystemService(Context.LayoutInflaterService);
         }
-        public override EntryInfo this[int position] 
+        public override EntryInfo this[int position]
         {
             get { return tableList[position]; }
         }
 
-        public override int Count 
+        public override int Count
         {
             get { return tableList.Count; }
         }
@@ -46,19 +46,19 @@ namespace Datafine
             //initialize the data
             if (convertView == null)
             {
-                convertView = mInflater.Inflate(Resource.Layout.listview_table, null);
+                convertView = mInflater.Inflate(Resource.Layout.entries_listview, null);
                 holder = new TableViewHolder();
-                
+
 
                 //at this point these are null, so they will throw null at the next block
-                holder.name = convertView.FindViewById<TextView>(Resource.Id.tableName);
-                holder.phoneNumber = convertView.FindViewById<TextView>(Resource.Id.tablePhoneNumber);
+                holder.column1 = convertView.FindViewById<TextView>(Resource.Id.tableColumn1);
+                holder.column2 = convertView.FindViewById<TextView>(Resource.Id.tableColumn2);
                 holder.dateAdded = convertView.FindViewById<TextView>(Resource.Id.tableDateAdded);
-                holder.location = convertView.FindViewById<TextView>(Resource.Id.tableLocation);
-                holder.age = convertView.FindViewById<TextView>(Resource.Id.tableAge);
+                holder.column3 = convertView.FindViewById<TextView>(Resource.Id.tableColumn3);
+                holder.column4 = convertView.FindViewById<TextView>(Resource.Id.tableColumn4);
 
                 convertView.Tag = holder;
-              
+
             }
             else
             {
@@ -66,12 +66,12 @@ namespace Datafine
             }
 
             //set the data
-            holder.name.Text = tableList[position].name.ToString();
+            holder.column1.Text = tableList[position].column1.ToString();
             holder.dateAdded.Text = tableList[position].dateAdded.ToString();
-            holder.phoneNumber.Text = tableList[position].phoneNumber.ToString();
-            holder.location.Text = tableList[position].location.ToString();
-            holder.age.Text = tableList[position].age.ToString();
-           
+            holder.column2.Text = tableList[position].column2.ToString();
+            holder.column3.Text = tableList[position].column3.ToString();
+            holder.column4.Text = tableList[position].column4.ToString();
+
             return convertView;
         }
 
@@ -84,13 +84,12 @@ namespace Datafine
         public class TableViewHolder : Java.Lang.Object
         {
 
-            public TextView name { get; set; }
-            public TextView phoneNumber { get; set; }
-            public TextView location { get; set; }
-            public TextView age { get; set; }
+            public TextView column1 { get; set; }
+            public TextView column2 { get; set; }
+            public TextView column3 { get; set; }
+            public TextView column4 { get; set; }
             public TextView dateAdded { get; set; }
         }
-
 
     }
 }

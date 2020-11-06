@@ -15,6 +15,7 @@
       </intent-filter>
     </activity>
     <activity android:name="crc64ccef0fc746faa48b.TableCreation" android:label="TableCreation" />
+    <activity android:name="crc64ccef0fc746faa48b.TableCreation2" android:label="TableCreation2" />
     <activity android:name="crc64ccef0fc746faa48b.TableDescriptionPage" android:label="TableDescriptionPage" />
     <activity android:name="crc64ccef0fc746faa48b.TableView" android:label="DatabaseView" />
     <activity android:name="crc64ccef0fc746faa48b.MainActivity" android:label="@string/app_name" android:theme="@style/AppTheme.NoActionBar" />

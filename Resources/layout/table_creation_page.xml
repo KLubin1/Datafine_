@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include
+     <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/toolbar"/>
@@ -17,7 +17,7 @@
         <com.google.android.material.textfield.TextInputEditText
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:id="@+id/addEdit_Name"
+             android:id="@+id/tableCreate_Name"
              android:hint="Table Name"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -28,7 +28,7 @@
         <com.google.android.material.textfield.TextInputEditText
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-            android:id="@+id/addEdit_Number"
+            android:id="@+id/tableCreate_Description"
              android:hint="Table Description"/>
     </com.google.android.material.textfield.TextInputLayout>
 

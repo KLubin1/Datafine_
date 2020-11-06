@@ -61,12 +61,14 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TableListAdapter.cs" />
     <Compile Include="EntryCreation.cs" />
     <Compile Include="LoginScreen.cs" />
     <Compile Include="PasswordRequest.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="TableCreation.cs" />
+    <Compile Include="TableCreation2.cs" />
     <Compile Include="TableInfo.cs" />
     <Compile Include="TableDescriptionPage.cs" />
     <Compile Include="EntryListAdapter.cs" />
@@ -193,7 +195,7 @@
     <AndroidResource Include="Resources\drawable-v21\baseline_settings_black_18dp.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\listview_table.xml">
+    <AndroidResource Include="Resources\layout\entries_listview.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -266,6 +268,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\login_screen.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\table_creation_page2.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\tables_listview.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

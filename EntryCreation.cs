@@ -153,10 +153,10 @@ namespace Datafine
                         pb.id = int.Parse(Intent.Extras.GetString("Id"));
                     }   
                     
-                    pb.name = nameEditText.Text;
-                    pb.phoneNumber = numberEditText.Text;
-                    pb.location = locationEditText.Text;
-                    pb.age = ageEditText.Text;
+                    pb.column1 = nameEditText.Text;
+                    pb.column2 = numberEditText.Text;
+                    pb.column3 = locationEditText.Text;
+                    pb.column4 = ageEditText.Text;
                     pb.dateAdded = "Date Created: " + now.ToString();
 
                 try

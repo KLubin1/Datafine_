@@ -225,19 +225,19 @@ namespace Datafine
             switch (searchType)
             {
                 case "1":
-                    itemList = dbVals.GetContactsBySearchName(searchTerm);
+                    itemList = dbVals.GetContactsByColumn1(searchTerm);
                     break;
                 case "2":
-                    itemList = dbVals.GetContactsBySearchLocation(searchTerm);
+                    itemList = dbVals.GetContactsByColumn2(searchTerm);
                     break;
                 case "3":
-                    itemList = dbVals.GetContactsBySearchAge(searchTerm);
+                    itemList = dbVals.GetContactsByColumn3(searchTerm);
                     break;
                 case "4":
-                    itemList = dbVals.GetContactsBySearchId(searchTerm);
+                    itemList = dbVals.GetContactsByColumn4(searchTerm);
                     break;
                 default:
-                    itemList = dbVals.GetContactsBySearchName(searchTerm);
+                    itemList = dbVals.GetContactsByColumn1(searchTerm);
                     break;
             }
 

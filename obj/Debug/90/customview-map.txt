@@ -22,9 +22,11 @@ com.google.android.material.navigation.NavigationView;obj\Debug\90\res\layout\ac
 com.google.android.material.textfield.TextInputEditText;obj\Debug\90\res\layout\entry_creation_page.xml
 com.google.android.material.textfield.TextInputEditText;obj\Debug\90\res\layout\login_screen.xml
 com.google.android.material.textfield.TextInputEditText;obj\Debug\90\res\layout\table_creation_page.xml
+com.google.android.material.textfield.TextInputEditText;obj\Debug\90\res\layout\table_creation_page2.xml
 com.google.android.material.textfield.TextInputLayout;obj\Debug\90\res\layout\entry_creation_page.xml
 com.google.android.material.textfield.TextInputLayout;obj\Debug\90\res\layout\login_screen.xml
 com.google.android.material.textfield.TextInputLayout;obj\Debug\90\res\layout\table_creation_page.xml
+com.google.android.material.textfield.TextInputLayout;obj\Debug\90\res\layout\table_creation_page2.xml
 dimen;obj\Debug\90\res\values\dimens.xml
 EditPreference;obj\Debug\90\res\xml\settings_screen.xml
 EditText;obj\Debug\90\res\layout\ask_password_dialog.xml
@@ -38,6 +40,7 @@ gradient;obj\Debug\90\res\drawable\side_nav_bar.xml
 group;obj\Debug\90\res\menu\activity_main_drawer.xml
 ImageButton;obj\Debug\90\res\layout\entry_creation_page.xml
 ImageButton;obj\Debug\90\res\layout\table_creation_page.xml
+ImageButton;obj\Debug\90\res\layout\table_creation_page2.xml
 ImageButton;obj\Debug\90\res\layout\table_view_control_command.xml
 ImageView;obj\Debug\90\res\layout\login_screen.xml
 ImageView;obj\Debug\90\res\layout\nav_header_main.xml
@@ -47,6 +50,7 @@ include;obj\Debug\90\res\layout\entry_creation_page.xml
 include;obj\Debug\90\res\layout\entry_view_layout.xml
 include;obj\Debug\90\res\layout\settings_layout.xml
 include;obj\Debug\90\res\layout\table_creation_page.xml
+include;obj\Debug\90\res\layout\table_creation_page2.xml
 include;obj\Debug\90\res\layout\table_description_layout.xml
 item;obj\Debug\90\res\drawable\splash_screen_logo.xml
 item;obj\Debug\90\res\menu\activity_main_drawer.xml
@@ -58,6 +62,7 @@ item;obj\Debug\90\res\values\styles.xml
 item;obj\Debug\90\res\values-v21\styles.xml
 layer-list;obj\Debug\90\res\drawable\splash_screen_logo.xml
 LinearLayout;obj\Debug\90\res\layout\ask_password_dialog.xml
+LinearLayout;obj\Debug\90\res\layout\entries_listview.xml
 LinearLayout;obj\Debug\90\res\layout\entry_creation_page.xml
 LinearLayout;obj\Debug\90\res\layout\entry_view_layout.xml
 LinearLayout;obj\Debug\90\res\layout\listview_table.xml
@@ -65,8 +70,10 @@ LinearLayout;obj\Debug\90\res\layout\login_screen.xml
 LinearLayout;obj\Debug\90\res\layout\nav_header_main.xml
 LinearLayout;obj\Debug\90\res\layout\settings_layout.xml
 LinearLayout;obj\Debug\90\res\layout\table_creation_page.xml
+LinearLayout;obj\Debug\90\res\layout\table_creation_page2.xml
 LinearLayout;obj\Debug\90\res\layout\table_description_layout.xml
 LinearLayout;obj\Debug\90\res\layout\table_view_control_command.xml
+LinearLayout;obj\Debug\90\res\layout\tables_listview.xml
 ListPreference;obj\Debug\90\res\xml\settings_screen.xml
 ListView;obj\Debug\90\res\layout\entry_view_layout.xml
 ListView;obj\Debug\90\res\layout\settings_layout.xml
@@ -104,12 +111,14 @@ SwitchPreferenceCompat;obj\Debug\90\res\xml\settings_screen.xml
 TableLayout;obj\Debug\90\res\layout\table_view_control_command.xml
 TableRow;obj\Debug\90\res\layout\table_view_control_command.xml
 TextView;obj\Debug\90\res\layout\content_main.xml
+TextView;obj\Debug\90\res\layout\entries_listview.xml
 TextView;obj\Debug\90\res\layout\entry_view_layout.xml
 TextView;obj\Debug\90\res\layout\listview_table.xml
 TextView;obj\Debug\90\res\layout\login_screen.xml
 TextView;obj\Debug\90\res\layout\nav_header_main.xml
 TextView;obj\Debug\90\res\layout\table_description_layout.xml
 TextView;obj\Debug\90\res\layout\table_view_control_command.xml
+TextView;obj\Debug\90\res\layout\tables_listview.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_camera.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_gallery.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_manage.xml
