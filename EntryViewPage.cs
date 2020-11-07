@@ -13,6 +13,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Support.V7.App;
 using AlertDialog = Android.App.AlertDialog;
+using Xamarin.Essentials;
 
 namespace Datafine
 {
@@ -33,7 +34,7 @@ namespace Datafine
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-            SupportActionBar.Title = "TableOne";
+            SupportActionBar.Title = GetPrefs("table_name");
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             
             //floating action bar to add new entries
@@ -202,7 +203,7 @@ namespace Datafine
                 // NotifyDataSetChanged();
 
                 this.Recreate();
-                Toast.MakeText(this, "Contact Deleted Succesfully!", ToastLength.Long).Show();
+                Toast.MakeText(this, "Entry Deleted Succesfully!", ToastLength.Long).Show();
 
             });
             confirm.SetButton2("Cancel", (sender, ev) =>
@@ -301,6 +302,12 @@ namespace Datafine
             ISharedPreferencesEditor editor = prefs.Edit();
             editor.PutString(key, value);
             editor.Commit();
+        }
+
+        //get the preference
+        private string GetPrefs(string name)
+        {
+            return Preferences.Get(name, null);
         }
     }
 }

@@ -14,6 +14,7 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
+using Xamarin.Essentials;
 
 namespace Datafine
 {
@@ -64,8 +65,11 @@ namespace Datafine
             //execute on click; launch the entries OnClick and start new activity that shows database entries
             //listView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
             //{
-               // Toast.MakeText(this, "To be Databased", ToastLength.Short).Show();
+            // Toast.MakeText(this, "To be Databased", ToastLength.Short).Show();
             //};
+
+
+            tableButton.Text = GetPrefs("table_name");
         }
 
         public override void OnBackPressed()
@@ -208,6 +212,12 @@ namespace Datafine
             Toast.MakeText(this, "Long Clicked", ToastLength.Short).Show();
             var intent = new Intent(this, typeof(TableDescriptionPage));
             StartActivity(intent);
+        }
+
+        //get the preference
+        private string GetPrefs(string name)
+        {
+            return Preferences.Get(name, null);
         }
     }
 }

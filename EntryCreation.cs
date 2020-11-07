@@ -169,7 +169,7 @@ namespace Datafine
                     {
                         //upgrade contact
                         db.UpdateContact(pb);
-                        Toast.MakeText(this, "Contact Updated Successfully!", ToastLength.Long).Show();
+                        Toast.MakeText(this, "Entry Updated Successfully!", ToastLength.Long).Show();
 
                         editor.PutBoolean("UpgradeFlag", false);
                         editor.Apply();
@@ -180,7 +180,7 @@ namespace Datafine
                     {
                         //add the entry to 
                         db.AddContact(pb);
-                        Toast.MakeText(this, "New Contact Created!", ToastLength.Long).Show();
+                        Toast.MakeText(this, "New Entry Created!", ToastLength.Long).Show();
                     }
                         
                         // and return to main page
