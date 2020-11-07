@@ -147,6 +147,9 @@ namespace Datafine
                         //delete entry from position
                         DeleteEntry(e.Position);
                             break;
+                        case Resource.Id.cc_ViewInfo:
+                            //handle full data of entry
+                            break;
                     }
                 };
             }

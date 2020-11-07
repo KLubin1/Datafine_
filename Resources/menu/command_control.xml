@@ -3,7 +3,9 @@
     <item android:id="@+id/cc_Edit"
           android:title="Update" />    
     <item android:id="@+id/cc_Delete"
-          android:title="Delete" /> 
+          android:title="Delete" />
+    <item android:id="@+id/cc_ViewInfo"
+          android:title="View Full Details" />
     <item android:id="@+id/cc_Move"
           android:title="Move" />    
     <item android:id="@+id/cc_Star"
