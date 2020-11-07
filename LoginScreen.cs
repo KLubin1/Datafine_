@@ -32,12 +32,17 @@ namespace Datafine
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("loggingSession", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = sharedPreferences.Edit();
+
             if (CredentialsAreValid())
             {
                 Toast.MakeText(this, "Login Successful!", ToastLength.Short).Show();
                 StartActivity(typeof(MainActivity));
                 Thread.Sleep(2000);
                 Toast.MakeText(this, Resource.String.hello_user, ToastLength.Long).Show();
+                editor.PutBoolean("loggedIn", true);
+                editor.Commit();
             }
             else
                 Toast.MakeText(this, "Username or Password is incorrect. Try again.", ToastLength.Long).Show();

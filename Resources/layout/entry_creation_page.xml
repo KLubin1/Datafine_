@@ -23,8 +23,7 @@
         <com.google.android.material.textfield.TextInputEditText
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:id="@+id/addEdit_Name"
-             android:hint="Name"/>
+             android:id="@+id/addEdit_Name"/>
     </com.google.android.material.textfield.TextInputLayout>
 
      <com.google.android.material.textfield.TextInputLayout
@@ -34,8 +33,7 @@
         <com.google.android.material.textfield.TextInputEditText
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-            android:id="@+id/addEdit_Number"
-             android:hint="Phone Number"/>
+            android:id="@+id/addEdit_Number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
      <com.google.android.material.textfield.TextInputLayout
@@ -45,8 +43,7 @@
         <com.google.android.material.textfield.TextInputEditText
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-            android:id="@+id/addEdit_Location"
-             android:hint="Location"/>
+            android:id="@+id/addEdit_Location"/>
     </com.google.android.material.textfield.TextInputLayout>-->
 
      <com.google.android.material.textfield.TextInputLayout
@@ -57,7 +54,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
             android:id="@+id/addEdit_Age"
-             android:hint="Age"/>
+             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton

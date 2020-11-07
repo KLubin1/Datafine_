@@ -92,6 +92,9 @@ namespace Datafine
         //handler for the options menu; to be addeed later
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+            ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("loggingSession", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = sharedPreferences.Edit();
+
             int id = item.ItemId;
             if (id == Resource.Id.action_settings)
             {
@@ -103,7 +106,13 @@ namespace Datafine
             {
                 return true;
             }
-            if(id == Resource.Id.action_home)
+            if (id == Resource.Id.action_logout)
+            {
+                editor.PutBoolean("loggedIn", false);
+                editor.Commit();
+                Finish();
+            }
+            if (id == Resource.Id.action_home)
             {
                 StartActivity(typeof(MainActivity));
             }

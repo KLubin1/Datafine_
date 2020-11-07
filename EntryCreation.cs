@@ -20,6 +20,7 @@ using Android.Views.InputMethods;
 using AndroidX.AppCompat.Widget;
 using Android.Support.V7.Widget;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Xamarin.Essentials;
 
 namespace Datafine
 {
@@ -27,7 +28,7 @@ namespace Datafine
     public class EntryCreation : AppCompatActivity
     {
         //EditText nameEditText, numberEditText, locationEditText, ageEditText;
-        TextInputEditText nameEditText, numberEditText, locationEditText, ageEditText;
+        TextInputEditText column1EditText, column2EditText, column3EditText, column4EditText;
         ImageButton saveButton;
         LinearLayout view;
 
@@ -47,10 +48,10 @@ namespace Datafine
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             // Create your application here
-            nameEditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Name);
-            numberEditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Number);
-            locationEditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Location);
-            ageEditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Age);
+            column1EditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Name);
+            column2EditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Number);
+            column3EditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Location);
+            column4EditText = FindViewById<TextInputEditText>(Resource.Id.addEdit_Age);
             saveButton = FindViewById<ImageButton>(Resource.Id.addEdit_btnSave);
 
             // for view used for snackbar reference
@@ -80,6 +81,9 @@ namespace Datafine
                 LoadDataForEdit(theId);
                 
             }
+
+            //Set the hint for text edits depending on the custom columns
+            SetField();
         }
             //Load the data when its under editing
             private void LoadDataForEdit(string contactId)
@@ -88,10 +92,10 @@ namespace Datafine
                 ICursor cData = db.GetContactById(int.Parse(contactId));
                 if (cData.MoveToFirst())
                 {
-                    nameEditText.Text = cData.GetString(cData.GetColumnIndex("Name"));
-                    numberEditText.Text = cData.GetString(cData.GetColumnIndex("PhoneNumber"));
-                    locationEditText.Text = cData.GetString(cData.GetColumnIndex("Location"));
-                    ageEditText.Text = cData.GetString(cData.GetColumnIndex("Age"));
+                    column1EditText.Text = cData.GetString(cData.GetColumnIndex(GetPrefs("column1")));
+                    column2EditText.Text = cData.GetString(cData.GetColumnIndex(GetPrefs("column2")));
+                    column3EditText.Text = cData.GetString(cData.GetColumnIndex(GetPrefs("column3")));
+                    column4EditText.Text = cData.GetString(cData.GetColumnIndex(GetPrefs("column4")));
 
                 }     
             }
@@ -111,7 +115,7 @@ namespace Datafine
                 bool upgrade = sharedPreferences.GetBoolean("UpgradeFlag", false);
 
             //if no data was entered, call error
-            if (nameEditText.Text.Trim().Length < 1)
+            if (column1EditText.Text.Trim().Length < 1)
                 {
                     //Toast.MakeText(this, "Enter Name.", ToastLength.Short).Show();
                     Snackbar snackbar = Snackbar.Make(view, "Name field cannot be empty (NOT NULL)", Snackbar.LengthIndefinite);
@@ -120,7 +124,7 @@ namespace Datafine
                 }
 
 
-                if (numberEditText.Text.Trim().Length < 1)
+                if (column2EditText.Text.Trim().Length < 1)
                 {
                     //Toast.MakeText(this, "Enter Phone Number.", ToastLength.Short).Show();
                     Snackbar snackbar = Snackbar.Make(view, "Phone Number field cannot be empty (NOT NULL)", Snackbar.LengthIndefinite);
@@ -128,7 +132,7 @@ namespace Datafine
                     return;
                 }
 
-                if (locationEditText.Text.Trim().Length < 1)
+                if (column3EditText.Text.Trim().Length < 1)
                 {
                     //Toast.MakeText(this, "Enter Location.", ToastLength.Short).Show();
                     Snackbar snackbar = Snackbar.Make(view, "Location field cannot be empty (NOT NULL)", Snackbar.LengthIndefinite);
@@ -136,7 +140,7 @@ namespace Datafine
                     return;
                 }
 
-                if (ageEditText.Text.Trim().Length < 1)
+                if (column4EditText.Text.Trim().Length < 1)
                 {
                     //Toast.MakeText(this, "Enter Age.", ToastLength.Short).Show();
                     Snackbar snackbar = Snackbar.Make(view, "Age field cannot be empty (NOT NULL)", Snackbar.LengthIndefinite);
@@ -153,10 +157,10 @@ namespace Datafine
                         pb.id = int.Parse(Intent.Extras.GetString("Id"));
                     }   
                     
-                    pb.column1 = nameEditText.Text;
-                    pb.column2 = numberEditText.Text;
-                    pb.column3 = locationEditText.Text;
-                    pb.column4 = ageEditText.Text;
+                    pb.column1 = column1EditText.Text;
+                    pb.column2 = column2EditText.Text;
+                    pb.column3 = column3EditText.Text;
+                    pb.column4 = column4EditText.Text;
                     pb.dateAdded = "Date Created: " + now.ToString();
 
                 try
@@ -214,6 +218,20 @@ namespace Datafine
                 InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
                 imm.HideSoftInputFromWindow(view.WindowToken, 0);
             }
+        }
+
+        private void SetField()
+        {
+            column1EditText.Hint = GetPrefs("column1");
+            column2EditText.Hint = GetPrefs("column2");
+            column3EditText.Hint = GetPrefs("column3");
+            column4EditText.Hint = GetPrefs("column4");
+        }
+
+        //get the preference
+        private static string GetPrefs(string name)
+        {
+            return Preferences.Get(name, null);
         }
     }
 }

@@ -18,10 +18,21 @@ namespace Datafine
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
+
+            ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("loggingSession", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = sharedPreferences.Edit();
+            bool isLoggedIn = sharedPreferences.GetBoolean("loggedIn", false);
+
             //It will show until the Main Activity is ready to show, so it works great for the first time, but quickly appear the subsequent times
             base.OnCreate(savedInstanceState);
             Thread.Sleep(2000);
-            StartActivity(typeof(LoginScreen));
+            if (isLoggedIn == false)
+            {
+                StartActivity(typeof(LoginScreen));
+
+            }
+            else
+                StartActivity(typeof(MainActivity));
 
         }
     }
