@@ -23,8 +23,6 @@ namespace Datafine
     {
         //list that holds the list of databases
         Button tableButton;
-        //for the password
-        EditText passwordField;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

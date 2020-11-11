@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Database.Sqlite;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
@@ -69,11 +70,17 @@ namespace Datafine
             string getTableName = GetPrefs("table_name");
             string getTableDescription = GetPrefs("table_description");
 
-            Intent intent = new Intent(this, typeof(MainActivity));
-            StartActivity(typeof(MainActivity));
-            Toast.MakeText(this, "TableName: " + getTableName + "\nTable Description: " + getTableDescription + "\nColumn1: " + getColumn1 + "\nColumn2: " + getColumn2 + "\nColumn3: " + getColumn3 + "\nColumn4: " + getColumn4, ToastLength.Long).Show();
-            //add a confirmartion dialog recapping the titles
 
+            StartActivity(typeof(MainActivity));
+
+
+            //call CreateNewTable
+            CreateNewTable();
+
+
+            //add a confirmartion dialog recapping the titles
+            Toast.MakeText(this, "TableName: " + getTableName + "\nTable Description: " + getTableDescription + "\nColumn1: " + getColumn1 + "\nColumn2: " + getColumn2 + "\nColumn3: " + getColumn3 + "\nColumn4: " + getColumn4, ToastLength.Long).Show();
+           
         }
 
 
@@ -85,6 +92,15 @@ namespace Datafine
         private string GetPrefs(string name)
         {
             return Preferences.Get(name, null);
+        }
+
+        private void CreateNewTable()
+        {
+            //call DBHelper's CreateNewTable method to be able to create the new table at exactly this time
+            SQLiteOpenHelper sq = new DBHelper(this);
+            SQLiteDatabase db = sq.WritableDatabase;
+            DBHelper helper = new DBHelper(this);
+            helper.CreateNewTable(db);
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {

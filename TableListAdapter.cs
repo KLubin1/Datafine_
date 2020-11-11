@@ -61,7 +61,7 @@ namespace Datafine
             }
 
             //set the data
-            holder.tableName.Text = tableList[position].title.ToString();
+            holder.tableName.Text = tableList[position].tableName.ToString();
             holder.dateAdded.Text = tableList[position].dateAdded.ToString();
             holder.description.Text = tableList[position].description.ToString();
 

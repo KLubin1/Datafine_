@@ -14,14 +14,14 @@ namespace Datafine
 {
     public class TableInfo
     {
-        public string title { get; set; }
+        public string tableName { get; set; }
         public string dateAdded { get; set; }
         public string description { get; set; }
         
         public TableInfo() { }
-        public TableInfo(string _title, string _dateAdded, string _description)
+        public TableInfo(string _tableName, string _dateAdded, string _description)
         {
-            _title = title;
+            _tableName = tableName;
             _dateAdded = dateAdded;
             _description = description;
         }

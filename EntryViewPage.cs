@@ -101,6 +101,7 @@ namespace Datafine
 
             //long click event for items in list
             listView.ItemLongClick += listView_ItemLongClick;
+
         }
 
 

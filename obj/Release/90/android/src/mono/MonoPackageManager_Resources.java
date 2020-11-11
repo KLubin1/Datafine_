@@ -33,6 +33,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.Transition.dll",
 		"Xamarin.Android.Support.v7.AppCompat.dll",
 		"Xamarin.Android.Support.v7.CardView.dll",
+		"Xamarin.Android.Support.v7.Preference.dll",
 		"Xamarin.Android.Support.v7.RecyclerView.dll",
 		"Xamarin.Android.Support.Vector.Drawable.dll",
 		"Xamarin.Android.Support.VersionedParcelable.dll",
@@ -63,6 +64,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.Lifecycle.ViewModel.dll",
 		"Xamarin.AndroidX.Loader.dll",
 		"Xamarin.AndroidX.LocalBroadcastManager.dll",
+		"Xamarin.AndroidX.Preference.dll",
 		"Xamarin.AndroidX.Print.dll",
 		"Xamarin.AndroidX.RecyclerView.dll",
 		"Xamarin.AndroidX.SlidingPaneLayout.dll",
@@ -73,11 +75,12 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.VersionedParcelable.dll",
 		"Xamarin.AndroidX.ViewPager.dll",
 		"Xamarin.Google.Android.Material.dll",
-		"Xamarin.AndroidX.Activity.dll",
-		"Xamarin.AndroidX.SavedState.dll",
 		"Xamarin.Essentials.dll",
 		"Xamarin.Google.Guava.ListenableFuture.dll",
 		"Datafine.dll",
+		"Xamarin.AndroidX.Activity.dll",
+		"Xamarin.AndroidX.Lifecycle.ViewModelSavedState.dll",
+		"Xamarin.AndroidX.SavedState.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};
