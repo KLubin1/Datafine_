@@ -8,6 +8,7 @@ using Android.Content;
 using Android.Database.Sqlite;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
@@ -20,6 +21,7 @@ namespace Datafine
     {
         EditText column1, column2, column3, column4;
         ImageButton doneButton;
+        LinearLayout view;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -40,6 +42,9 @@ namespace Datafine
             column4 = FindViewById<EditText>(Resource.Id.tableCreate_Column4);
             doneButton = FindViewById<ImageButton>(Resource.Id.addTable_btnSave);
 
+            //for the snackbar
+            view = FindViewById<LinearLayout>(Resource.Id.tableCreation_view);
+
 
             doneButton.Click += DoneButton_Click;
 
@@ -49,38 +54,33 @@ namespace Datafine
 
         private void DoneButton_Click(object sender, EventArgs e)
         {
-            //put the names into the preference
 
-            if (column1.Text.Length != 0 || column2.Text.Length != 0 || column3.Text.Length != 0 || column4.Text.Length != 0)
+            if (TestInput() == true)
             {
+
+                //the more important part
                 SetPrefs("column1", column1.Text);
                 SetPrefs("column2", column2.Text);
                 SetPrefs("column3", column3.Text);
                 SetPrefs("column4", column4.Text);
+
+
+                /*string getColumn1 = GetPrefs("column1");
+                string getColumn2 = GetPrefs("column2");
+                string getColumn3 = GetPrefs("column3");
+                string getColumn4 = GetPrefs("column4");
+                string getTableName = GetPrefs("table_name");
+                string getTableDescription = GetPrefs("table_description");*/
+
+
+                //call CreateNewTable
+                CreateNewTable();
+                //launch main page
+                StartActivity(typeof(MainActivity));
+
+                //add a confirmartion dialog recapping the titles
+                //Toast.MakeText(this, "TableName: " + getTableName + "\nTable Description: " + getTableDescription + "\nColumn1: " + getColumn1 + "\nColumn2: " + getColumn2 + "\nColumn3: " + getColumn3 + "\nColumn4:" + getColumn4, ToastLength.Short).Show();
             }
-            else
-            {
-                Toast.MakeText(this, "All coumns must have a value!", ToastLength.Short).Show();
-            }
-
-            string getColumn1 = GetPrefs("column1");
-            string getColumn2 = GetPrefs("column2");
-            string getColumn3 = GetPrefs("column3");
-            string getColumn4 = GetPrefs("column4");
-            string getTableName = GetPrefs("table_name");
-            string getTableDescription = GetPrefs("table_description");
-
-
-            StartActivity(typeof(MainActivity));
-
-
-            //call CreateNewTable
-            CreateNewTable();
-
-
-            //add a confirmartion dialog recapping the titles
-            Toast.MakeText(this, "TableName: " + getTableName + "\nTable Description: " + getTableDescription + "\nColumn1: " + getColumn1 + "\nColumn2: " + getColumn2 + "\nColumn3: " + getColumn3 + "\nColumn4: " + getColumn4, ToastLength.Long).Show();
-           
         }
 
 
@@ -113,6 +113,52 @@ namespace Datafine
                 default:
                     return base.OnOptionsItemSelected(item);
             }
+        }
+
+        public bool TestInput()
+        {
+
+            bool testPassed = true;
+
+            //grab the inputs, not the prefs. The reason it is done this way is to not save and process the table unless it is free of errors
+            string testColumn1 = column1.Text;
+            string testColumn2 = column2.Text;
+            string testColumn3 = column3.Text;
+            string testColumn4 = column4.Text;
+
+
+            //check to make sure there are no duplicate columns, otherwise the table won't create correctly (and the app will crash)
+            string[] inputs = { testColumn1, testColumn2, testColumn3, testColumn4 };
+
+            for (int i = 0; i < inputs.Length - 1; i++)
+            {
+                for (int j = i + 1; j < inputs.Length; j++)
+                {
+                    if (inputs[i] == inputs[j])
+                    {
+                        Snackbar snackbar = Snackbar.Make(view, "Columns names must be unique", Snackbar.LengthIndefinite);
+                        snackbar.Show();
+                        testPassed = false;
+                        break;
+                        
+                    }
+                }
+                
+            }
+
+            //check if fields are empty
+            if (testColumn1.Length <= 0 || testColumn2.Length <= 0 || testColumn3.Length <= 0 || testColumn4.Length <= 0)
+              {
+                Snackbar snackbar = Snackbar.Make(view, "Fields cannot be empty!", Snackbar.LengthIndefinite);
+                snackbar.Show();
+                testPassed = false;
+              }
+            
+
+            //if any of the previous conditions ocurred at any point, this will return false, and the create code will stop from being excuted
+            //since the code will get called every click of the done button, this wil get called and checked as many times as the input has an error
+            //if none if the conditions occurred, it will simplyy return true, and proceed accordingly
+            return testPassed;
         }
     }
 }
