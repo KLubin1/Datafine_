@@ -207,7 +207,6 @@ namespace Datafine
         //launch description page
         private void TableButtonDetails(object o, View.LongClickEventArgs e)
         {
-            Toast.MakeText(this, "Long Clicked", ToastLength.Short).Show();
             var intent = new Intent(this, typeof(TableDescriptionPage));
             StartActivity(intent);
         }

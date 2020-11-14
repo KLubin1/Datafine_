@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Text.RegularExpressions;
 using Android.App;
 using Android.Content;
 using Android.Database.Sqlite;
@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
 using Xamarin.Essentials;
 
@@ -54,6 +55,11 @@ namespace Datafine
 
         private void DoneButton_Click(object sender, EventArgs e)
         {
+            //close keyboard to view any messages
+            //CloseKeyboard();
+
+            //fix input to make sure there isnt any input that will crash the app
+            FixInput();
             //if there were no found errors, proceed
             if (TestInput() == true)
             {
@@ -130,8 +136,7 @@ namespace Datafine
                         Snackbar snackbar = Snackbar.Make(view, "Columns names must be unique", Snackbar.LengthIndefinite);
                         snackbar.Show();
                         testPassed = false;
-                        break;
-                        
+                        break;                      
                     }
                 }
                 
@@ -144,13 +149,40 @@ namespace Datafine
                 snackbar.Show();
                 testPassed = false;
               }
-            
 
             //if any of the previous conditions ocurred at any point, this will return false, and the create code will stop from being excuted
             //since the code will get called every click of the done button, this will get called and checked as many times as the input has an error
             //if none if the conditions occurred, it will simplyy return true, and proceed accordingly
 
             return testPassed;
+        }
+
+
+        public void FixInput()
+        {
+         
+
+            //remove special characters (for now)
+            column1.Text = Regex.Replace(column1.Text, @"[^0-9a-zA-Z\\s]+", "");
+            column2.Text = Regex.Replace(column2.Text, @"[^0-9a-zA-Z\\s]+", "");
+            column3.Text = Regex.Replace(column3.Text, @"[^0-9a-zA-Z\\s]+", "");
+            column4.Text = Regex.Replace(column4.Text, @"[^0-9a-zA-Z\\s]+", "");
+
+            //replace whitespace
+            column1.Text = Regex.Replace(column1.Text, @"\\s+", "_");
+            column2.Text = Regex.Replace(column2.Text, @"\\s+", "_");
+            column3.Text = Regex.Replace(column3.Text, @"\\s+", "_");
+            column4.Text = Regex.Replace(column4.Text, @"\\s+", "_");
+
+        }
+        public void CloseKeyboard()
+        {
+            View view = this.CurrentFocus;
+            if (view != null)
+            {
+                InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+                imm.HideSoftInputFromWindow(view.WindowToken, 0);
+            }
         }
     }
 }
