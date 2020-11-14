@@ -41,10 +41,6 @@ namespace Datafine
 
 
             doneButton.Click += DoneButton_Click;
-            Preferences.Set("table_name", tableName.Text);
-
-
-
 
         }
 
@@ -66,8 +62,6 @@ namespace Datafine
 
             /*string getTableName = GetPrefs("table_name");
             string getTableDescription = GetPrefs("table_description");
-
-
             //affirm it's working
             Toast.MakeText(this, "TableName: " + getTableName + "\nTableDescription: " + getTableDescription, ToastLength.Long).Show();
 */

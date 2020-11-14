@@ -22,6 +22,8 @@ namespace Datafine
         EditText column1, column2, column3, column4;
         ImageButton doneButton;
         LinearLayout view;
+        DateTime now = DateTime.Now;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -48,37 +50,26 @@ namespace Datafine
 
             doneButton.Click += DoneButton_Click;
 
-
-
         }
 
         private void DoneButton_Click(object sender, EventArgs e)
         {
-
+            //if there were no found errors, proceed
             if (TestInput() == true)
             {
-
                 //the more important part
                 SetPrefs("column1", column1.Text);
                 SetPrefs("column2", column2.Text);
                 SetPrefs("column3", column3.Text);
                 SetPrefs("column4", column4.Text);
-
-
-                /*string getColumn1 = GetPrefs("column1");
-                string getColumn2 = GetPrefs("column2");
-                string getColumn3 = GetPrefs("column3");
-                string getColumn4 = GetPrefs("column4");
-                string getTableName = GetPrefs("table_name");
-                string getTableDescription = GetPrefs("table_description");*/
-
+                SetPrefs("table_created", now.ToString());
 
                 //call CreateNewTable
                 CreateNewTable();
                 //launch main page
                 StartActivity(typeof(MainActivity));
 
-                //add a confirmartion dialog recapping the titles
+                //add a confirmartion dialog recapping the newly created info
                 //Toast.MakeText(this, "TableName: " + getTableName + "\nTable Description: " + getTableDescription + "\nColumn1: " + getColumn1 + "\nColumn2: " + getColumn2 + "\nColumn3: " + getColumn3 + "\nColumn4:" + getColumn4, ToastLength.Short).Show();
             }
         }
@@ -156,8 +147,9 @@ namespace Datafine
             
 
             //if any of the previous conditions ocurred at any point, this will return false, and the create code will stop from being excuted
-            //since the code will get called every click of the done button, this wil get called and checked as many times as the input has an error
+            //since the code will get called every click of the done button, this will get called and checked as many times as the input has an error
             //if none if the conditions occurred, it will simplyy return true, and proceed accordingly
+
             return testPassed;
         }
     }

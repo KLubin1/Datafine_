@@ -8,11 +8,11 @@
   <string name="hello_user">Hello, Kaleah</string>
   <string name="Table_Name">TableOne</string>
   <string name="columnInfo1">Id (INT, NOT NULL, AUTOINCREMENT) [Hidden]</string>
-  <string name="columnInfo2">Name (STRING, NOT NULL) </string>
-  <string name="columnInfo3">PhoneNumber (STRING, NOT NULL) </string>
-  <string name="columnInfo4">Location (STRING, NOT NULL) </string>
-  <string name="columnInfo5">Age (STRING, NOT NULL) </string>
-  <string name="columnInfo6">Date Added (STRING, NOT NULL) [Auto]</string>
+  <string name="columnInfo2">Name (TEXT, NOT NULL) </string>
+  <string name="columnInfo3">PhoneNumber (TEXT, NOT NULL) </string>
+  <string name="columnInfo4">Location (TEXT, NOT NULL) </string>
+  <string name="columnInfo5">Age (TEXT, NOT NULL) </string>
+  <string name="columnInfo6">Date Added (TEXT, NOT NULL) [Auto]</string>
   <string name="Table_Description">First table of Datafine for building and testing. By no means official or even a real table.</string>
   
 </resources>

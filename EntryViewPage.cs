@@ -151,6 +151,7 @@ namespace Datafine
                             break;
                         case Resource.Id.cc_ViewInfo:
                             //handle full data of entry
+                            StartActivity(typeof(TableDescriptionPage));
                             break;
                     }
                 };

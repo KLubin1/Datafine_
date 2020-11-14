@@ -6,8 +6,4 @@
           android:title="Delete" />
     <item android:id="@+id/cc_ViewInfo"
           android:title="View Full Details" />
-    <item android:id="@+id/cc_Move"
-          android:title="Move" />    
-    <item android:id="@+id/cc_Star"
-          android:title="Star" /> 
 </menu>
