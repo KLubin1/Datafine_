@@ -427,3 +427,4 @@ C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\an
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\androidx\proguard\9e4fc22c-db72-48e8-9057-c9e2b7a0439e.txt
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\res\layout\about_layout.xml
 C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\android\src\crc64ccef0fc746faa48b\About.java
+C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Debug\90\res\drawable-v21\baseline_more_vert_black_18dp.png

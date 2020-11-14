@@ -106,6 +106,7 @@ namespace Datafine
 
             if (id == Resource.Id.action_about)
             {
+                StartActivity(typeof(About));
                 return true;
             }
             if (id == Resource.Id.action_logout)

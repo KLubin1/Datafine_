@@ -24,7 +24,9 @@ namespace Datafine
         IList<EntryInfo> itemList = null;
         TextView suchEmpty;
         SearchView search;
-        
+        ImageView cc;
+
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -51,6 +53,8 @@ namespace Datafine
             fab.Click += FabOnClick;
             LoadEntries();
 
+            //for the image button for cc
+            cc = FindViewById<ImageView>(Resource.Id.lr_ccBtn);
 
 
             //test out search term change effect
@@ -82,6 +86,13 @@ namespace Datafine
             }*/
 
         }
+
+        private void Cc_ContextMenuCreated(object sender, View.CreateContextMenuEventArgs e)
+        {
+            throw new NotImplementedException();
+          
+        }
+
 
         //load entries unto the listview
         private void LoadEntries()
@@ -270,9 +281,11 @@ namespace Datafine
                     return true;
 
                 case Resource.Id.action_settings:
+                    Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
                     return true;
 
                 case Resource.Id.action_about:
+                    StartActivity(typeof(About));
                     return true;
 
                 case Resource.Id.action_home:
@@ -287,8 +300,10 @@ namespace Datafine
         public override void OnBackPressed()
         {
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            
+
             base.OnBackPressed();
+            Finish();
+
         }
 
 
