@@ -160,8 +160,6 @@ namespace Datafine
 
         public void FixInput()
         {
-         
-
             //remove special characters (for now)
             column1.Text = Regex.Replace(column1.Text, @"[^0-9a-zA-Z\\s]+", "");
             column2.Text = Regex.Replace(column2.Text, @"[^0-9a-zA-Z\\s]+", "");

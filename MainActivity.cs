@@ -150,27 +150,32 @@ namespace Datafine
             else if (id == Resource.Id.nav_delete)
             {
                 //handle the delete action
-
+                Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_upload)
             {
                 //handle the upload action
+                Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_download)
             {
                 //handle the download action
+                Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_share)
             {
                 //handle the share action
+                Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_export)
             {
                 //handle the export action
+                Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_setting)
             {
                 //handle the settings
+                StartActivity(typeof(Settings));
             }
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
