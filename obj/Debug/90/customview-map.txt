@@ -58,6 +58,7 @@ item;obj\Debug\90\res\values\drawables.xml
 item;obj\Debug\90\res\values\styles.xml
 item;obj\Debug\90\res\values-v21\styles.xml
 layer-list;obj\Debug\90\res\drawable\splash_screen_logo.xml
+LinearLayout;obj\Debug\90\res\layout\about_layout.xml
 LinearLayout;obj\Debug\90\res\layout\ask_password_dialog.xml
 LinearLayout;obj\Debug\90\res\layout\entries_listview.xml
 LinearLayout;obj\Debug\90\res\layout\entry_creation_page.xml
@@ -104,6 +105,7 @@ style;obj\Debug\90\res\values-v21\styles.xml
 SwitchPreference;obj\Debug\90\res\xml\settings_screen.xml
 TableLayout;obj\Debug\90\res\layout\table_view_control_command.xml
 TableRow;obj\Debug\90\res\layout\table_view_control_command.xml
+TextView;obj\Debug\90\res\layout\about_layout.xml
 TextView;obj\Debug\90\res\layout\content_main.xml
 TextView;obj\Debug\90\res\layout\entries_listview.xml
 TextView;obj\Debug\90\res\layout\entry_view_layout.xml

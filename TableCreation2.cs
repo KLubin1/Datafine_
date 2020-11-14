@@ -35,7 +35,6 @@ namespace Datafine
             SetSupportActionBar(toolbar);
 
             SupportActionBar.Title = "Create Table Columns";
-            //SupportActionBar.SetDisplayShowHomeEnabled(true);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             //once the data is collected from here, recreate the app and create the next table

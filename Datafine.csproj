@@ -61,6 +61,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs" />
     <Compile Include="TableListAdapter.cs" />
     <Compile Include="EntryCreation.cs" />
     <Compile Include="LoginScreen.cs" />
@@ -278,6 +279,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\tables_listview.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\about_layout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
