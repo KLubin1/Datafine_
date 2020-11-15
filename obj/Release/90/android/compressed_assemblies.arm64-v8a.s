@@ -8,7 +8,7 @@
 .L.compressed_assembly_descriptors:
 	/* 0: Datafine.dll */
 	/* uncompressed_file_size */
-	.word	172544
+	.word	176128
 	/* loaded */
 	.byte	0
 	/* data */
@@ -80,7 +80,7 @@
 
 	/* 8: System.dll */
 	/* uncompressed_file_size */
-	.word	387072
+	.word	504832
 	/* loaded */
 	.byte	0
 	/* data */
@@ -467,7 +467,7 @@
 
 	/* 51: mscorlib.dll */
 	/* uncompressed_file_size */
-	.word	1892864
+	.word	1893888
 	/* loaded */
 	.byte	0
 	/* data */

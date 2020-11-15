@@ -60,6 +60,12 @@ namespace Datafine
             //test out search term change effect
             string searchTerm = GetSetting("search_type", Application.Context);
 
+            //set upgrade to false by default
+            ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = sharedPreferences.Edit();
+            editor.PutBoolean("UpgradeFlag", false);
+
+
             //ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
             //string searchTerm = prefs.GetString("search_type", "1");
 
@@ -136,6 +142,7 @@ namespace Datafine
                 ISharedPreferencesEditor editor = sharedPreferences.Edit();
                 editor.PutBoolean("UpgradeFlag", false);
 
+                
 
                 //set and launch the popup menu 
                 var commandControl = new Android.Widget.PopupMenu(this, (View)sender);
@@ -152,6 +159,8 @@ namespace Datafine
                         //this is "saving" the id so to refer back to this entry in the table creation page on update
                         intent.PutExtra("Id", selectedItem.id.ToString());
                         //set the flag to true to activate update functionality in table creation
+                        //testing with prefs
+                        Preferences.Set("OnEdit", selectedItem.id.ToString());
                         editor.PutBoolean("UpgradeFlag", true);
                             editor.Apply();
                             StartActivity(intent);
@@ -281,7 +290,7 @@ namespace Datafine
                     return true;
 
                 case Resource.Id.action_settings:
-                    Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
+                    StartActivity(typeof(Settings));
                     return true;
 
                 case Resource.Id.action_about:

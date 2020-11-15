@@ -77,7 +77,7 @@ namespace Datafine
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    Finish();
+                    StartActivity(typeof(MainActivity));
                     return true;
 
                 default:
@@ -111,6 +111,12 @@ namespace Datafine
             ISharedPreferencesEditor editor = prefs.Edit();
             editor.PutBoolean(key, value);
             editor.Commit();
+        }
+
+        public override void OnBackPressed()
+        {
+            //Finish();
+            StartActivity(typeof(MainActivity));
         }
 
     }

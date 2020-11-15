@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Text.RegularExpressions;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -49,6 +49,7 @@ namespace Datafine
             //put the names into the preference and retrieve them
             if (tableName.Text.Length != 0 || tableDescription.Text.Length != 0)
             {
+                FixInput();
                 SetPrefs("table_name", tableName.Text);
                 SetPrefs("table_description", tableDescription.Text);
             }
@@ -91,6 +92,18 @@ namespace Datafine
                 default:
                     return base.OnOptionsItemSelected(item);
             }
+        }
+
+        public void FixInput()
+        {
+            //remove special characters (for now)
+            tableName.Text = Regex.Replace(tableName.Text, @"[^0-9a-zA-Z\\s]+", "");
+
+
+            //replace whitespace
+            tableName.Text = Regex.Replace(tableName.Text, @"\\s+", "_");
+
+
         }
 
     }

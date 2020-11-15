@@ -72,9 +72,10 @@ namespace Datafine
             //set the upgrade flag by default to false here so that it wont crash on null when the table is first made
             ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
             var editor = sharedPreferences.Edit();
+            editor.PutBoolean("UpgradeFlag", false);
             bool upgrade = sharedPreferences.GetBoolean("UpgradeFlag", false);
 
-            if (upgrade == true)
+            if (upgrade == true) //why is this getting set to true??
             {
                 string theId = Intent.Extras.GetString("Id");
 
