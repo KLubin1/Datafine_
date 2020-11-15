@@ -23,6 +23,8 @@ namespace Datafine
     {
         //list that holds the list of databases
         Button tableButton;
+        TextView helloUser;
+        TextView suchEmpty;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -51,6 +53,21 @@ namespace Datafine
             tableButton.Click += TableButtonLaunch;
             tableButton.LongClick += TableButtonDetails;
 
+            //such empty
+            suchEmpty = FindViewById<TextView>(Resource.Id.suchEmptyTable);
+
+            if(GetPrefs("table_name") == null)
+            {
+                tableButton.Visibility = ViewStates.Invisible;
+                suchEmpty.Visibility = ViewStates.Visible;
+            }
+
+            else
+            {
+                tableButton.Visibility = ViewStates.Visible;
+                suchEmpty.Visibility = ViewStates.Invisible;
+            }
+
 
             //listView = FindViewById<ListView>(Resource.Id.databaseListView);
             //populate with dummy data
@@ -68,14 +85,18 @@ namespace Datafine
 
 
             tableButton.Text = GetPrefs("table_name");
+
+            
         }
 
         public override void OnBackPressed()
         {
             //just additional code to close the nav drawer if its open 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            if(drawer.IsDrawerOpen(GravityCompat.Start))
+
+            if (drawer.IsDrawerOpen(GravityCompat.Start))
             {
+                
                 drawer.CloseDrawer(GravityCompat.Start);
             }
             else
@@ -88,6 +109,8 @@ namespace Datafine
         {
             //create options menu
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
+            helloUser = FindViewById<TextView>(Resource.Id.hello_user);
+            helloUser.Text = "Hello, " + GetPrefs("hello_user");
             return true;
         }
 
@@ -113,7 +136,7 @@ namespace Datafine
             {
                 editor.PutBoolean("loggedIn", false);
                 editor.Commit();
-                Finish();
+                Finish(); //*but will only finish last activity 
             }
             if (id == Resource.Id.action_home)
             {
@@ -139,7 +162,10 @@ namespace Datafine
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
+            
+
             int id = item.ItemId;
+
 
             if (id == Resource.Id.nav_add)
             {
@@ -186,22 +212,28 @@ namespace Datafine
 
         public void TableButtonLaunch(object sender, EventArgs eventArgs)
         {
-            //if the modififiable password flag is true
-            //ask for password first
-            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
-            string password_viewable = prefs.GetString("set_password", null);
-            if (password_viewable == "3" || password_viewable == "4")
+            // if the tablename is null, its empty, dont go to entries, it will crash
+            if(GetPrefs("table_name")  != null)
             {
-                //open dialog
-                PasswordRequest request = new PasswordRequest();
-                request.Show(SupportFragmentManager, "Password Request");
+                //if the modififiable password flag is true, ask for password first
+                ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+                string password_viewable = prefs.GetString("set_password", null);
+                if (password_viewable == "3" || password_viewable == "4")
+                {
+                    //open dialog
+                    PasswordRequest request = new PasswordRequest();
+                    request.Show(SupportFragmentManager, "Password Request");
+                }
+                else
+                {
+                    //launch the table entry's page
+                    var intent = new Intent(this, typeof(EntryViewPage));
+                    StartActivity(intent);
+                }
             }
-            else
-            {
-                //launch the table entry's page
-                var intent = new Intent(this, typeof(EntryViewPage));
-                StartActivity(intent);
-            }
+                //do nothing, just let the user know table is empty
+
+            
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

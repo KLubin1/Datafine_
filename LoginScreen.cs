@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Xamarin.Essentials;
 
 namespace Datafine
 {
@@ -35,7 +36,7 @@ namespace Datafine
             ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("loggingSession", FileCreationMode.Private);
             ISharedPreferencesEditor editor = sharedPreferences.Edit();
 
-            if (CredentialsAreValid())
+            /*if (CredentialsAreValid())
             {
                 Toast.MakeText(this, "Login Successful!", ToastLength.Short).Show();
                 StartActivity(typeof(MainActivity));
@@ -45,7 +46,17 @@ namespace Datafine
                 editor.Commit();
             }
             else
-                Toast.MakeText(this, "Username or Password is incorrect. Try again.", ToastLength.Long).Show();
+                Toast.MakeText(this, "Username or Password is incorrect. Try again.", ToastLength.Long).Show();*/
+
+
+            //for demo, just takes in the user's name and sets that to hello user
+            Preferences.Set("hello_user", userName.Text);
+            Toast.MakeText(this, "Login Successful!", ToastLength.Short).Show();
+            StartActivity(typeof(MainActivity));
+            Thread.Sleep(2000);
+            Toast.MakeText(this, "Hello, " + Preferences.Get("hello_user", null) + "!", ToastLength.Long).Show();
+            editor.PutBoolean("loggedIn", true);
+            editor.Commit();
         }
 
         //handle what are and aren't correct credentials
@@ -77,6 +88,11 @@ namespace Datafine
                 }
             }
             return validate;
+        }
+
+        private void DemoLogin()
+        {
+
         }
     }
 }

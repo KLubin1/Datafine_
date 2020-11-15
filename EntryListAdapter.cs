@@ -63,7 +63,6 @@ namespace Datafine
                 cc = convertView.FindViewById<ImageView>(Resource.Id.lr_ccBtn);
 
                 //code for cc adapted from EntryViewPage
-
                 cc.Click += (object sender, EventArgs e) =>
                 {
                     var selectedItem = tableList[position];
@@ -105,7 +104,6 @@ namespace Datafine
                                 case Resource.Id.cc_Delete:
                                     //delete entry from position
                                     DeleteEntry(position);
-                                    Toast.MakeText(activity, "Is Deleting", ToastLength.Short).Show();
                                     
                                     break;
                                 case Resource.Id.cc_ViewInfo:
