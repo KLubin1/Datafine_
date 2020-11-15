@@ -42,6 +42,7 @@ ImageButton;obj\Release\90\res\layout\table_view_control_command.xml
 ImageView;obj\Release\90\res\layout\entries_listview.xml
 ImageView;obj\Release\90\res\layout\login_screen.xml
 ImageView;obj\Release\90\res\layout\nav_header_main.xml
+include;obj\Release\90\res\layout\about_layout.xml
 include;obj\Release\90\res\layout\activity_main.xml
 include;obj\Release\90\res\layout\app_bar_main.xml
 include;obj\Release\90\res\layout\entry_creation_page.xml

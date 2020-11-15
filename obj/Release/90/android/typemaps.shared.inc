@@ -19,38 +19,38 @@
 	.section	.rodata.map_aname.3,"aMS",@progbits,1
 	.type	.L.map_aname.3, @object
 .L.map_aname.3:
-	.asciz	"Xamarin.Essentials"
-	.size	.L.map_aname.3, 19
+	.asciz	"Datafine"
+	.size	.L.map_aname.3, 9
 
 	.section	.rodata.map_aname.4,"aMS",@progbits,1
 	.type	.L.map_aname.4, @object
 .L.map_aname.4:
-	.asciz	"Xamarin.AndroidX.Preference"
-	.size	.L.map_aname.4, 28
+	.asciz	"Xamarin.Essentials"
+	.size	.L.map_aname.4, 19
 
 	.section	.rodata.map_aname.5,"aMS",@progbits,1
 	.type	.L.map_aname.5, @object
 .L.map_aname.5:
-	.asciz	"Xamarin.AndroidX.Activity"
-	.size	.L.map_aname.5, 26
+	.asciz	"Xamarin.AndroidX.Preference"
+	.size	.L.map_aname.5, 28
 
 	.section	.rodata.map_aname.6,"aMS",@progbits,1
 	.type	.L.map_aname.6, @object
 .L.map_aname.6:
-	.asciz	"Xamarin.AndroidX.RecyclerView"
-	.size	.L.map_aname.6, 30
+	.asciz	"Xamarin.AndroidX.Activity"
+	.size	.L.map_aname.6, 26
 
 	.section	.rodata.map_aname.7,"aMS",@progbits,1
 	.type	.L.map_aname.7, @object
 .L.map_aname.7:
-	.asciz	"Mono.Android"
-	.size	.L.map_aname.7, 13
+	.asciz	"Xamarin.AndroidX.RecyclerView"
+	.size	.L.map_aname.7, 30
 
 	.section	.rodata.map_aname.8,"aMS",@progbits,1
 	.type	.L.map_aname.8, @object
 .L.map_aname.8:
-	.asciz	"Datafine"
-	.size	.L.map_aname.8, 9
+	.asciz	"Mono.Android"
+	.size	.L.map_aname.8, 13
 
 	.section	.rodata.map_aname.9,"aMS",@progbits,1
 	.type	.L.map_aname.9, @object
