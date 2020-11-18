@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Owner\\OneDrive - Full Sail University\\Datafine\\Datafine\\Datafine.csproj": {}
+    "C:\\Users\\Owner\\Documents\\Datafine\\Datafine\\Datafine\\Datafine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Owner\\OneDrive - Full Sail University\\Datafine\\Datafine\\Datafine.csproj": {
+    "C:\\Users\\Owner\\Documents\\Datafine\\Datafine\\Datafine\\Datafine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Owner\\OneDrive - Full Sail University\\Datafine\\Datafine\\Datafine.csproj",
+        "projectUniqueName": "C:\\Users\\Owner\\Documents\\Datafine\\Datafine\\Datafine\\Datafine.csproj",
         "projectName": "Datafine",
-        "projectPath": "C:\\Users\\Owner\\OneDrive - Full Sail University\\Datafine\\Datafine\\Datafine.csproj",
+        "projectPath": "C:\\Users\\Owner\\Documents\\Datafine\\Datafine\\Datafine\\Datafine.csproj",
         "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Owner\\OneDrive - Full Sail University\\Datafine\\Datafine\\obj\\",
+        "outputPath": "C:\\Users\\Owner\\Documents\\Datafine\\Datafine\\Datafine\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [

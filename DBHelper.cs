@@ -381,9 +381,17 @@ namespace Datafine
             return Preferences.Get(name, null);
         }
 
+
+        //Table methods
+
         public void CreateNewTable(SQLiteDatabase db) //this db will have to point to this database somehow in order for it to work
         {
             OnCreate(db);
+        }
+
+        public void GetAllTables(SQLiteDatabase db)
+        {
+            //db.ExecSQL("");
         }
 
     }

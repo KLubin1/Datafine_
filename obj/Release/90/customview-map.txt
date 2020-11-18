@@ -10,7 +10,7 @@ background;obj\Release\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 bitmap;obj\Release\90\res\drawable\splash_screen_logo.xml
 Button;obj\Release\90\res\layout\content_main.xml
 Button;obj\Release\90\res\layout\login_screen.xml
-cache-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+cache-path;C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Release\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Release\90\res\drawable\splash_screen_logo.xml
 color;obj\Release\90\res\values\colors.xml
 color;obj\Release\90\res\values\ic_launcher_background.xml
@@ -29,8 +29,8 @@ com.google.android.material.textfield.TextInputLayout;obj\Release\90\res\layout\
 dimen;obj\Release\90\res\values\dimens.xml
 EditText;obj\Release\90\res\layout\ask_password_dialog.xml
 EditTextPreference;obj\Release\90\res\xml\settings_screen.xml
-external-cache-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-external-path;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-cache-path;C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Release\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-path;C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Release\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Release\90\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Release\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 gradient;obj\Release\90\res\drawable\side_nav_bar.xml
@@ -62,7 +62,6 @@ item;obj\Release\90\res\values-v21\styles.xml
 layer-list;obj\Release\90\res\drawable\splash_screen_logo.xml
 LinearLayout;obj\Release\90\res\layout\about_layout.xml
 LinearLayout;obj\Release\90\res\layout\ask_password_dialog.xml
-LinearLayout;obj\Release\90\res\layout\entries_listview.xml
 LinearLayout;obj\Release\90\res\layout\entry_creation_page.xml
 LinearLayout;obj\Release\90\res\layout\entry_view_layout.xml
 LinearLayout;obj\Release\90\res\layout\login_screen.xml
@@ -84,7 +83,7 @@ path;obj\Release\90\res\drawable-v21\ic_menu_manage.xml
 path;obj\Release\90\res\drawable-v21\ic_menu_send.xml
 path;obj\Release\90\res\drawable-v21\ic_menu_share.xml
 path;obj\Release\90\res\drawable-v21\ic_menu_slideshow.xml
-paths;C:\Users\Owner\OneDrive - Full Sail University\Datafine\Datafine\obj\Release\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Release\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 Preference;obj\Release\90\res\xml\settings_screen.xml
 PreferenceCategory;obj\Release\90\res\xml\settings_screen.xml
 PreferenceScreen;obj\Release\90\res\xml\settings_screen.xml

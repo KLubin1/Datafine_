@@ -1,0 +1,1 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"><item android:id="@+id/cc_Edit" android:title="Update" /><item android:id="@+id/cc_Delete" android:title="Delete" /><item android:id="@+id/cc_ViewInfo" android:title="View Full Details" /></menu>

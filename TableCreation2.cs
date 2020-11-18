@@ -77,8 +77,11 @@ namespace Datafine
 
                 //call CreateNewTable
                 CreateNewTable();
+                //Toast
+                Toast.MakeText(this, "New Table Created!", ToastLength.Short).Show();
                 //launch main page
                 StartActivity(typeof(MainActivity));
+
 
                 //add a confirmartion dialog recapping the newly created info
                 //Toast.MakeText(this, "TableName: " + getTableName + "\nTable Description: " + getTableDescription + "\nColumn1: " + getColumn1 + "\nColumn2: " + getColumn2 + "\nColumn3: " + getColumn3 + "\nColumn4:" + getColumn4, ToastLength.Short).Show();

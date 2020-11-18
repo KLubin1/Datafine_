@@ -28,7 +28,17 @@ namespace Datafine
             googleButton = FindViewById<Button>(Resource.Id.login_googleBtn);
             loginButton = FindViewById<Button>(Resource.Id.login_doneBtn);
 
+            //temporarily disable password for demo purposes
+            password.Clickable = false;
+            password.Enabled = false;
+
             loginButton.Click += LoginButton_Click;
+            googleButton.Click += GoogleButton_Click;
+        }
+
+        private void GoogleButton_Click(object sender, EventArgs e)
+        {
+            Toast.MakeText(this, "Under Construction, use Login instead", ToastLength.Short).Show();
         }
 
         private void LoginButton_Click(object sender, EventArgs e)

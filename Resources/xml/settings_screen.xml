@@ -8,16 +8,18 @@
     <Preference
         app:key="color_scheme"
         app:title="Color Scheme"
+        android:clickable="false"
         app:summary="Change app's color scheme"/>
     <Preference
         app:key="module"
         app:title="Module"
+        android:clickable="false"
         app:summary="Customize app's modules"/>
 
   </PreferenceCategory>
 
   <PreferenceCategory
-    app:title="Locking/Unlocking">
+    app:title="Control Table Access">
 
     <EditTextPreference
        app:key="create_password"
@@ -27,7 +29,7 @@
      <ListPreference
        app:key="set_password"
        app:title="Enable Password"
-       app:summary="Enable table capabilties with password"
+       app:summary="Enable table access with password"
        app:defaultValue="1"
        app:entryValues="@array/password_settings_values"
        app:entries="@array/password_settings"/>

@@ -8,7 +8,7 @@
 .L.compressed_assembly_descriptors:
 	/* 0: Datafine.dll */
 	/* uncompressed_file_size */
-	.word	176128
+	.word	176640
 	/* loaded */
 	.byte	0
 	/* data */
@@ -26,7 +26,7 @@
 
 	/* 2: Mono.Android.dll */
 	/* uncompressed_file_size */
-	.word	1159168
+	.word	1159680
 	/* loaded */
 	.byte	0
 	/* data */
@@ -323,7 +323,7 @@
 
 	/* 35: Xamarin.AndroidX.Loader.dll */
 	/* uncompressed_file_size */
-	.word	37888
+	.word	37376
 	/* loaded */
 	.byte	0
 	/* data */
