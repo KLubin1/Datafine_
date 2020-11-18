@@ -4472,46 +4472,46 @@ namespace Datafine
 			public const int SYM = 2131296261;
 			
 			// aapt resource value: 0x7F090104
-			public const int tableButton = 2131296516;
+			public const int tableColumn1 = 2131296516;
 			
 			// aapt resource value: 0x7F090105
-			public const int tableColumn1 = 2131296517;
+			public const int tableColumn2 = 2131296517;
 			
 			// aapt resource value: 0x7F090106
-			public const int tableColumn2 = 2131296518;
+			public const int tableColumn3 = 2131296518;
 			
 			// aapt resource value: 0x7F090107
-			public const int tableColumn3 = 2131296519;
+			public const int tableColumn4 = 2131296519;
 			
 			// aapt resource value: 0x7F090108
-			public const int tableColumn4 = 2131296520;
+			public const int tableCreate_Column1 = 2131296520;
 			
 			// aapt resource value: 0x7F090109
-			public const int tableCreate_Column1 = 2131296521;
+			public const int tableCreate_Column2 = 2131296521;
 			
 			// aapt resource value: 0x7F09010A
-			public const int tableCreate_Column2 = 2131296522;
+			public const int tableCreate_Column3 = 2131296522;
 			
 			// aapt resource value: 0x7F09010B
-			public const int tableCreate_Column3 = 2131296523;
+			public const int tableCreate_Column4 = 2131296523;
 			
 			// aapt resource value: 0x7F09010C
-			public const int tableCreate_Column4 = 2131296524;
+			public const int tableCreate_Description = 2131296524;
 			
 			// aapt resource value: 0x7F09010D
-			public const int tableCreate_Description = 2131296525;
+			public const int tableCreate_Name = 2131296525;
 			
 			// aapt resource value: 0x7F09010E
-			public const int tableCreate_Name = 2131296526;
+			public const int tableCreation_view = 2131296526;
 			
 			// aapt resource value: 0x7F09010F
-			public const int tableCreation_view = 2131296527;
+			public const int tableDateAdded = 2131296527;
 			
 			// aapt resource value: 0x7F090110
-			public const int tableDateAdded = 2131296528;
+			public const int tableListView = 2131296528;
 			
 			// aapt resource value: 0x7F090111
-			public const int tableListView = 2131296529;
+			public const int tableListViewMain = 2131296529;
 			
 			// aapt resource value: 0x7F090112
 			public const int tableListview_dateAdded = 2131296530;

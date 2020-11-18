@@ -25,6 +25,8 @@ namespace Datafine
         Button tableButton;
         TextView helloUser;
         TextView suchEmpty;
+        IList<TableInfo> tableList = null;
+        ListView tableListView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -47,47 +49,80 @@ namespace Datafine
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
+            //listView
+            tableListView = FindViewById<ListView>(Resource.Id.tableListViewMain);
+
             //button for table launch simulation
-            tableButton = FindViewById<Button>(Resource.Id.tableButton);
+            //tableButton = FindViewById<Button>(Resource.Id.tableButton);
             //launch the table view page
-            tableButton.Click += TableButtonLaunch;
-            tableButton.LongClick += TableButtonDetails;
+            //tableButton.Click += TableButtonLaunch;
+            //tableButton.LongClick += TableButtonDetails;
 
             //such empty
             suchEmpty = FindViewById<TextView>(Resource.Id.suchEmptyTable);
 
-            if(GetPrefs("table_name") == null)
+            if (GetPrefs("table_name") == null)
             {
-                tableButton.Visibility = ViewStates.Invisible;
+                //tableButton.Visibility = ViewStates.Invisible;
                 suchEmpty.Visibility = ViewStates.Visible;
             }
 
             else
             {
-                tableButton.Visibility = ViewStates.Visible;
+                //tableButton.Visibility = ViewStates.Visible;
                 suchEmpty.Visibility = ViewStates.Invisible;
             }
 
 
-            //listView = FindViewById<ListView>(Resource.Id.databaseListView);
-            //populate with dummy data
-            //itemList = new List<DatabaseInfo>();
-            //DatabaseInfo dummy = new DatabaseInfo("Dummy Database", now.ToString(),"This is a test database.");
-            //itemList.Add(dummy);
+            //tableButton.Text = GetPrefs("table_name");
 
-            //list databases
-            //listView.Adapter = new TableListAdapter(this, itemList);
-            //execute on click; launch the entries OnClick and start new activity that shows database entries
-            //listView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
-            //{
-            // Toast.MakeText(this, "To be Databased", ToastLength.Short).Show();
-            //};
+            LoadTables();
 
-
-            tableButton.Text = GetPrefs("table_name");
-
-            
         }
+
+        //should perform as LoadEntries, but for tables
+        public void LoadTables()
+        {
+            DBHelper dbVals = new DBHelper(this);
+            //load data
+            tableList = dbVals.GetAllTables();
+
+            if (tableList.Count == 0)
+            {
+                //add a message saying the database is empty; make a entry to start 
+                suchEmpty.Visibility = ViewStates.Visible;
+            }
+
+            //set the lisy adapter
+            tableListView.Adapter = new TableViewAdapter(this, tableList);
+
+            //long click event for items in list
+            tableListView.ItemClick += TableListView_ItemClick;
+        }
+
+        //same as what was for the table
+            private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+            {
+                // if the tablename is null, its empty, dont go to entries, it will crash
+                if (GetPrefs("table_name") != null)
+                {
+                    //if the modififiable password flag is true, ask for password first
+                    ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+                    string password_viewable = prefs.GetString("set_password", null);
+                    if (password_viewable == "3" || password_viewable == "4")
+                    {
+                        //open dialog
+                        PasswordRequest request = new PasswordRequest();
+                        request.Show(SupportFragmentManager, "Password Request");
+                    }
+                    else
+                    {
+                        //launch the table entry's page
+                        var intent = new Intent(this, typeof(EntryViewPage));
+                        StartActivity(intent);
+                    }
+                }
+            }
 
         public override void OnBackPressed()
         {

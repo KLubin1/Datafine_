@@ -389,9 +389,25 @@ namespace Datafine
             OnCreate(db);
         }
 
-        public void GetAllTables(SQLiteDatabase db)
+        //retieve list of tables
+        public IList<TableInfo> GetAllTables()
         {
-            //db.ExecSQL("");
+            SQLiteDatabase db = this.ReadableDatabase;
+            ICursor c = db.RawQuery("SELECT name FROM sqlite_master WHERE type='table'", null); //will return the names of table
+
+            var tables = new List<TableInfo>();
+
+            while (c.MoveToNext())
+            {
+                tables.Add(new TableInfo
+                {
+                    tableName = c.GetString(0)
+                });
+            }
+
+            c.Close();
+            db.Close();
+            return tables;
         }
 
     }

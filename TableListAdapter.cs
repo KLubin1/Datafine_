@@ -50,8 +50,8 @@ namespace Datafine
                 holder = new TableViewHolder();
 
                 holder.tableName = convertView.FindViewById<TextView>(Resource.Id.tableListview_name);
-                holder.description = convertView.FindViewById<TextView>(Resource.Id.tableListview_description);
-                holder.dateAdded = convertView.FindViewById<TextView>(Resource.Id.tableListview_dateAdded);
+                //holder.description = convertView.FindViewById<TextView>(Resource.Id.tableListview_description);
+                //holder.dateAdded = convertView.FindViewById<TextView>(Resource.Id.tableListview_dateAdded);
 
                 convertView.Tag = holder;
             }
@@ -62,8 +62,8 @@ namespace Datafine
 
             //set the data
             holder.tableName.Text = tableList[position].tableName.ToString();
-            holder.dateAdded.Text = tableList[position].dateAdded.ToString();
-            holder.description.Text = tableList[position].description.ToString();
+            //holder.dateAdded.Text = tableList[position].dateAdded.ToString();
+            //holder.description.Text = tableList[position].description.ToString();
 
             return convertView;
         }
