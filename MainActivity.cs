@@ -93,7 +93,7 @@ namespace Datafine
                 suchEmpty.Visibility = ViewStates.Visible;
             }
 
-            //set the lisy adapter
+            //set the list adapter
             tableListView.Adapter = new TableViewAdapter(this, tableList);
 
             //long click event for items in list
@@ -101,7 +101,7 @@ namespace Datafine
         }
 
         //same as what was for the table
-            private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
             {
                 // if the tablename is null, its empty, dont go to entries, it will crash
                 if (GetPrefs("table_name") != null)
@@ -122,6 +122,13 @@ namespace Datafine
                         StartActivity(intent);
                     }
                 }
+
+                //get the table selected and save it in a prefs
+            TableInfo table = tableList[e.Position];
+            SetPrefs("SelectedTable", table.tableName.ToString());
+
+
+            Toast.MakeText(this, "Table selected = " + table.tableName.ToString(), ToastLength.Short).Show();
             }
 
         public override void OnBackPressed()
@@ -288,6 +295,12 @@ namespace Datafine
         private string GetPrefs(string name)
         {
             return Preferences.Get(name, null);
+        }
+
+        //get the preference
+        private void SetPrefs(string name, string value)
+        {
+            Preferences.Set(name, value);
         }
     }
 }

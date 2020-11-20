@@ -8,7 +8,6 @@ androidx.drawerlayout.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main.
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 bitmap;obj\Debug\90\res\drawable\splash_screen_logo.xml
-Button;obj\Debug\90\res\layout\content_main.xml
 Button;obj\Debug\90\res\layout\login_screen.xml
 cache-path;C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\90\res\drawable\splash_screen_logo.xml

@@ -23,13 +23,6 @@ namespace Datafine
         //database version
         private const int DATABASE_VERSION = 1;
 
-        //PROBLEM: at this point in this class, it still holds the previous table
-        //in other words, its not getting the right information to process the newly created table
-        //this never gets hit the second time a new table is made...
-        //when the GetAllContacts and other methods get called, they still hold unto the first preferenced valued table
-        //this field and the OnCreate method wont get called again from the first time the app is initailized
-        //in other words, this will only work if the app is reinitalized from the first time
-
         /*private static string tableName = GetPrefs("table_name");
         private static string column1 = GetPrefs("column1");
         private static string column2 = GetPrefs("column2");
@@ -96,14 +89,23 @@ namespace Datafine
         {
             SQLiteDatabase db = this.ReadableDatabase;
 
-            string tableName = GetPrefs("table_name");
+            /*string tableName = GetPrefs("table_name");
             string column1 = GetPrefs("column1");
             string column2 = GetPrefs("column2");
             string column3 = GetPrefs("column3");
             string column4 = GetPrefs("column4");
+*/
+            //get the selected table
+            string table = GetPrefs("SelectedTable");
+            //get said table from query...
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            //...to retrieve said table's column names
+            string[] columns = tableCursor.GetColumnNames();
+            
 
 
-            ICursor c = db.Query(tableName, new string[] { "Id", column1, column2, column3, column4, "DateAdded" }, null, null, null, null, null); //can organize the retrieval with any values or way here
+            //now assemble the main query with the selected table name and columns
+            ICursor c = db.Query(table, columns, null, null, null, null, null); //can organize the retrieval with any values or way here
             var contacts = new List<EntryInfo>();
             while (c.MoveToNext())
             {
@@ -119,6 +121,7 @@ namespace Datafine
                 });
 
             }
+
             c.Close();
             db.Close();
             return contacts;
@@ -128,13 +131,15 @@ namespace Datafine
         public IList<EntryInfo> GetContactsByColumn1(string column1Term)
         {
             SQLiteDatabase db = this.ReadableDatabase;
-            string column1 = GetPrefs("column1");
-            string column2 = GetPrefs("column2");
-            string column3 = GetPrefs("column3");
-            string column4 = GetPrefs("column4");
-            string tableName = GetPrefs("table_name");
+            //get the selected table
+            string table = GetPrefs("SelectedTable");
+            //get said table from query...
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            //...to retrieve said table's column names
+            string[] columns = tableCursor.GetColumnNames();
+            string searchTermColumn = tableCursor.GetColumnName(1);
 
-            ICursor c = db.Query(tableName, new string[] { "Id", column1, column2, column3, column4, "DateAdded" }, "upper(" + column1 + ") LIKE ?", new string[] { "%" + column1Term.ToUpper() + "%" }, null, null, null, null);
+            ICursor c = db.Query(table, columns , "upper(" + searchTermColumn + ") LIKE ?", new string[] { "%" + column1Term.ToUpper() + "%" }, null, null, null, null);
 
             var contacts = new List<EntryInfo>();
 
@@ -161,17 +166,19 @@ namespace Datafine
 
 
          //retrieve entries based off of a search location or term
-          public IList<EntryInfo> GetContactsByColumn2(string locationToSearch)
+          public IList<EntryInfo> GetContactsByColumn2(string column2Term)
           {
             SQLiteDatabase db = this.ReadableDatabase;
 
-            string column1 = GetPrefs("column1");
-            string column2 = GetPrefs("column2");
-            string column3 = GetPrefs("column3");
-            string column4 = GetPrefs("column4");
-            string tableName = GetPrefs("table_name");
+            //get the selected table
+            string table = GetPrefs("SelectedTable");
+            //get said table from query...
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            //...to retrieve said table's column names
+            string[] columns = tableCursor.GetColumnNames();
+            string searchTermColumn = tableCursor.GetColumnName(2);
 
-            ICursor c = db.Query(tableName, new string[] { "Id", column1, column2, column3, column4, "DateAdded" }, "upper(" + column1 + ") LIKE ?", new string[] { "%" + column2.ToUpper() + "%" }, null, null, null, null);
+            ICursor c = db.Query(table, columns, "upper(" + searchTermColumn + ") LIKE ?", new string[] { "%" + column2Term.ToUpper() + "%" }, null, null, null, null);
 
             var contacts = new List<EntryInfo>();
 
@@ -196,17 +203,19 @@ namespace Datafine
 
 
           //retrieve entries based off of a search age
-          public IList<EntryInfo> GetContactsByColumn3(string ageToSearch)
+          public IList<EntryInfo> GetContactsByColumn3(string column3Term)
           {
             SQLiteDatabase db = this.ReadableDatabase;
 
-            string column1 = GetPrefs("column1");
-            string column2 = GetPrefs("column2");
-            string column3 = GetPrefs("column3");
-            string column4 = GetPrefs("column4");
-            string tableName = GetPrefs("table_name");
+            //get the selected table
+            string table = GetPrefs("SelectedTable");
+            //get said table from query...
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            //...to retrieve said table's column names
+            string[] columns = tableCursor.GetColumnNames();
+            string searchTermColumn = tableCursor.GetColumnName(3);
 
-            ICursor c = db.Query(tableName, new string[] { "Id", column1, column2, column3, column4, "DateAdded" }, "upper(" + column1 + ") LIKE ?", new string[] { "%" + column3.ToUpper() + "%" }, null, null, null, null);
+            ICursor c = db.Query(table, columns, "upper(" + searchTermColumn + ") LIKE ?", new string[] { "%" + column3Term.ToUpper() + "%" }, null, null, null, null);
 
             var contacts = new List<EntryInfo>();
 
@@ -229,17 +238,19 @@ namespace Datafine
             return contacts;
         }
 
-          public IList<EntryInfo> GetContactsByColumn4(string idToSearch)
+          public IList<EntryInfo> GetContactsByColumn4(string column4Term)
           {
             SQLiteDatabase db = this.ReadableDatabase;
 
-            string column1 = GetPrefs("column1");
-            string column2 = GetPrefs("column2");
-            string column3 = GetPrefs("column3");
-            string column4 = GetPrefs("column4");
-            string tableName = GetPrefs("table_name");
+            //get the selected table
+            string table = GetPrefs("SelectedTable");
+            //get said table from query...
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            //...to retrieve said table's column names
+            string[] columns = tableCursor.GetColumnNames();
+            string searchTermColumn = tableCursor.GetColumnName(3);
 
-            ICursor c = db.Query(tableName, new string[] { "Id", column1, column2, column3, column4, "DateAdded" }, "upper(" + column1 + ") LIKE ?", new string[] { "%" + column4.ToUpper() + "%" }, null, null, null, null);
+            ICursor c = db.Query(table,columns, "upper(" + searchTermColumn + ") LIKE ?", new string[] { "%" + column4Term.ToUpper() + "%" }, null, null, null, null);
 
             var contacts = new List<EntryInfo>();
 
@@ -267,29 +278,29 @@ namespace Datafine
         {
             SQLiteDatabase db = this.ReadableDatabase;
 
-            string column1 = GetPrefs("column1");
-            string column2 = GetPrefs("column2");
-            string column3 = GetPrefs("column3");
-            string column4 = GetPrefs("column4");
-            string tableName = GetPrefs("table_name");
-
+            //get the selected table
+            string table = GetPrefs("SelectedTable");
+            //get said table from query
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            //retrieve said table's columns by index
             ContentValues contentValues = new ContentValues();
-            contentValues.Put(column1, entry.column1);
-            contentValues.Put(column2, entry.column2);
-            contentValues.Put(column3, entry.column3);
-            contentValues.Put(column4, entry.column4);
+            contentValues.Put(tableCursor.GetColumnName(1), entry.column1);
+            contentValues.Put(tableCursor.GetColumnName(2), entry.column2);
+            contentValues.Put(tableCursor.GetColumnName(3), entry.column3);
+            contentValues.Put(tableCursor.GetColumnName(4), entry.column4);
             contentValues.Put("DateAdded", entry.dateAdded);
 
-            db.Insert(tableName, null, contentValues);
+            db.Insert(table, null, contentValues);
         }
 
         //retrieve entry by id
         public ICursor GetContactById(int id)
         {
-            string tableName = GetPrefs("table_name");
+            //get the selected table
+            string table = GetPrefs("SelectedTable");
 
             SQLiteDatabase db = this.ReadableDatabase;
-            ICursor res = db.RawQuery("SELECT * FROM " + tableName + " WHERE Id=" + id + "", null);
+            ICursor res = db.RawQuery("SELECT * FROM " + table + " WHERE Id=" + id + "", null);
             return res;
         }
 
@@ -304,29 +315,30 @@ namespace Datafine
 
             SQLiteDatabase db = this.WritableDatabase;
 
-            string column1 = GetPrefs("column1");
-            string column2 = GetPrefs("column2");
-            string column3 = GetPrefs("column3");
-            string column4 = GetPrefs("column4");
-            string tableName = GetPrefs("table_name");
+            //get the selected table
+            string table = GetPrefs("SelectedTable");
+            //get said table from query...
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            //...to retrieve said table's column names
+            string[] columns = tableCursor.GetColumnNames();
+            string searchTermColumn = tableCursor.GetColumnName(3);
 
             ContentValues vals = new ContentValues();
-            vals.Put(column1, entry.column1);
-            vals.Put(column2, entry.column2);
-            vals.Put(column3, entry.column3);
-            vals.Put(column4, entry.column4);
+            vals.Put(tableCursor.GetColumnName(1), entry.column1);
+            vals.Put(tableCursor.GetColumnName(2), entry.column2);
+            vals.Put(tableCursor.GetColumnName(3), entry.column3);
+            vals.Put(tableCursor.GetColumnName(4), entry.column4);
             vals.Put("DateAdded", entry.dateAdded);
 
 
-            ICursor cursor = db.Query(tableName,
-                    new String[] { "Id", column1, column2, column3, column4, "DateAdded" }, "Id=?", new string[] { entry.id.ToString() }, null, null, null, null);
+            ICursor cursor = db.Query(table, columns, "Id=?", new string[] { entry.id.ToString() }, null, null, null, null);
 
             if (cursor != null)
             {
                 if (cursor.MoveToFirst())
                 {
                     // update the row
-                    db.Update(tableName, vals, "Id=?", new String[] { cursor.GetString(0) });
+                    db.Update(table, vals, "Id=?", new String[] { cursor.GetString(0) });
                 }
 
                 cursor.Close();
@@ -344,20 +356,21 @@ namespace Datafine
 
             SQLiteDatabase db = this.ReadableDatabase;
 
-            string column1 = GetPrefs("column1");
-            string column2 = GetPrefs("column2");
-            string column3 = GetPrefs("column3");
-            string column4 = GetPrefs("column4");
-            string tableName = GetPrefs("table_name");
+            //get the selected table
+            string table = GetPrefs("SelectedTable");
+            //get said table from query...
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            //...to retrieve said table's column names
+            string[] columns = tableCursor.GetColumnNames();
 
-            ICursor cursor = db.Query(tableName,
-                    new String[] { "Id", column1, column2, column3, column4, "DateAdded" }, "Id=?", new string[] { entryId }, null, null, null, null);
+            ICursor cursor = db.Query(table,
+                    columns, "Id=?", new string[] { entryId }, null, null, null, null);
 
             if (cursor != null)
             {
                 if (cursor.MoveToFirst())
                 {
-                    db.Delete(tableName, "Id=?", new String[] { cursor.GetString(0) });
+                    db.Delete(table, "Id=?", new String[] { cursor.GetString(0) });
                 }
                 cursor.Close();
             }
@@ -366,7 +379,7 @@ namespace Datafine
 
         public void DeleteTable(SQLiteDatabase db)
         {
-            string tableName = GetPrefs("table_name");
+            string tableName = GetPrefs("SelectedTable");
             db.ExecSQL("DROP TABLE IF EXISTS " + tableName);
         }
 

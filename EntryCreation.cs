@@ -203,6 +203,7 @@ namespace Datafine
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
+
                     Finish();
                     return true;
 
