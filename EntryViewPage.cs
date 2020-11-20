@@ -36,7 +36,7 @@ namespace Datafine
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-            SupportActionBar.Title = GetPrefs("table_name");
+            SupportActionBar.Title = GetPrefs("SelectedTable");
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             
             //floating action bar to add new entries

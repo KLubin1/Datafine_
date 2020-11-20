@@ -21,6 +21,7 @@ using AndroidX.AppCompat.Widget;
 using Android.Support.V7.Widget;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 using Xamarin.Essentials;
+using Android.Database.Sqlite;
 
 namespace Datafine
 {
@@ -89,14 +90,24 @@ namespace Datafine
             //Load the data when its under editing
             private void LoadDataForEdit(string contactId)
             {
+                //get instance of dbhelper to get contact
                 DBHelper db = new DBHelper(this);
+                //get instance of the db helper database
+                SQLiteOpenHelper sq = new DBHelper(this);
+                SQLiteDatabase column = sq.ReadableDatabase;
+                //query the selected table
+                string table = GetPrefs("SelectedTable");
+                ICursor c = column.Query(table, null, null, null, null, null, null);
+            
+                
                 ICursor cData = db.GetContactById(int.Parse(contactId));
                 if (cData.MoveToFirst())
                 {
-                    column1EditText.Text = cData.GetString(cData.GetColumnIndex(GetPrefs("column1")));
-                    column2EditText.Text = cData.GetString(cData.GetColumnIndex(GetPrefs("column2")));
-                    column3EditText.Text = cData.GetString(cData.GetColumnIndex(GetPrefs("column3")));
-                    column4EditText.Text = cData.GetString(cData.GetColumnIndex(GetPrefs("column4")));
+                    //with the queried table and corresponding name returned by the column index, get column's info
+                    column1EditText.Text = cData.GetString(cData.GetColumnIndex(c.GetColumnName(1)));
+                    column2EditText.Text = cData.GetString(cData.GetColumnIndex(c.GetColumnName(2)));
+                    column3EditText.Text = cData.GetString(cData.GetColumnIndex(c.GetColumnName(3)));
+                    column4EditText.Text = cData.GetString(cData.GetColumnIndex(c.GetColumnName(4)));
 
                 }     
             }
@@ -224,10 +235,17 @@ namespace Datafine
 
         private void SetField()
         {
-            column1EditText.Hint = GetPrefs("column1");
-            column2EditText.Hint = GetPrefs("column2");
-            column3EditText.Hint = GetPrefs("column3");
-            column4EditText.Hint = GetPrefs("column4");
+            //get instance of the db helper database
+            SQLiteOpenHelper sq = new DBHelper(this);
+            SQLiteDatabase column = sq.ReadableDatabase;
+            //query the selected table
+            string table = GetPrefs("SelectedTable");
+            ICursor c = column.Query(table, null, null, null, null, null, null);
+
+            column1EditText.Hint = c.GetColumnName(1);
+            column2EditText.Hint = c.GetColumnName(2);
+            column3EditText.Hint = c.GetColumnName(3);
+            column4EditText.Hint = c.GetColumnName(4);
         }
 
         //get the preference

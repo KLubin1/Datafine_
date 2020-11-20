@@ -5,6 +5,8 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Database;
+using Android.Database.Sqlite;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
@@ -32,23 +34,30 @@ namespace Datafine
             SupportActionBar.Title = "Table Description";
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
+            //get instance of the db helper database
+            SQLiteOpenHelper sq = new DBHelper(this);
+            SQLiteDatabase column = sq.ReadableDatabase;
+            //query the selected table
+            string table = Preferences.Get("SelectedTable", null);
+            ICursor c = column.Query(table, null, null, null, null, null, null);
+
             //set the columns name; column1 and column6 are reserved for the id and the date added respectively
             column1 = FindViewById<TextView>(Resource.Id.desc_column2);
-            column1.Text = Preferences.Get("column1", null) + " (TEXT, NOT NULL)";
+            column1.Text = c.GetColumnName(1) + " (TEXT, NOT NULL)";
 
             column2 = FindViewById<TextView>(Resource.Id.desc_column3);
-            column2.Text = Preferences.Get("column2", null) + " (TEXT, NOT NULL)";
+            column2.Text = c.GetColumnName(2) + " (TEXT, NOT NULL)";
 
             column3 = FindViewById<TextView>(Resource.Id.desc_column4);
-            column3.Text = Preferences.Get("column3", null) + " (TEXT, NOT NULL)";
+            column3.Text = c.GetColumnName(3) + " (TEXT, NOT NULL)";
 
             column4 = FindViewById<TextView>(Resource.Id.desc_column5);
-            column4.Text = Preferences.Get("column4", null) + " (TEXT, NOT NULL)";
+            column4.Text = c.GetColumnName(4) + " (TEXT, NOT NULL)";
 
 
             //set the table name
             tableName = FindViewById<TextView>(Resource.Id.desc_TableName);
-            tableName.Text = Preferences.Get("table_name", null);
+            tableName.Text = Preferences.Get("SelectedTable", null);
 
 
             //set the description

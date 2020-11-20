@@ -22,7 +22,6 @@ namespace Datafine
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
         //list that holds the list of databases
-        Button tableButton;
         TextView helloUser;
         TextView suchEmpty;
         IList<TableInfo> tableList = null;
@@ -56,7 +55,8 @@ namespace Datafine
             //tableButton = FindViewById<Button>(Resource.Id.tableButton);
             //launch the table view page
             //tableButton.Click += TableButtonLaunch;
-            //tableButton.LongClick += TableButtonDetails;
+
+            tableListView.ItemLongClick += TableDetails;
 
             //such empty
             suchEmpty = FindViewById<TextView>(Resource.Id.suchEmptyTable);
@@ -78,6 +78,12 @@ namespace Datafine
 
             LoadTables();
 
+        }
+
+        private void TableDetails(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+            var intent = new Intent(this, typeof(TableDescriptionPage));
+            StartActivity(intent);
         }
 
         //should perform as LoadEntries, but for tables
@@ -102,9 +108,12 @@ namespace Datafine
 
         //same as what was for the table
         private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-            {
-                // if the tablename is null, its empty, dont go to entries, it will crash
-                if (GetPrefs("table_name") != null)
+        {
+            //get the table selected and save it in a prefs
+            TableInfo table = tableList[e.Position];
+            SetPrefs("SelectedTable", table.tableName.ToString());
+            // if the tablename is null, its empty; dont go to entries, it will crash
+            if (table.tableName.ToString() != null || table.tableName.Length !=0)
                 {
                     //if the modififiable password flag is true, ask for password first
                     ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
@@ -121,15 +130,9 @@ namespace Datafine
                         var intent = new Intent(this, typeof(EntryViewPage));
                         StartActivity(intent);
                     }
-                }
-
-                //get the table selected and save it in a prefs
-            TableInfo table = tableList[e.Position];
-            SetPrefs("SelectedTable", table.tableName.ToString());
-
-
-            Toast.MakeText(this, "Table selected = " + table.tableName.ToString(), ToastLength.Short).Show();
             }
+
+        }
 
         public override void OnBackPressed()
         {
@@ -251,32 +254,6 @@ namespace Datafine
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
         }
-
-        public void TableButtonLaunch(object sender, EventArgs eventArgs)
-        {
-            // if the tablename is null, its empty, dont go to entries, it will crash
-            if(GetPrefs("table_name")  != null)
-            {
-                //if the modififiable password flag is true, ask for password first
-                ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
-                string password_viewable = prefs.GetString("set_password", null);
-                if (password_viewable == "3" || password_viewable == "4")
-                {
-                    //open dialog
-                    PasswordRequest request = new PasswordRequest();
-                    request.Show(SupportFragmentManager, "Password Request");
-                }
-                else
-                {
-                    //launch the table entry's page
-                    var intent = new Intent(this, typeof(EntryViewPage));
-                    StartActivity(intent);
-                }
-            }
-                //do nothing, just let the user know table is empty
-
-            
-        }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -284,12 +261,7 @@ namespace Datafine
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        //launch description page
-        private void TableButtonDetails(object o, View.LongClickEventArgs e)
-        {
-            var intent = new Intent(this, typeof(TableDescriptionPage));
-            StartActivity(intent);
-        }
+
 
         //get the preference
         private string GetPrefs(string name)
