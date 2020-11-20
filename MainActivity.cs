@@ -56,7 +56,7 @@ namespace Datafine
             //launch the table view page
             //tableButton.Click += TableButtonLaunch;
 
-            tableListView.ItemLongClick += TableDetails;
+            tableListView.ItemLongClick += TableDetails_ItemLongClick;
 
             //such empty
             suchEmpty = FindViewById<TextView>(Resource.Id.suchEmptyTable);
@@ -80,12 +80,7 @@ namespace Datafine
 
         }
 
-        private void TableDetails(object sender, AdapterView.ItemLongClickEventArgs e)
-        {
-            var intent = new Intent(this, typeof(TableDescriptionPage));
-            StartActivity(intent);
-        }
-
+       
         //should perform as LoadEntries, but for tables
         public void LoadTables()
         {
@@ -106,6 +101,7 @@ namespace Datafine
             tableListView.ItemClick += TableListView_ItemClick;
         }
 
+        
         //same as what was for the table
         private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
@@ -133,6 +129,16 @@ namespace Datafine
             }
 
         }
+
+        private void TableDetails_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+            //get the table selected and save it in a prefs
+            TableInfo table = tableList[e.Position];
+            SetPrefs("SelectedTable", table.tableName.ToString());
+            var intent = new Intent(this, typeof(TableDescriptionPage));
+            StartActivity(intent);
+        }
+
 
         public override void OnBackPressed()
         {

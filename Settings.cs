@@ -115,8 +115,8 @@ namespace Datafine
 
         public override void OnBackPressed()
         {
-            //Finish();
-            StartActivity(typeof(MainActivity));
+            Finish();
+            //StartActivity(typeof(MainActivity));
         }
 
     }
