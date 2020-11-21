@@ -213,8 +213,15 @@ namespace Datafine
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
-            
-
+            string actionKey = null;
+            /*
+            * Quick Reference for NavDrawers' ActionKey:
+            * 1 - Delete
+            * 2 - Upload
+            * 3 - Download
+            * 4 - Share
+            * 5 - Export
+            */
             int id = item.ItemId;
 
 
@@ -228,27 +235,33 @@ namespace Datafine
             else if (id == Resource.Id.nav_delete)
             {
                 //handle the delete action
-                Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
+                actionKey = "1";
+                //StartActivity(typeof(TableModifyPage));
+                //Toast.MakeText(this, "Delete", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_upload)
             {
+                actionKey = "2";
                 //handle the upload action
-                Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
+                Toast.MakeText(this, "Upload", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_download)
             {
+                actionKey = "3";
                 //handle the download action
-                Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
+                Toast.MakeText(this, "Download", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_share)
             {
+                actionKey = "4";
                 //handle the share action
-                Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
+                Toast.MakeText(this, "Share", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_export)
             {
+                actionKey = "5";
                 //handle the export action
-                Toast.MakeText(this, "Under Construction", ToastLength.Short).Show();
+                Toast.MakeText(this, "Export", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_setting)
             {
@@ -256,8 +269,13 @@ namespace Datafine
                 StartActivity(typeof(Settings));
             }
 
+
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
+
+            SetPrefs("action_key", actionKey);
+            StartActivity(typeof(TableModifyPage));
+
             return true;
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

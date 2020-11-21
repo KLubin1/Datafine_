@@ -18,6 +18,7 @@
     <activity android:label="TableCreation" android:name="crc64ccef0fc746faa48b.TableCreation" />
     <activity android:label="TableCreation2" android:name="crc64ccef0fc746faa48b.TableCreation2" />
     <activity android:label="TableDescriptionPage" android:name="crc64ccef0fc746faa48b.TableDescriptionPage" />
+    <activity android:label="TableModifyPage" android:name="crc64ccef0fc746faa48b.TableModifyPage" />
     <activity android:label="DatabaseView" android:name="crc64ccef0fc746faa48b.TableView" />
     <activity android:label="@string/app_name" android:theme="@style/AppTheme.NoActionBar" android:name="crc64ccef0fc746faa48b.MainActivity" />
     <activity android:label="TableViewPage" android:name="crc64ccef0fc746faa48b.EntryViewPage" />

@@ -428,3 +428,5 @@ C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\stamp\_Generate
 C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\Datafine.csprojAssemblyReference.cache
+C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\res\layout\table_list_modify_layout.xml
+C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\android\src\crc64ccef0fc746faa48b\TableModifyPage.java

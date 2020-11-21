@@ -73,6 +73,7 @@
     <Compile Include="TableInfo.cs" />
     <Compile Include="TableDescriptionPage.cs" />
     <Compile Include="EntryListAdapter.cs" />
+    <Compile Include="TableModifyPage.cs" />
     <Compile Include="TableView.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="MainActivity.cs" />
@@ -289,6 +290,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-v21\baseline_more_vert_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\table_list_modify_layout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

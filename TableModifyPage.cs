@@ -1,0 +1,129 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Support.V7.App;
+using Android.Views;
+using Android.Widget;
+using Xamarin.Essentials;
+using AlertDialog = Android.App.AlertDialog;
+
+namespace Datafine
+{
+    [Activity(Label = "TableModifyPage")]
+    public class TableModifyPage : AppCompatActivity
+    {
+        ListView listview;
+        IList<TableInfo> tables = null;
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.table_list_modify_layout);
+
+            //set the toolbar
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
+            //the title will be set according to action key, which wil require an eval of action key
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+            listview = FindViewById<ListView>(Resource.Id.tableModify_ListView);
+
+            //inflate the tables
+            DBHelper dbVals = new DBHelper(this);
+            //load data
+            tables = dbVals.GetAllTables();
+
+            //set the list adapter
+            listview.Adapter = new TableViewAdapter(this, tables);
+
+            //long click event for items in list
+            listview.ItemClick += OnClickByActionKey;
+
+        }
+
+        private void OnClickByActionKey(object o, AdapterView.ItemClickEventArgs e)
+        {
+
+            //this will get the string key for a certain set of actions through this switch statement
+            /*
+             * Quick Reference for NavDrawers' ActionKey:
+             * 1 - Delete
+             * 2 - Upload
+             * 3 - Download
+             * 4 - Share
+             * 5 - Export
+             * Don't forget to reset the key after an item is clicked.
+             */
+
+            string actionKey = GetPrefs("action_key");
+
+            switch (actionKey)
+            {
+                case "1":
+                    //delete
+                    SupportActionBar.Title = "Select a Table";
+                    var selectedItem = tables[e.Position];
+                    DBHelper db = new DBHelper(this);
+                    //alert dialog to confirm and execute deletion
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    AlertDialog confirm = builder.Create();
+                    confirm.SetTitle("Confirm Deletion");
+                    confirm.SetMessage("You are about to delete an entire table. Are you sure?");
+                    confirm.SetButton("Yes", (sender, ev) =>
+                    {
+                        //get the position of the deletion was called and delete the view, then finally, delete the actual entry
+                        var poldel = sender;
+
+                        tables.Remove(selectedItem);
+
+                        db.DeleteTable(selectedItem.tableName.ToString());
+                        // NotifyDataSetChanged();
+
+                        StartActivity(typeof(MainActivity));
+                        Toast.MakeText(this, "Table Deleted Succesfully!", ToastLength.Long).Show();
+
+                    });
+                    confirm.SetButton2("Nope", (sender, ev) =>
+                    {
+
+                    });
+
+                    confirm.Show();
+                    Toast.MakeText(this, "Delete", ToastLength.Short).Show();
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "5":
+                    break;
+                default:
+                    break;
+            }
+
+
+        }
+
+
+        //get the preference
+        private string GetPrefs(string name)
+        {
+            return Preferences.Get(name, null);
+        }
+
+        //get the preference
+        private void SetPrefs(string name, string value)
+        {
+            Preferences.Set(name, value);
+        }
+
+    }
+
+}

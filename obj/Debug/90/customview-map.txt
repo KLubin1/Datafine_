@@ -50,6 +50,7 @@ include;obj\Debug\90\res\layout\settings_layout.xml
 include;obj\Debug\90\res\layout\table_creation_page.xml
 include;obj\Debug\90\res\layout\table_creation_page2.xml
 include;obj\Debug\90\res\layout\table_description_layout.xml
+include;obj\Debug\90\res\layout\table_list_modify_layout.xml
 item;obj\Debug\90\res\drawable\splash_screen_logo.xml
 item;obj\Debug\90\res\menu\activity_main_drawer.xml
 item;obj\Debug\90\res\menu\command_control.xml
@@ -69,11 +70,13 @@ LinearLayout;obj\Debug\90\res\layout\settings_layout.xml
 LinearLayout;obj\Debug\90\res\layout\table_creation_page.xml
 LinearLayout;obj\Debug\90\res\layout\table_creation_page2.xml
 LinearLayout;obj\Debug\90\res\layout\table_description_layout.xml
+LinearLayout;obj\Debug\90\res\layout\table_list_modify_layout.xml
 LinearLayout;obj\Debug\90\res\layout\table_view_control_command.xml
 LinearLayout;obj\Debug\90\res\layout\tables_listview.xml
 ListPreference;obj\Debug\90\res\xml\settings_screen.xml
 ListView;obj\Debug\90\res\layout\content_main.xml
 ListView;obj\Debug\90\res\layout\entry_view_layout.xml
+ListView;obj\Debug\90\res\layout\table_list_modify_layout.xml
 menu;obj\Debug\90\res\menu\activity_main_drawer.xml
 menu;obj\Debug\90\res\menu\command_control.xml
 menu;obj\Debug\90\res\menu\menu_main.xml

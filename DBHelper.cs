@@ -377,10 +377,10 @@ namespace Datafine
 
         }
 
-        public void DeleteTable(SQLiteDatabase db)
+        public void DeleteTable(string table)
         {
-            string tableName = GetPrefs("SelectedTable");
-            db.ExecSQL("DROP TABLE IF EXISTS " + tableName);
+            SQLiteDatabase db = this.ReadableDatabase;
+            db.ExecSQL("DROP TABLE IF EXISTS " + table);
         }
 
         private static void SetPrefs(string name, string value)
