@@ -145,11 +145,25 @@ namespace Datafine
             return Preferences.Get(name, null);
         }
 
-        //get the preference
+        //set the preference
         private void SetPrefs(string name, string value)
         {
             Preferences.Set(name, value);
         }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
+
 
     }
 

@@ -1,1 +1,11 @@
-<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android"><TextView android:text="TableName" android:layout_width="match_parent" android:layout_height="wrap_content" android:minWidth="25px" android:minHeight="25px" android:textSize="20dp" android:id="@+id/tableListview_name" android:textStyle="bold" /><TextView android:text="Description" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/tableListview_description" /><TextView android:text="DateAdded" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/tableListview_dateAdded" /></LinearLayout>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android"><TextView android:text="TableName" android:layout_width="match_parent" android:layout_height="wrap_content" android:minWidth="25px" android:minHeight="25px" android:textSize="20dp" android:id="@+id/tableListview_name" android:textStyle="bold" /><!--Commented out until I can figure out how to implement--><!--  <TextView
+        android:text="Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableListview_description" />
+
+    <TextView
+        android:text="DateAdded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableListview_dateAdded" />--></LinearLayout>

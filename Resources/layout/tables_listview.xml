@@ -14,7 +14,8 @@
        android:id="@+id/tableListview_name"
        android:textStyle="bold"/>
 
-    <TextView
+    <!--Commented out until I can figure out how to implement-->
+  <!--  <TextView
         android:text="Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,6 +25,6 @@
         android:text="DateAdded"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tableListview_dateAdded" />
+        android:id="@+id/tableListview_dateAdded" />-->
 
 </LinearLayout>

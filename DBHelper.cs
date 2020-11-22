@@ -23,23 +23,6 @@ namespace Datafine
         //database version
         private const int DATABASE_VERSION = 1;
 
-        /*private static string tableName = GetPrefs("table_name");
-        private static string column1 = GetPrefs("column1");
-        private static string column2 = GetPrefs("column2");
-        private static string column3 = GetPrefs("column3");
-        private static string column4 = GetPrefs("column4");
-*/
-
-       /* readonly string createTable =
-            "CREATE TABLE IF NOT EXISTS " + tableName + " (" +
-            "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            column1 + " TEXT NOT NULL, " +
-            column2 + " TEXT NOT NULL, " +
-            column3 + " TEXT NOT NULL, " +
-            column4 + " TEXT NOT NULL, " +
-            "DateAdded TEXT NOT NULL)"
-            ;*/
-
         public DBHelper(Context c) : base(c, DATABASE_NAME, null, DATABASE_VERSION)
         {
 
@@ -49,7 +32,6 @@ namespace Datafine
         //create table
         public override void OnCreate(SQLiteDatabase db)
         {
-
 
             string tableName = GetPrefs("table_name");
             string column1 = GetPrefs("column1");
@@ -73,9 +55,6 @@ namespace Datafine
         }
 
 
-       
-
-
         //upgrade version of table by dropping it and recreating it
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
@@ -89,12 +68,6 @@ namespace Datafine
         {
             SQLiteDatabase db = this.ReadableDatabase;
 
-            /*string tableName = GetPrefs("table_name");
-            string column1 = GetPrefs("column1");
-            string column2 = GetPrefs("column2");
-            string column3 = GetPrefs("column3");
-            string column4 = GetPrefs("column4");
-*/
             //get the selected table
             string table = GetPrefs("SelectedTable");
             //get said table from query...
@@ -102,7 +75,6 @@ namespace Datafine
             //...to retrieve said table's column names
             string[] columns = tableCursor.GetColumnNames();
             
-
 
             //now assemble the main query with the selected table name and columns
             ICursor c = db.Query(table, columns, null, null, null, null, null); //can organize the retrieval with any values or way here
@@ -161,8 +133,6 @@ namespace Datafine
             db.Close();
             return contacts;
         }
-
-
 
 
          //retrieve entries based off of a search location or term
@@ -397,7 +367,7 @@ namespace Datafine
 
         //Table methods
 
-        public void CreateNewTable(SQLiteDatabase db) //this db will have to point to this database somehow in order for it to work
+        public void CreateNewTable(SQLiteDatabase db)
         {
             OnCreate(db);
         }
@@ -421,6 +391,11 @@ namespace Datafine
             c.Close();
             db.Close();
             return tables;
+        }
+
+        public void CreateTableInfoTable()
+        {
+           
         }
 
     }

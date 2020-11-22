@@ -65,32 +65,6 @@ namespace Datafine
             ISharedPreferencesEditor editor = sharedPreferences.Edit();
             editor.PutBoolean("UpgradeFlag", false);
 
-
-            //ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
-            //string searchTerm = prefs.GetString("search_type", "1");
-
-            /*switch (searchTerm)
-            {
-                case "2":
-                    //tSetting("search_type", "2");
-                    Toast.MakeText(Application.Context, "Search Term is set to Location", ToastLength.Short).Show(); ;
-                    break;
-                case "3":
-                    //tSetting("search_type", "3");
-                    Toast.MakeText(this, "Search Term is set to Age", ToastLength.Short).Show(); ;
-                    break;
-                case "4":
-                    //tSetting("search_type", "4");
-                    Toast.MakeText(this, "Search Term is set to Id", ToastLength.Short).Show();
-                    break;
-
-                default:
-                    Toast.MakeText(this, "Search Term is set to Name", ToastLength.Short).Show();
-                    break;
-
-
-            }*/
-
         }
 
         private void Cc_ContextMenuCreated(object sender, View.CreateContextMenuEventArgs e)
@@ -247,7 +221,7 @@ namespace Datafine
             
             DBHelper dbVals = new DBHelper(this);
             string searchTerm = e.NewText.ToString();
-            //switch between the name, location, age and id(for experimental purposes) search basis; by default its based on name
+            //switch between the columns searchTerm; by default it's based on column1
             switch (searchType)
             {
                 case "1":

@@ -236,32 +236,26 @@ namespace Datafine
             {
                 //handle the delete action
                 actionKey = "1";
-                //StartActivity(typeof(TableModifyPage));
-                //Toast.MakeText(this, "Delete", ToastLength.Short).Show();
             }
             else if (id == Resource.Id.nav_upload)
             {
-                actionKey = "2";
                 //handle the upload action
-                Toast.MakeText(this, "Upload", ToastLength.Short).Show();
+                actionKey = "2";
             }
             else if (id == Resource.Id.nav_download)
             {
-                actionKey = "3";
                 //handle the download action
-                Toast.MakeText(this, "Download", ToastLength.Short).Show();
+                actionKey = "3";
             }
             else if (id == Resource.Id.nav_share)
             {
-                actionKey = "4";
                 //handle the share action
-                Toast.MakeText(this, "Share", ToastLength.Short).Show();
+                actionKey = "4";
             }
             else if (id == Resource.Id.nav_export)
             {
-                actionKey = "5";
                 //handle the export action
-                Toast.MakeText(this, "Export", ToastLength.Short).Show();
+                actionKey = "5";
             }
             else if (id == Resource.Id.nav_setting)
             {

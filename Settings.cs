@@ -38,33 +38,6 @@ namespace Datafine
             SettingsFragment sf = new SettingsFragment();
             FragmentTransaction fm = FragmentManager.BeginTransaction();
             fm.Replace(Resource.Id.pref_container, sf).Commit();
-
-
-
-            //test out search term change effect
-           /* string searchTerm = GetSetting("search_type");
-
-            switch (searchTerm)
-            {
-                case "2":
-                    Toast.MakeText(this, "Search Term is set to Location", ToastLength.Short).Show();
-                    break;
-                case "3":
-                    Toast.MakeText(this, "Search Term is set to Age", ToastLength.Short).Show();
-                    break;
-                case "4":
-                    Toast.MakeText(this, "Search Term is set to Id", ToastLength.Short).Show();
-                    break;
-
-                default:
-                    Toast.MakeText(this, "Search Term is set to Name", ToastLength.Short).Show();
-                    break;
-
-
-            }*/
-            //createPassword = FindPreference("create_password");
-
-            //createPassword.PreferenceClick += CreatePassword_PreferenceClick;
         }
 
         private void CreatePassword_PreferenceClick(object sender, Preference.Preference.PreferenceClickEventArgs e)
