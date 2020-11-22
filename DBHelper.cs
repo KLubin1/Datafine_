@@ -406,7 +406,7 @@ namespace Datafine
         public IList<TableInfo> GetAllTables()
         {
             SQLiteDatabase db = this.ReadableDatabase;
-            ICursor c = db.RawQuery("SELECT name FROM sqlite_master WHERE type='table'", null); //will return the names of table
+            ICursor c = db.RawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name IS NOT 'sqlite_sequence' AND name IS NOT 'android_metadata'", null); //will return the names of table; exclue the system reserved tables from the query
 
             var tables = new List<TableInfo>();
 

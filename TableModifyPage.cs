@@ -29,6 +29,7 @@ namespace Datafine
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             //the title will be set according to action key, which wil require an eval of action key
+            SetToolbarTitle();
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             listview = FindViewById<ListView>(Resource.Id.tableModify_ListView);
@@ -111,6 +112,32 @@ namespace Datafine
 
         }
 
+        private void SetToolbarTitle()
+        {
+            string actionKey = GetPrefs("action_key");
+
+            switch (actionKey)
+            {
+                case "1":
+                    SupportActionBar.Title = "Delete Table";
+                    break;
+                case "2":
+                    SupportActionBar.Title = "Upload Tables";
+                    break;
+                case "3":
+                    SupportActionBar.Title = "Download Tables";
+                    break;
+                case "4":
+                    SupportActionBar.Title = "Share Tables";
+                    break;
+                case "5":
+                    SupportActionBar.Title = "Export Tables";
+                    break;
+                default:
+                    SupportActionBar.Title = "?";
+                    break;
+            }
+        }
 
         //get the preference
         private string GetPrefs(string name)
