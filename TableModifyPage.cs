@@ -67,7 +67,6 @@ namespace Datafine
             {
                 case "1":
                     //delete
-                    SupportActionBar.Title = "Select a Table";
                     var selectedItem = tables[e.Position];
                     DBHelper db = new DBHelper(this);
                     //alert dialog to confirm and execute deletion

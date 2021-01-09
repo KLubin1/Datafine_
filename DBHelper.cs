@@ -30,28 +30,47 @@ namespace Datafine
 
 
         //create table
+        //on a completely clean install, this will crash on start MainActivity. Need to prevent this from running at first run, or make a dummmy table
         public override void OnCreate(SQLiteDatabase db)
         {
+            ISharedPreferences prefs = Application.Context.GetSharedPreferences("loggingSession", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = prefs.Edit();
+            bool firstStart = prefs.GetBoolean("firstStart", false);
 
-            string tableName = GetPrefs("table_name");
-            string column1 = GetPrefs("column1");
-            string column2 = GetPrefs("column2");
-            string column3 = GetPrefs("column3");
-            string column4 = GetPrefs("column4");
-
-
-            string createTable =
-            "CREATE TABLE IF NOT EXISTS " + tableName + " (" +
-            "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            column1 + " TEXT NOT NULL, " +
-            column2 + " TEXT NOT NULL, " +
-            column3 + " TEXT NOT NULL, " +
-            column4 + " TEXT NOT NULL, " +
-            "DateAdded TEXT NOT NULL)"
-            ;
+            if (firstStart == false)
+            {
+                string tableName = GetPrefs("table_name");
+                string column1 = GetPrefs("column1");
+                string column2 = GetPrefs("column2");
+                string column3 = GetPrefs("column3");
+                string column4 = GetPrefs("column4");
 
 
-            db.ExecSQL(createTable);
+                string createTable =
+                "CREATE TABLE IF NOT EXISTS " + tableName + " (" +
+                "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                column1 + " TEXT NOT NULL, " +
+                column2 + " TEXT NOT NULL, " +
+                column3 + " TEXT NOT NULL, " +
+                column4 + " TEXT NOT NULL, " +
+                "DateAdded TEXT NOT NULL)"
+                ;
+
+
+                db.ExecSQL(createTable);
+
+
+            }
+
+            else
+            {
+                editor.PutBoolean("firstStart", false);
+                editor.Apply();
+            }
+                
+            
+
+            //otherwise make a dummy table?
         }
 
 
@@ -391,11 +410,6 @@ namespace Datafine
             c.Close();
             db.Close();
             return tables;
-        }
-
-        public void CreateTableInfoTable()
-        {
-           
         }
 
     }

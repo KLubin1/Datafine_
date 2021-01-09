@@ -51,30 +51,10 @@ namespace Datafine
             //listView
             tableListView = FindViewById<ListView>(Resource.Id.tableListViewMain);
 
-            //button for table launch simulation
-            //tableButton = FindViewById<Button>(Resource.Id.tableButton);
-            //launch the table view page
-            //tableButton.Click += TableButtonLaunch;
-
             tableListView.ItemLongClick += TableDetails_ItemLongClick;
 
             //such empty
             suchEmpty = FindViewById<TextView>(Resource.Id.suchEmptyTable);
-
-            if (GetPrefs("table_name") == null)
-            {
-                //tableButton.Visibility = ViewStates.Invisible;
-                suchEmpty.Visibility = ViewStates.Visible;
-            }
-
-            else
-            {
-                //tableButton.Visibility = ViewStates.Visible;
-                suchEmpty.Visibility = ViewStates.Invisible;
-            }
-
-
-            //tableButton.Text = GetPrefs("table_name");
 
             LoadTables();
 
@@ -88,7 +68,7 @@ namespace Datafine
             //load data
             tableList = dbVals.GetAllTables();
 
-            if (tableList.Count == 0)
+            if (tableList.Count == 2) //because of the 2 system-reserved tables
             {
                 //add a message saying the database is empty; make a entry to start 
                 suchEmpty.Visibility = ViewStates.Visible;
@@ -108,7 +88,7 @@ namespace Datafine
             //get the table selected and save it in a prefs
             TableInfo table = tableList[e.Position];
             SetPrefs("SelectedTable", table.tableName.ToString());
-            // if the tablename is null, its empty; dont go to entries, it will crash
+            // if the null, itablename is ts empty; dont go to entries, it will crash
             if (table.tableName.ToString() != null || table.tableName.Length !=0)
                 {
                     //if the modififiable password flag is true, ask for password first
@@ -292,6 +272,7 @@ namespace Datafine
         {
             Preferences.Set(name, value);
         }
+
     }
 }
 

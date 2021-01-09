@@ -1,0 +1,18 @@
+******Preference Key References*******
+*"SelectedTable" - Holds and returns the table name of the clicked or longcliked listview item
+*"table_name"  - Holds and returns the table name that the user just put when they created a new table. Only valid for newly created tables.
+*"column1"  - Holds and returns the column1 name that the user just put when they created a new table. Only valid for newly created tables.
+*"column2"  - Holds and returns the column2 name that the user just put when they created a new table. Only valid for newly created tables.
+*"column3"  - Holds and returns the column3 name that the user just put when they created a new table. Only valid for newly created tables.
+*"column4"  - Holds and returns the column4 name that the user just put when they created a new table. Only valid for newly created tables.
+*"table_description"  - Holds and returns the table description that the user just put when they created a new table. Only valid for newly created tables.
+*"table_created"  - Holds and returns the table creation timestamp. Only valid for newly created tables.
+*[name of the table] + "_table_desrciption"  - Holds and returns the table description pertinent to the passed in table name for futher use in the app. There is one of these for every table created.
+*[name of the table] + "_table_created"  - Holds and returns the table creation timestamp pertinent to the passed in table name for futher use in the app. There is one of these for every table created.
+*"action_key"  - Holds and returns the number for action behavioir for nav drawer functions.
+*"set_password"  -  Holds and returns the string number for the password setting for any of the 3 options (editing, viewing, editinag and viewing)
+*"hello_user"  - Holds and returns the name that the user placed when they logged in. 
+
+
+*"loggedIn" - From the "logging session" file, holds whether the user is logged in or not"
+*"firstStart" - From the "logging session" file, holds whether this is the first time app is being launched. Note: the app must be on a fresh install state for this to work properly

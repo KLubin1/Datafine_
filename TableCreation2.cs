@@ -67,7 +67,9 @@ namespace Datafine
                 SetPrefs("column2", column2.Text);
                 SetPrefs("column3", column3.Text);
                 SetPrefs("column4", column4.Text);
-                SetPrefs("table_created", now.ToString());
+                //get table name 
+                string tableName = GetPrefs("table_name");
+                SetPrefs(tableName + "_table_created", now.ToString());
 
                 //reset prefs
                 ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);

@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.cs" />
+    <Compile Include="IPrefs.cs" />
     <Compile Include="TableListAdapter.cs" />
     <Compile Include="EntryCreation.cs" />
     <Compile Include="LoginScreen.cs" />

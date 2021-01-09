@@ -50,9 +50,10 @@ namespace Datafine
                 convertView = mInflater.Inflate(Resource.Layout.tables_listview, null);
                 holder = new TableViewHolder();
 
+                //set to view
                 holder.tableName = convertView.FindViewById<TextView>(Resource.Id.tableListview_name);
-                //holder.description = convertView.FindViewById<TextView>(Resource.Id.tableListview_description);
-                //holder.dateAdded = convertView.FindViewById<TextView>(Resource.Id.tableListview_dateAdded);
+                holder.description = convertView.FindViewById<TextView>(Resource.Id.tableListview_description);
+                holder.dateAdded = convertView.FindViewById<TextView>(Resource.Id.tableListview_dateAdded);
 
                 convertView.Tag = holder;
             }
@@ -64,8 +65,8 @@ namespace Datafine
             //set the data
             //seting the table is easy enough, but somehow i need to save the corresponding description and table... It cant be the same as retriving them from a table
             holder.tableName.Text = tableList[position].tableName.ToString();
-            //holder.dateAdded.Text = Preferences.Get("table_created", null);
-            //holder.description.Text = Preferences.Get("table_description", null);
+            holder.dateAdded.Text = Preferences.Get(tableList[position].tableName.ToString() + "_table_created", null);
+            holder.description.Text = Preferences.Get(tableList[position].tableName.ToString() + "_table_description", null);
 
             return convertView;
         }

@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{434F923A-A429-4447-BE5A-3162483BDFAC}"
 	ProjectSection(SolutionItems) = preProject
 		NTS.txt = NTS.txt
+		PrefsKeys.txt = PrefsKeys.txt
 	EndProjectSection
 EndProject
 Global

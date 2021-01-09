@@ -63,7 +63,7 @@ namespace Datafine
             //set the description
             tableDescription = FindViewById<TextView>(Resource.Id.desc_ownerDescription);
             
-            tableDescription.Text = Preferences.Get("table_description", null);
+            tableDescription.Text = Preferences.Get(table + "_table_description", null);
 
             //if there wasnt an decription add some filler text
             if(tableDescription.Text.Length == 0)
@@ -73,7 +73,7 @@ namespace Datafine
 
             //set the real table creation time
             dateAdded = FindViewById<TextView>(Resource.Id.desc_dateAdded);
-            dateAdded.Text = Preferences.Get("table_created", null);
+            dateAdded.Text = Preferences.Get(table + "_table_created", null);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

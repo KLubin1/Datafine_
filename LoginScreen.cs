@@ -46,6 +46,8 @@ namespace Datafine
             ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("loggingSession", FileCreationMode.Private);
             ISharedPreferencesEditor editor = sharedPreferences.Edit();
 
+            editor.PutBoolean("firstStart", true);
+
             /*if (CredentialsAreValid())
             {
                 Toast.MakeText(this, "Login Successful!", ToastLength.Short).Show();

@@ -47,25 +47,30 @@ namespace Datafine
         private void DoneButton_Click(object sender, EventArgs e)
         {
             //put the names into the preference and retrieve them
-            if (tableName.Text.Length != 0 || tableDescription.Text.Length != 0)
+            if (tableName.Text.Length != 0)
             {
                 FixInput();
                 SetPrefs("table_name", tableName.Text);
-                SetPrefs("table_description", tableDescription.Text);
+               
             }
             else
             {
-                Toast.MakeText(this, "Table Name and Description can't be empty!", ToastLength.Short).Show();
+                Toast.MakeText(this, "Table name can't be empty!", ToastLength.Short).Show();
+            }
+
+            if(tableDescription.Text.Length != 0)
+            {
+                //set the description according to table name
+                SetPrefs(tableName.Text + "_table_description", tableDescription.Text);
+            }
+            else
+            {
+                //set to default "no description"
+                SetPrefs(tableName.Text + "_table_description", "No description added");
             }
 
             Intent intent = new Intent(this, typeof(TableCreation2));
             StartActivity(intent);
-
-            /*string getTableName = GetPrefs("table_name");
-            string getTableDescription = GetPrefs("table_description");
-            //affirm it's working
-            Toast.MakeText(this, "TableName: " + getTableName + "\nTableDescription: " + getTableDescription, ToastLength.Long).Show();
-*/
 
         }
 
