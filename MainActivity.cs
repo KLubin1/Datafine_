@@ -68,8 +68,8 @@ namespace Datafine
             //load data
             tableList = dbVals.GetAllTables();
 
-            if (tableList.Count == 2) //because of the 2 system-reserved tables
-            {
+            if (tableList.Count == 0)
+            { 
                 //add a message saying the database is empty; make a entry to start 
                 suchEmpty.Visibility = ViewStates.Visible;
             }

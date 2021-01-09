@@ -56,21 +56,26 @@ namespace Datafine
                 "DateAdded TEXT NOT NULL)"
                 ;
 
-
                 db.ExecSQL(createTable);
-
-
             }
 
             else
+            //otherwise make a dummy table?
             {
+                string createTable =
+                  "CREATE TABLE IF NOT EXISTS DummyTable " +
+                  "(Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                  "Column1 TEXT NOT NULL, " +
+                  "Column2 TEXT NOT NULL, " +
+                  "Column3 TEXT NOT NULL, " +
+                  "Column4 TEXT NOT NULL, " +
+                  "FirstInstall TEXT NOT NULL)";
+
+                  db.ExecSQL(createTable);
+
                 editor.PutBoolean("firstStart", false);
                 editor.Apply();
             }
-                
-            
-
-            //otherwise make a dummy table?
         }
 
 
@@ -394,8 +399,9 @@ namespace Datafine
         //retieve list of tables
         public IList<TableInfo> GetAllTables()
         {
+            //AND name IS NOT 'sqlite_sequence' AND name IS NOT 'android_metadata' AND name IS NOT 'DummyTable'
             SQLiteDatabase db = this.ReadableDatabase;
-            ICursor c = db.RawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name IS NOT 'sqlite_sequence' AND name IS NOT 'android_metadata'", null); //will return the names of table; exclue the system reserved tables from the query
+            ICursor c = db.RawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name IS NOT 'sqlite_sequence' AND name IS NOT 'android_metadata' AND name IS NOT 'DummyTable'", null); //will return the names of table; exclue the system reserved tables from the query
 
             var tables = new List<TableInfo>();
 
