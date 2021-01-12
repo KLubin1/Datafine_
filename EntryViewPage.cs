@@ -257,10 +257,15 @@ namespace Datafine
         //for the back button toolbar and the other toolbar options
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+            //clear all previous views so that MainActivity is the only open activity
+
+            var intent = new Intent(this, typeof(MainActivity));
+            intent.SetFlags(ActivityFlags.ClearTop);
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
                     Finish();
+                    StartActivity(intent);
                     return true;
 
                 case Resource.Id.action_settings:
@@ -272,7 +277,8 @@ namespace Datafine
                     return true;
 
                 case Resource.Id.action_home:
-                    StartActivity(typeof(MainActivity));
+                    Finish();
+                    StartActivity(intent);
                     return true;
                 default:
                     return base.OnOptionsItemSelected(item);

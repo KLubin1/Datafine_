@@ -214,14 +214,16 @@ namespace Datafine
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-
+                    //
                     Finish();
+                    StartActivity(typeof(EntryViewPage));
                     return true;
 
                 default:
                     return base.OnOptionsItemSelected(item);
             }
         }
+
 
         public void CloseKeyboard()
         {
