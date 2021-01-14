@@ -1,6 +1,8 @@
 @string/appbar_scrolling_view_behavior;obj\Debug\90\res\layout\content_main.xml
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
+androidx.appcompat.widget.AppCompatSpinner;obj\Debug\90\res\layout\table_creation_page2.xml
+androidx.appcompat.widget.AppCompatTextView;obj\Debug\90\res\layout\table_creation_page2.xml
 androidx.appcompat.widget.Toolbar;obj\Debug\90\res\layout\toolbar.xml
 androidx.coordinatorlayout.widget.CoordinatorLayout;obj\Debug\90\res\layout\app_bar_main.xml
 androidx.coordinatorlayout.widget.CoordinatorLayout;obj\Debug\90\res\layout\entry_view_layout.xml
@@ -57,6 +59,7 @@ item;obj\Debug\90\res\menu\command_control.xml
 item;obj\Debug\90\res\menu\menu_main.xml
 item;obj\Debug\90\res\values\array.xml
 item;obj\Debug\90\res\values\drawables.xml
+item;obj\Debug\90\res\values\strings.xml
 item;obj\Debug\90\res\values\styles.xml
 item;obj\Debug\90\res\values-v21\styles.xml
 layer-list;obj\Debug\90\res\drawable\splash_screen_logo.xml
@@ -105,12 +108,15 @@ SearchView;obj\Debug\90\res\layout\table_view_control_command.xml
 shape;obj\Debug\90\res\drawable\side_nav_bar.xml
 string;obj\Debug\90\res\values\strings.xml
 string-array;obj\Debug\90\res\values\array.xml
+string-array;obj\Debug\90\res\values\strings.xml
 style;obj\Debug\90\res\values\styles.xml
 style;obj\Debug\90\res\values-v21\styles.xml
 SwitchPreference;obj\Debug\90\res\xml\settings_screen.xml
 TableLayout;obj\Debug\90\res\layout\entries_listview.xml
+TableLayout;obj\Debug\90\res\layout\table_creation_page2.xml
 TableLayout;obj\Debug\90\res\layout\table_view_control_command.xml
 TableRow;obj\Debug\90\res\layout\entries_listview.xml
+TableRow;obj\Debug\90\res\layout\table_creation_page2.xml
 TableRow;obj\Debug\90\res\layout\table_view_control_command.xml
 TextView;obj\Debug\90\res\layout\about_layout.xml
 TextView;obj\Debug\90\res\layout\content_main.xml

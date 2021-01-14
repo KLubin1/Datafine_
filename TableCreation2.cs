@@ -14,6 +14,7 @@ using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
 using Xamarin.Essentials;
+using AlertDialog = Android.App.AlertDialog;
 
 namespace Datafine
 {
@@ -21,9 +22,10 @@ namespace Datafine
     public class TableCreation2 : AppCompatActivity
     {
         EditText column1, column2, column3, column4;
-        ImageButton doneButton;
+        ImageButton doneButton, domColInfo;
         LinearLayout view;
         DateTime now = DateTime.Now;
+        Spinner domCol;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -44,12 +46,36 @@ namespace Datafine
             column4 = FindViewById<EditText>(Resource.Id.tableCreate_Column4);
             doneButton = FindViewById<ImageButton>(Resource.Id.addTable_btnSave);
 
+            //for the dominant column info
+            domColInfo = FindViewById<ImageButton>(Resource.Id.tableCreate_dom_col_info);
+            domColInfo.Click += DomColInfo_Click;
+
             //for the snackbar
             view = FindViewById<LinearLayout>(Resource.Id.tableCreation_view);
 
+            //for the dominant column selector 
+            domCol = FindViewById<Spinner>(Resource.Id.tableCreate_domColSpinner);
+            domCol.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(SpinnerSelected);
+            var adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.DominantColumns, Android.Resource.Layout.SimpleSpinnerItem);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            domCol.Adapter = adapter;
 
             doneButton.Click += DoneButton_Click;
 
+        }
+
+        private void DomColInfo_Click(object sender, EventArgs e)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog confirm = builder.Create();
+            confirm.SetTitle("Set Dominant Column");
+            confirm.SetMessage(GetString(Resource.String.Dominant_Columnn_Info));
+            confirm.SetButton("Got it!", (sender2, ev) =>
+            {
+             
+            });
+
+            confirm.Show();
         }
 
         private void DoneButton_Click(object sender, EventArgs e)
@@ -76,15 +102,21 @@ namespace Datafine
                 var editor = sharedPreferences.Edit();
                 editor.PutBoolean("UpgradeFlag", false);
 
-
                 //call CreateNewTable
                 CreateNewTable();
                 //Toast
                 Toast.MakeText(this, "New Table Created!", ToastLength.Short).Show();
+                Toast.MakeText(this, "Dominant Column is: " + GetPrefs("dom_col"), ToastLength.Short).Show();
                 //launch main page
                 StartActivity(typeof(MainActivity));
-
             }
+        }
+
+        private void SpinnerSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            //handle and set the dominant column prefs for further processing in the entry list adapter
+            Spinner spinner = (Spinner)sender;
+            SetPrefs("dom_col", spinner.GetItemAtPosition(e.Position).ToString());
         }
 
 

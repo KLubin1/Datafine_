@@ -13,6 +13,7 @@
 *"set_password"  -  Holds and returns the string number for the password setting for any of the 3 options (editing, viewing, editinag and viewing)
 *"hello_user"  - Holds and returns the name that the user placed when they logged in. 
 *"set password" - From the default preference file, holds the number(string) pertaining to one of the password options.
+"dom_col" - Holds which column the user selected as the dominant when they made their column
 
 
 *"loggedIn" - From the "logging session" file, holds whether the user is logged in or not"

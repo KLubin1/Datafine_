@@ -258,7 +258,6 @@ namespace Datafine
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             //clear all previous views so that MainActivity is the only open activity
-
             var intent = new Intent(this, typeof(MainActivity));
             intent.SetFlags(ActivityFlags.ClearTop);
             switch (item.ItemId)

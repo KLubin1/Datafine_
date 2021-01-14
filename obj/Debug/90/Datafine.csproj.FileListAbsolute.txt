@@ -430,3 +430,4 @@ C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\stamp\_ResolveL
 C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\Datafine.csprojAssemblyReference.cache
 C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\res\layout\table_list_modify_layout.xml
 C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\android\src\crc64ccef0fc746faa48b\TableModifyPage.java
+C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\res\drawable-v21\baseline_help_black_18dp.png
