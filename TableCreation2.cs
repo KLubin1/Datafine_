@@ -84,6 +84,7 @@ namespace Datafine
             //CloseKeyboard();
 
             //fix input to make sure there isnt any input that will crash the app
+            //But, if the user input only numbers, this will cause somewhat of a crash
             FixInput();
             //if there were no found errors, proceed
             if (TestInput() == true)
@@ -116,7 +117,10 @@ namespace Datafine
         {
             //handle and set the dominant column prefs for further processing in the entry list adapter
             Spinner spinner = (Spinner)sender;
-            SetPrefs("dom_col", spinner.GetItemAtPosition(e.Position).ToString());
+            //preface with the table name to set this setting to ecah unique table
+            Preferences.Remove("dom_col");
+            string table = Preferences.Get("table_name", null); //this will retrieve the table name that was just made
+            SetPrefs(table + "_dom_col", spinner.GetItemAtPosition(e.Position).ToString()); //set this setting for this table, eg: 'TestTable_dom_col'
         }
 
 
@@ -188,6 +192,27 @@ namespace Datafine
                 snackbar.Show();
                 testPassed = false;
               }
+            //if the columns have been replaced by being of onlu numbers
+            if(column1.Text == Regex.Replace(column1.Text, @"[0-9]+", "") ||
+            column2.Text == Regex.Replace(column2.Text, @"[0-9]+", "") ||
+            column3.Text == Regex.Replace(column3.Text, @"[0-9]+", "") ||
+            column4.Text == Regex.Replace(column4.Text, @"[0-9]+", ""))
+            {
+                Snackbar snackbar = Snackbar.Make(view, "Column names cannot be of only numbers or special characters!", Snackbar.LengthIndefinite);
+                snackbar.Show();
+                testPassed = false;
+            }
+
+            //if the columns have been replaced by special characters
+            //else if (column1.Text == Regex.Replace(column1.Text, @"[^0-9a-zA-Z\\s]+", "")||
+            //column2.Text == Regex.Replace(column2.Text, @"[^0-9a-zA-Z\\s]+", "")||
+            //column3.Text == Regex.Replace(column3.Text, @"[^0-9a-zA-Z\\s]+", "")||
+            //column4.Text == Regex.Replace(column4.Text, @"[^0-9a-zA-Z\\s]+", ""))
+            //{
+            //    Snackbar snackbar = Snackbar.Make(view, "Yeah... No.", Snackbar.LengthIndefinite);
+            //    snackbar.Show();
+            //    testPassed = false;
+            //}
 
             //if any of the previous conditions ocurred at any point, this will return false, and the create code will stop from being excuted
             //since the code will get called every click of the done button, this will get called and checked as many times as the input has an error
@@ -210,6 +235,15 @@ namespace Datafine
             column2.Text = Regex.Replace(column2.Text, @"\\s+", "_");
             column3.Text = Regex.Replace(column3.Text, @"\\s+", "_");
             column4.Text = Regex.Replace(column4.Text, @"\\s+", "_");
+
+            //replace only numbers
+            column1.Text = Regex.Replace(column1.Text, @"[0-9]+", "");
+            column2.Text = Regex.Replace(column2.Text, @"[0-9]+", "");
+            column3.Text = Regex.Replace(column3.Text, @"[0-9]+", "");
+            column4.Text = Regex.Replace(column4.Text, @"[0-9]+", "");
+
+
+            
 
         }
         public void CloseKeyboard()

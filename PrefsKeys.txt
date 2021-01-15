@@ -1,5 +1,6 @@
 ******Preference Key References*******
-*"SelectedTable" - Holds and returns the table name of the clicked or longcliked listview item
+#"table" - Holds the name given by the user to the table when it has just been created. Important note, this is used to set the settings for that table on new creation
+*"SelectedTable" - Holds and returns the table name of the clicked or longcliked listview item. Used for futher processing in app and for determining each individual table's settings 
 *"table_name"  - Holds and returns the table name that the user just put when they created a new table. Only valid for newly created tables.
 *"column1"  - Holds and returns the column1 name that the user just put when they created a new table. Only valid for newly created tables.
 *"column2"  - Holds and returns the column2 name that the user just put when they created a new table. Only valid for newly created tables.
@@ -13,7 +14,7 @@
 *"set_password"  -  Holds and returns the string number for the password setting for any of the 3 options (editing, viewing, editinag and viewing)
 *"hello_user"  - Holds and returns the name that the user placed when they logged in. 
 *"set password" - From the default preference file, holds the number(string) pertaining to one of the password options.
-"dom_col" - Holds which column the user selected as the dominant when they made their column
+*[name of the table] + _dom_col" - Holds which column the user selected as the dominant when they made their column
 
 
 *"loggedIn" - From the "logging session" file, holds whether the user is logged in or not"

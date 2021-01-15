@@ -10,6 +10,7 @@ using Android.Preferences;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Xamarin.Essentials;
 
 namespace Datafine
 {
@@ -139,6 +140,41 @@ namespace Datafine
             holder.column2.Text = tableList[position].column2.ToString();
             holder.column3.Text = tableList[position].column3.ToString();
             holder.column4.Text = tableList[position].column4.ToString();
+
+
+            //get and set the selected table's dominant column
+            string selTable = Preferences.Get("SelectedTable", null);
+            string selTableDomCol = Preferences.Get(selTable + "_dom_col", null);
+
+            //Size: 25, Style: bold
+            switch(selTableDomCol)
+            {
+                case ("Column1"):
+                    holder.column1.SetTextSize(Android.Util.ComplexUnitType.Sp, 20);
+                    holder.column1.SetTypeface(Android.Graphics.Typeface.Default, Android.Graphics.TypefaceStyle.Bold);
+                    break;
+                case ("Column2"):
+                    holder.column2.SetTextSize(Android.Util.ComplexUnitType.Sp, 20);
+                    holder.column2.SetTypeface(Android.Graphics.Typeface.Default, Android.Graphics.TypefaceStyle.Bold);
+                    break;
+                case ("Column3"):
+                    holder.column3.SetTextSize(Android.Util.ComplexUnitType.Sp, 20);
+                    holder.column3.SetTypeface(Android.Graphics.Typeface.Default, Android.Graphics.TypefaceStyle.Bold);
+                    break;
+                case ("Column4"):
+                    holder.column4.SetTextSize(Android.Util.ComplexUnitType.Sp, 20);
+                    holder.column4.SetTypeface(Android.Graphics.Typeface.Default, Android.Graphics.TypefaceStyle.Bold);
+                    break;
+                default:
+                    //column 1 is default
+                    holder.column1.SetTextSize(Android.Util.ComplexUnitType.Sp, 20);
+                    holder.column1.SetTypeface(Android.Graphics.Typeface.Default, Android.Graphics.TypefaceStyle.Bold);
+                    break;
+
+            }
+            
+
+            
 
             return convertView;
         }

@@ -14,7 +14,7 @@
   <string name="columnInfo5">Age (TEXT, NOT NULL) </string>
   <string name="columnInfo6">Date Added (TEXT, NOT NULL) [Auto]</string>
   <string name="Table_Description">First table of Datafine for building and testing. By no means official or even a real table.</string>
-  <string name="Dominant_Columnn_Info">The dominant column is the table column that will stand out on your entry to help you identify your entries quicker. The dominant column is in bold and in a bigger font</string>
+  <string name="Dominant_Columnn_Info">The dominant column is the table column that will stand out on your entry to help you identify your entries quicker. The dominant column is in bold and in a bigger font.</string>
   <string-array name="DominantColumns">
     <item>Column1</item>
     <item>Column2</item>

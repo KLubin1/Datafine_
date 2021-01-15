@@ -124,6 +124,7 @@ TextView;obj\Debug\90\res\layout\entries_listview.xml
 TextView;obj\Debug\90\res\layout\entry_view_layout.xml
 TextView;obj\Debug\90\res\layout\login_screen.xml
 TextView;obj\Debug\90\res\layout\nav_header_main.xml
+TextView;obj\Debug\90\res\layout\table_creation_page2.xml
 TextView;obj\Debug\90\res\layout\table_description_layout.xml
 TextView;obj\Debug\90\res\layout\table_view_control_command.xml
 TextView;obj\Debug\90\res\layout\tables_listview.xml
