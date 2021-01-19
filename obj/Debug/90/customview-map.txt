@@ -11,6 +11,7 @@ background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 bitmap;obj\Debug\90\res\drawable\splash_screen_logo.xml
 Button;obj\Debug\90\res\layout\login_screen.xml
+Button;obj\Debug\90\res\layout\table_creation_page2.xml
 cache-path;C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\lp\40\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\90\res\drawable\splash_screen_logo.xml
 color;obj\Debug\90\res\values\colors.xml
@@ -106,6 +107,7 @@ resources;obj\Debug\90\res\values-v21\styles.xml
 SearchView;obj\Debug\90\res\layout\entry_view_layout.xml
 SearchView;obj\Debug\90\res\layout\table_view_control_command.xml
 shape;obj\Debug\90\res\drawable\side_nav_bar.xml
+Spinner;obj\Debug\90\res\layout\table_creation_page2.xml
 string;obj\Debug\90\res\values\strings.xml
 string-array;obj\Debug\90\res\values\array.xml
 string-array;obj\Debug\90\res\values\strings.xml

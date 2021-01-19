@@ -186,7 +186,6 @@ namespace Datafine
                     column3 = c.GetString(3),
                     column4 = c.GetString(4),
                     dateAdded = c.GetString(5)
-
                 });
             }
 
@@ -246,12 +245,15 @@ namespace Datafine
 
             ICursor c = db.Query(table,columns, "upper(" + searchTermColumn + ") LIKE ?", new string[] { "%" + column4Term.ToUpper() + "%" }, null, null, null, null);
 
+
             var contacts = new List<EntryInfo>();
 
             while (c.MoveToNext())
             {
                 contacts.Add(new EntryInfo
                 {
+
+
                     id = c.GetInt(0),
                     column1 = c.GetString(1),
                     column2 = c.GetString(2),
@@ -418,5 +420,26 @@ namespace Datafine
             return tables;
         }
 
+        //will have to determine the type of function to get from the table depending on the type the user selected!
+        public dynamic GetFunction(string dataTypeSelected)
+        {
+            switch(dataTypeSelected)
+            {
+                case "TEXT":
+                    break;
+                case "INTEGER":
+                    break;
+                case "REAL":
+                    break;
+                case "BLOB":
+                    break;
+
+            }
+            string hey = "";
+            int heyo = 8;
+            float hio = 9.8f;
+            byte[] heyyy = {1,2,3 };           
+            return heyyy;
+        }
     }
 }

@@ -11,51 +11,102 @@
         android:layout_height="wrap_content"
         layout="@layout/toolbar"/>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <com.google.android.material.textfield.TextInputEditText
+        android:layout_height="wrap_content">
+         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tableCreate_Column1"
-            android:hint="Column1"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="278.9dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tableCreate_Column1"
+                    android:hint="Column1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="57.1dp"
+                android:id="@+id/tableCreate_dtSpinner1"/>
+        </TableRow>
+    </TableLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tableCreate_Column2"
-            android:hint="Column2"/>
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <com.google.android.material.textfield.TextInputEditText
+        android:layout_height="wrap_content">
+         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tableCreate_Column3"
-            android:hint="Column3"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="278.9dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tableCreate_Column2"
+                    android:hint="Column2"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="57.1dp"
+                android:id="@+id/tableCreate_dtSpinner2"/>
+        </TableRow>
+    </TableLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <com.google.android.material.textfield.TextInputEditText
+        android:layout_height="wrap_content">
+         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tableCreate_Column4"
-            android:hint="Column4"/>
-    </com.google.android.material.textfield.TextInputLayout>
-   
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="278.9dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tableCreate_Column3"
+                    android:hint="Column3"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="57.1dp"
+                android:id="@+id/tableCreate_dtSpinner3"/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+         <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="278.9dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tableCreate_Column4"
+                    android:hint="Column4"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="57.1dp"
+                android:id="@+id/tableCreate_dtSpinner4"/>
+        </TableRow>
+    </TableLayout>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -64,7 +115,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="298.3dp"
+                android:layout_width="248.0dp"
                 android:layout_height="wrap_content"
                 android:text="Select dominant column"
                 android:textSize="20dp"
@@ -91,6 +142,12 @@
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
         android:id="@+id/tableCreate_domColSpinner"/>
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="More info about columns and data types"
+        android:id="@+id/tableCreate_columnInfo"/>
+
     <ImageButton
         android:contentDescription="Done"
         android:id="@+id/addTable_btnSave"

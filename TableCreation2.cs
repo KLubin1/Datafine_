@@ -25,7 +25,8 @@ namespace Datafine
         ImageButton doneButton, domColInfo;
         LinearLayout view;
         DateTime now = DateTime.Now;
-        Spinner domCol;
+        Spinner domCol, dt1, dt2, dt3, dt4;
+        Button columnInfo;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -49,19 +50,91 @@ namespace Datafine
             //for the dominant column info
             domColInfo = FindViewById<ImageButton>(Resource.Id.tableCreate_dom_col_info);
             domColInfo.Click += DomColInfo_Click;
-
+            //for the column info page launch
+            columnInfo = FindViewById<Button>(Resource.Id.tableCreate_columnInfo);
             //for the snackbar
             view = FindViewById<LinearLayout>(Resource.Id.tableCreation_view);
 
             //for the dominant column selector 
             domCol = FindViewById<Spinner>(Resource.Id.tableCreate_domColSpinner);
-            domCol.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(SpinnerSelected);
+            domCol.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(DomColSpinnerSelected);
             var adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.DominantColumns, Android.Resource.Layout.SimpleSpinnerItem);
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             domCol.Adapter = adapter;
 
-            doneButton.Click += DoneButton_Click;
+            //for the data types selector
+            dt1 = FindViewById<Spinner>(Resource.Id.tableCreate_dtSpinner1);
+            dt2 = FindViewById<Spinner>(Resource.Id.tableCreate_dtSpinner2);
+            dt3 = FindViewById<Spinner>(Resource.Id.tableCreate_dtSpinner3);
+            dt4 = FindViewById<Spinner>(Resource.Id.tableCreate_dtSpinner4);
+            domCol = FindViewById<Spinner>(Resource.Id.tableCreate_domColSpinner);
 
+            //for the column info button
+            columnInfo = FindViewById<Button>(Resource.Id.tableCreate_columnInfo);
+
+            dt1.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(DT1Spinner);
+            var d1adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.DataTypes, Android.Resource.Layout.SimpleSpinnerItem);
+            d1adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            dt1.Adapter = d1adapter;
+
+            dt2.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(DT2Spinner);
+            var d2adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.DataTypes, Android.Resource.Layout.SimpleSpinnerItem);
+            d2adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            dt2.Adapter = d2adapter;
+
+            dt3.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(DT3Spinner);
+            var d3adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.DataTypes, Android.Resource.Layout.SimpleSpinnerItem);
+            d3adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            dt3.Adapter = d3adapter;
+
+            dt4.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(DT4Spinner);
+            var d4adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.DataTypes, Android.Resource.Layout.SimpleSpinnerItem);
+            d4adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            dt4.Adapter = d4adapter;
+
+
+            doneButton.Click += DoneButton_Click;
+            columnInfo.Click += ColumnInfo_Click;
+
+        }
+
+        private void ColumnInfo_Click(object sender, EventArgs e)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog confirm = builder.Create();
+            confirm.SetTitle("Column Info and Data Types");
+            confirm.SetMessage(GetString(Resource.String.Column_Info));
+            confirm.SetButton("Got it!", (sender2, ev) =>
+            {
+
+            });
+
+            confirm.Show();
+        }
+
+        //just capture the selected type and save into prefs
+        private void DT4Spinner(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+            Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
+        }
+
+        private void DT3Spinner(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+            Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
+        }
+
+        private void DT2Spinner(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+            Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
+        }
+
+        private void DT1Spinner(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+            Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
         }
 
         private void DomColInfo_Click(object sender, EventArgs e)
@@ -113,7 +186,7 @@ namespace Datafine
             }
         }
 
-        private void SpinnerSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        private void DomColSpinnerSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             //handle and set the dominant column prefs for further processing in the entry list adapter
             Spinner spinner = (Spinner)sender;
@@ -193,15 +266,15 @@ namespace Datafine
                 testPassed = false;
               }
             //if the columns have been replaced by being of onlu numbers
-            if(column1.Text == Regex.Replace(column1.Text, @"[0-9]+", "") ||
-            column2.Text == Regex.Replace(column2.Text, @"[0-9]+", "") ||
-            column3.Text == Regex.Replace(column3.Text, @"[0-9]+", "") ||
-            column4.Text == Regex.Replace(column4.Text, @"[0-9]+", ""))
-            {
-                Snackbar snackbar = Snackbar.Make(view, "Column names cannot be of only numbers or special characters!", Snackbar.LengthIndefinite);
-                snackbar.Show();
-                testPassed = false;
-            }
+            //if(column1.Text == Regex.Replace(column1.Text, @"[0-9]+", "") ||
+            //column2.Text == Regex.Replace(column2.Text, @"[0-9]+", "") ||
+            //column3.Text == Regex.Replace(column3.Text, @"[0-9]+", "") ||
+            //column4.Text == Regex.Replace(column4.Text, @"[0-9]+", ""))
+            //{
+            //    Snackbar snackbar = Snackbar.Make(view, "Column names cannot be of only numbers or special characters!", Snackbar.LengthIndefinite);
+            //    snackbar.Show();
+            //    testPassed = false;
+            //}
 
             //if the columns have been replaced by special characters
             //else if (column1.Text == Regex.Replace(column1.Text, @"[^0-9a-zA-Z\\s]+", "")||
@@ -236,11 +309,11 @@ namespace Datafine
             column3.Text = Regex.Replace(column3.Text, @"\\s+", "_");
             column4.Text = Regex.Replace(column4.Text, @"\\s+", "_");
 
-            //replace only numbers
-            column1.Text = Regex.Replace(column1.Text, @"[0-9]+", "");
-            column2.Text = Regex.Replace(column2.Text, @"[0-9]+", "");
-            column3.Text = Regex.Replace(column3.Text, @"[0-9]+", "");
-            column4.Text = Regex.Replace(column4.Text, @"[0-9]+", "");
+            ////replace only numbers
+            //column1.Text = Regex.Replace(column1.Text, @"[0-9]+", "");
+            //column2.Text = Regex.Replace(column2.Text, @"[0-9]+", "");
+            //column3.Text = Regex.Replace(column3.Text, @"[0-9]+", "");
+            //column4.Text = Regex.Replace(column4.Text, @"[0-9]+", "");
 
 
             
