@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Datafine
 {
-    [Activity(Theme ="@style/SplashTheme", MainLauncher =true, NoHistory =true)]
+    [Activity(Theme ="@style/SplashTheme", MainLauncher =true, NoHistory =true, Icon ="@drawable/ic_datafine")]
     public class SplashScreen : Activity
     {
         

@@ -278,6 +278,7 @@ namespace Datafine
                 case Resource.Id.action_home:
                     Finish();
                     StartActivity(intent);
+
                     return true;
                 default:
                     return base.OnOptionsItemSelected(item);
