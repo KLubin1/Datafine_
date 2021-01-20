@@ -437,3 +437,9 @@ C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\androidx\progua
 C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\androidx\proguard\d495f67f-74d8-423a-b7e6-73b38e07b1db.txt
 C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\androidx\proguard\d8490a1f-c1c9-450d-ac7c-ed0e05ba4d8d.txt
 C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\androidx\proguard\f02bb37a-5e11-4e17-b2c2-f3a0687d91f6.txt
+C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\Datafine.csprojAssemblyReference.cache
+C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\res\layout\content_main_gridview.xml
+C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\android\src\crc64ccef0fc746faa48b\TableGridAdapter.java
+C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\android\src\crc64ccef0fc746faa48b\TableGridAdapter_TableViewHolder.java
+C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\android\src\crc64ccef0fc746faa48b\TableListAdapter.java
+C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\android\src\crc64ccef0fc746faa48b\TableListAdapter_TableViewHolder.java

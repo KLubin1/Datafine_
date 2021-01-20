@@ -13,13 +13,13 @@ using Xamarin.Essentials;
 
 namespace Datafine
 {
-    public class TableViewAdapter : BaseAdapter<TableInfo>
+    public class TableListAdapter : BaseAdapter<TableInfo>
     {
         IList<TableInfo> tableList;
         private LayoutInflater mInflater;
         private Context activity;
 
-        public TableViewAdapter(Context _context, IList<TableInfo> _tableList)
+        public TableListAdapter(Context _context, IList<TableInfo> _tableList)
         {
             this.activity = _context;
             this.tableList = _tableList;

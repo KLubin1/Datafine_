@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="About.cs" />
     <Compile Include="IPrefs.cs" />
+    <Compile Include="TableGridAdapter.cs" />
     <Compile Include="TableListAdapter.cs" />
     <Compile Include="EntryCreation.cs" />
     <Compile Include="LoginScreen.cs" />
@@ -325,6 +326,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-v21\ic_datafine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\content_main_gridview.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

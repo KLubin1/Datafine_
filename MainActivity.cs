@@ -26,6 +26,7 @@ namespace Datafine
         TextView suchEmpty;
         IList<TableInfo> tableList = null;
         ListView tableListView;
+        GridView tableGridView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -50,6 +51,8 @@ namespace Datafine
 
             //listView
             tableListView = FindViewById<ListView>(Resource.Id.tableListViewMain);
+            //gridview
+            //tableGridView = FindViewById<GridView>(Resource.Id.tableGridViewMain);
 
             tableListView.ItemLongClick += TableDetails_ItemLongClick;
 
@@ -75,10 +78,14 @@ namespace Datafine
             }
 
             //set the list adapter
-            tableListView.Adapter = new TableViewAdapter(this, tableList);
+            tableListView.Adapter = new TableListAdapter(this, tableList);
+
+            //set the grid adapter(test)
+            //tableGridView.Adapter = new TableGridAdapter(this, tableList);
 
             //long click event for items in list
             tableListView.ItemClick += TableListView_ItemClick;
+            //tableGridView.ItemClick += TableListView_ItemClick;
         }
 
         

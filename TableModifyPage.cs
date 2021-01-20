@@ -40,7 +40,7 @@ namespace Datafine
             tables = dbVals.GetAllTables();
 
             //set the list adapter
-            listview.Adapter = new TableViewAdapter(this, tables);
+            listview.Adapter = new TableListAdapter(this, tables);
 
             //long click event for items in list
             listview.ItemClick += OnClickByActionKey;

@@ -1,4 +1,5 @@
 @string/appbar_scrolling_view_behavior;obj\Debug\90\res\layout\content_main.xml
+@string/appbar_scrolling_view_behavior;obj\Debug\90\res\layout\content_main_gridview.xml
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 androidx.appcompat.widget.AppCompatSpinner;obj\Debug\90\res\layout\table_creation_page2.xml
@@ -36,6 +37,7 @@ external-path;C:\Users\Owner\Documents\Datafine\Datafine\Datafine\obj\Debug\90\l
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 gradient;obj\Debug\90\res\drawable\side_nav_bar.xml
+GridView;obj\Debug\90\res\layout\content_main_gridview.xml
 group;obj\Debug\90\res\menu\activity_main_drawer.xml
 ImageButton;obj\Debug\90\res\layout\entry_creation_page.xml
 ImageButton;obj\Debug\90\res\layout\table_creation_page.xml
@@ -79,6 +81,7 @@ LinearLayout;obj\Debug\90\res\layout\table_view_control_command.xml
 LinearLayout;obj\Debug\90\res\layout\tables_listview.xml
 ListPreference;obj\Debug\90\res\xml\settings_screen.xml
 ListView;obj\Debug\90\res\layout\content_main.xml
+ListView;obj\Debug\90\res\layout\content_main_gridview.xml
 ListView;obj\Debug\90\res\layout\entry_view_layout.xml
 ListView;obj\Debug\90\res\layout\table_list_modify_layout.xml
 menu;obj\Debug\90\res\menu\activity_main_drawer.xml
@@ -95,6 +98,7 @@ Preference;obj\Debug\90\res\xml\settings_screen.xml
 PreferenceCategory;obj\Debug\90\res\xml\settings_screen.xml
 PreferenceScreen;obj\Debug\90\res\xml\settings_screen.xml
 RelativeLayout;obj\Debug\90\res\layout\content_main.xml
+RelativeLayout;obj\Debug\90\res\layout\content_main_gridview.xml
 RelativeLayout;obj\Debug\90\res\layout\entries_listview.xml
 resources;obj\Debug\90\res\values\array.xml
 resources;obj\Debug\90\res\values\colors.xml
@@ -122,6 +126,7 @@ TableRow;obj\Debug\90\res\layout\table_creation_page2.xml
 TableRow;obj\Debug\90\res\layout\table_view_control_command.xml
 TextView;obj\Debug\90\res\layout\about_layout.xml
 TextView;obj\Debug\90\res\layout\content_main.xml
+TextView;obj\Debug\90\res\layout\content_main_gridview.xml
 TextView;obj\Debug\90\res\layout\entries_listview.xml
 TextView;obj\Debug\90\res\layout\entry_view_layout.xml
 TextView;obj\Debug\90\res\layout\login_screen.xml
