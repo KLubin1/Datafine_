@@ -15,8 +15,8 @@ namespace Datafine
 {
     interface IPrefs
     {
-        void SetPrefs(string name, string value);
-        string GetPrefs(string name);
+        void SetPrefs(string name, object value);
+        dynamic GetPrefs(string name);
 
     }
 }

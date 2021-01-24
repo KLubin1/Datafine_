@@ -88,7 +88,7 @@ namespace Datafine
         }
 
         //retrive the info for processing and formating them to a cursor
-        public IList<EntryInfo> GetAllContacts()
+        public IList<EntryInfo> GetAllEntries()
         {
             SQLiteDatabase db = this.ReadableDatabase;
 

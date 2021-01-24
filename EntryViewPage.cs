@@ -79,7 +79,7 @@ namespace Datafine
         {
             DBHelper dbVals = new DBHelper(this);
             //load data
-            itemList = dbVals.GetAllContacts();
+            itemList = dbVals.GetAllEntries();
 
             if (itemList.Count == 0)
             {
