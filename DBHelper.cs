@@ -12,6 +12,7 @@ using Android.Widget;
 using Android.Database.Sqlite;
 using Android.Database;
 using Xamarin.Essentials;
+using Java.IO;
 
 namespace Datafine
 {
@@ -267,6 +268,16 @@ namespace Datafine
             c.Close();
             db.Close();
             return contacts;
+        }
+
+
+        //TODO: this will theoetically be able to export in this case the database. Test out first with the most common method, sd card
+        public void ExportDatabase()
+        {
+            //Note this is java's io file, not c#'s
+            //Also, lookup how to access databases in xamarin
+            File expo = Android.OS.Environment.ExternalStorageDirectory;
+            File data = Android.OS.Environment.DataDirectory;
         }
 
         //add contacts to content values and insert into database

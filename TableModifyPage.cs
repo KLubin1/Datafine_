@@ -82,7 +82,8 @@ namespace Datafine
                         tables.Remove(selectedItem);
 
                         db.DeleteTable(selectedItem.tableName.ToString());
-                        // NotifyDataSetChanged();
+                        //delete also shared prefs info of that table
+                        DeletePrefs(selectedItem.tableName.ToString());
 
                         StartActivity(typeof(MainActivity));
                         Toast.MakeText(this, "Table Deleted Succesfully!", ToastLength.Long).Show();
@@ -103,6 +104,7 @@ namespace Datafine
                 case "4":
                     break;
                 case "5":
+                    //TODO: export tables handler
                     break;
                 default:
                     break;
@@ -148,6 +150,18 @@ namespace Datafine
         private void SetPrefs(string name, string value)
         {
             Preferences.Set(name, value);
+        }
+
+        private void DeletePrefs(string tableName)
+        {
+            //Delete table metadata via its name:
+            // - table description
+            // - table created
+            // - table dom col
+
+            Preferences.Remove(tableName + "_table_description");
+            Preferences.Remove(tableName + "_table_created");
+            Preferences.Remove(tableName + "_dom_col");
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
