@@ -72,7 +72,7 @@ namespace Datafine
                   "Column4 TEXT NOT NULL, " +
                   "FirstInstall TEXT NOT NULL)";
 
-                  db.ExecSQL(createTable);
+                db.ExecSQL(createTable);
 
                 editor.PutBoolean("firstStart", false);
                 editor.Apply();
@@ -99,7 +99,7 @@ namespace Datafine
             ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
             //...to retrieve said table's column names
             string[] columns = tableCursor.GetColumnNames();
-            
+
 
             //now assemble the main query with the selected table name and columns
             ICursor c = db.Query(table, columns, null, null, null, null, null); //can organize the retrieval with any values or way here
@@ -136,7 +136,7 @@ namespace Datafine
             string[] columns = tableCursor.GetColumnNames();
             string searchTermColumn = tableCursor.GetColumnName(1);
 
-            ICursor c = db.Query(table, columns , "upper(" + searchTermColumn + ") LIKE ?", new string[] { "%" + column1Term.ToUpper() + "%" }, null, null, null, null);
+            ICursor c = db.Query(table, columns, "upper(" + searchTermColumn + ") LIKE ?", new string[] { "%" + column1Term.ToUpper() + "%" }, null, null, null, null);
 
             var contacts = new List<EntryInfo>();
 
@@ -160,9 +160,9 @@ namespace Datafine
         }
 
 
-         //retrieve entries based off of a search location or term
-          public IList<EntryInfo> GetContactsByColumn2(string column2Term)
-          {
+        //retrieve entries based off of a search location or term
+        public IList<EntryInfo> GetContactsByColumn2(string column2Term)
+        {
             SQLiteDatabase db = this.ReadableDatabase;
 
             //get the selected table
@@ -196,9 +196,9 @@ namespace Datafine
         }
 
 
-          //retrieve entries based off of a search age
-          public IList<EntryInfo> GetContactsByColumn3(string column3Term)
-          {
+        //retrieve entries based off of a search age
+        public IList<EntryInfo> GetContactsByColumn3(string column3Term)
+        {
             SQLiteDatabase db = this.ReadableDatabase;
 
             //get the selected table
@@ -232,8 +232,8 @@ namespace Datafine
             return contacts;
         }
 
-          public IList<EntryInfo> GetContactsByColumn4(string column4Term)
-          {
+        public IList<EntryInfo> GetContactsByColumn4(string column4Term)
+        {
             SQLiteDatabase db = this.ReadableDatabase;
 
             //get the selected table
@@ -244,7 +244,7 @@ namespace Datafine
             string[] columns = tableCursor.GetColumnNames();
             string searchTermColumn = tableCursor.GetColumnName(3);
 
-            ICursor c = db.Query(table,columns, "upper(" + searchTermColumn + ") LIKE ?", new string[] { "%" + column4Term.ToUpper() + "%" }, null, null, null, null);
+            ICursor c = db.Query(table, columns, "upper(" + searchTermColumn + ") LIKE ?", new string[] { "%" + column4Term.ToUpper() + "%" }, null, null, null, null);
 
 
             var contacts = new List<EntryInfo>();
@@ -432,25 +432,26 @@ namespace Datafine
         }
 
         //will have to determine the type of function to get from the table depending on the type the user selected!
-        public dynamic GetFunction(string dataTypeSelected)
-        {
-            switch(dataTypeSelected)
-            {
-                case "TEXT":
-                    break;
-                case "INTEGER":
-                    break;
-                case "REAL":
-                    break;
-                case "BLOB":
-                    break;
+        //    public dynamic GetFunction(string dataTypeSelected)
+        //    {
+        //        switch(dataTypeSelected)
+        //        {
+        //            case "TEXT":
+        //                break;
+        //            case "INTEGER":
+        //                break;
+        //            case "REAL":
+        //                break;
+        //            case "BLOB":
+        //                break;
 
-            }
-            string hey = "";
-            int heyo = 8;
-            float hio = 9.8f;
-            byte[] heyyy = {1,2,3 };           
-            return heyyy;
-        }
+        //        }
+        //        string hey = "";
+        //        int heyo = 8;
+        //        float hio = 9.8f;
+        //        byte[] heyyy = {1,2,3 };           
+        //        return heyyy;
+        //    }
+        //}
     }
 }
