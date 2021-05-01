@@ -26,13 +26,16 @@ namespace Datafine
             //It will show until the Main Activity is ready to show, so it works great for the first time, but quickly appear the subsequent times
             base.OnCreate(savedInstanceState);
             Thread.Sleep(2000);
-            if (isLoggedIn == false)
-            {
-                StartActivity(typeof(LoginScreen));
+            //TODO: Release Changes
+            //if (isLoggedIn == false)
+            //{
+            //    StartActivity(typeof(LoginScreen));
 
-            }
-            else
-                StartActivity(typeof(MainActivity));
+            //}
+            //else
+            //    StartActivity(typeof(MainActivity));
+
+            StartActivity(typeof(MainActivity));
 
         }
     }

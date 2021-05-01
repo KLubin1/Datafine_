@@ -218,6 +218,7 @@ namespace Datafine
                 //launch table creation page
                 Intent intent = new Intent(this, typeof(TableCreation));
                 StartActivity(intent);
+                return true;
             }
             else if (id == Resource.Id.nav_delete)
             {
@@ -228,26 +229,36 @@ namespace Datafine
             {
                 //handle the upload action
                 actionKey = "2";
+                Toast.MakeText(this, "Coming Soon!", ToastLength.Short).Show();
+                return true;
             }
             else if (id == Resource.Id.nav_download)
             {
                 //handle the download action
                 actionKey = "3";
+                Toast.MakeText(this, "Coming Soon!", ToastLength.Short).Show();
+                return true;
             }
             else if (id == Resource.Id.nav_share)
             {
                 //handle the share action
                 actionKey = "4";
+                Toast.MakeText(this, "Coming Soon!", ToastLength.Short).Show();
+                return true;
             }
             else if (id == Resource.Id.nav_export)
             {
                 //handle the export action
                 actionKey = "5";
+                Toast.MakeText(this, "Coming Soon!", ToastLength.Short).Show();
+                return true;
             }
             else if (id == Resource.Id.nav_setting)
             {
                 //handle the settings
                 StartActivity(typeof(Settings));
+                return true;
+                
             }
 
 

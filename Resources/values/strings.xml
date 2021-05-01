@@ -17,13 +17,16 @@
   <string name="Dominant_Columnn_Info">
     The dominant column is the table column that will stand out on your entry to help you identify your entries quicker. The dominant column is in bold and in a bigger font.
   </string>
+  
+  <!--TODO: Release changes-->
   <string name="Column_Info">
+    NOTE: Inherent data type functionality not yet implemented; this is just for demonstration purposes.\n
     SQLite Data types for the columns are as follows:\n
     - TEXT: Like so, a text or string object. This is the default and most commonly used type.\n
     - REAL: a floating point number, so usually a real number with decimals.\n
     - INTEGER: Just that, an integer number.\n
-    - BLOB: Basically, a chunk of data that holds the data in bytes regardless of type; the wild card of data types.\n 
-    Keep in mind the columns have to be named uniquely and with string value. You can use numbers in your naming, but not only numbers or special characters! SQLite doesn\'t like that. 
+    - BLOB: Basically, a chunk of data that holds the data in bytes regardless of type; the wild card of data types.\n
+    Keep in mind the columns have to be named uniquely and with string value. You can use numbers in your naming, but not only numbers or special characters! SQLite doesn\'t like that.
   </string>
   <string-array name="DominantColumns">
     <item>Column1</item>

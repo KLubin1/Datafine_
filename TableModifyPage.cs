@@ -95,7 +95,6 @@ namespace Datafine
                     });
 
                     confirm.Show();
-                    Toast.MakeText(this, "Delete", ToastLength.Short).Show();
                     break;
                 case "2":
                     break;
@@ -135,7 +134,7 @@ namespace Datafine
                     SupportActionBar.Title = "Export Tables";
                     break;
                 default:
-                    SupportActionBar.Title = "?";
+                    SupportActionBar.Title = "View";
                     break;
             }
         }
