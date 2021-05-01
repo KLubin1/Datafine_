@@ -5699,6 +5699,9 @@ public final class R {
      * About message
      */
     public static final int About_Message=0x7f0f0000;
+    /**
+     * TODO: Release changes
+     */
     public static final int Column_Info=0x7f0f0001;
     public static final int Dominant_Columnn_Info=0x7f0f0002;
     public static final int Table_Description=0x7f0f0003;

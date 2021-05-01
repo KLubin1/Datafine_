@@ -116,25 +116,25 @@ namespace Datafine
         private void DT4Spinner(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
-            Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
+            //Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
         }
 
         private void DT3Spinner(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
-            Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
+            //Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
         }
 
         private void DT2Spinner(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
-            Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
+            //Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
         }
 
         private void DT1Spinner(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
-            Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
+            //Toast.MakeText(this, spinner.GetItemAtPosition(e.Position).ToString(), ToastLength.Short);
         }
 
         private void DomColInfo_Click(object sender, EventArgs e)
@@ -180,7 +180,7 @@ namespace Datafine
                 CreateNewTable();
                 //Toast
                 Toast.MakeText(this, "New Table Created!", ToastLength.Short).Show();
-                Toast.MakeText(this, "Dominant Column is: " + GetPrefs("dom_col"), ToastLength.Short).Show();
+                //Toast.MakeText(this, "Dominant Column is: " + GetPrefs("dom_col"), ToastLength.Short).Show();
                 //launch main page
                 StartActivity(typeof(MainActivity));
             }
