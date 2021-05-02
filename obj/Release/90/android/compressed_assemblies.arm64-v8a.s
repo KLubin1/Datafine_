@@ -8,7 +8,7 @@
 .L.compressed_assembly_descriptors:
 	/* 0: Datafine.dll */
 	/* uncompressed_file_size */
-	.word	184320
+	.word	184832
 	/* loaded */
 	.byte	0
 	/* data */

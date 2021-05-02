@@ -64,6 +64,7 @@ namespace Datafine
             ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
             ISharedPreferencesEditor editor = sharedPreferences.Edit();
             editor.PutBoolean("UpgradeFlag", false);
+            editor.Apply();
 
         }
 
