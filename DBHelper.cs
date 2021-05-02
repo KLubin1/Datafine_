@@ -36,7 +36,8 @@ namespace Datafine
         {
             ISharedPreferences prefs = Application.Context.GetSharedPreferences("loggingSession", FileCreationMode.Private);
             ISharedPreferencesEditor editor = prefs.Edit();
-            bool firstStart = prefs.GetBoolean("firstStart", false);
+            //TODO: Release change: set to default to true because login that sets ot to true is disabled  
+            bool firstStart = prefs.GetBoolean("firstStart", true);
 
             if (firstStart == false)
             {

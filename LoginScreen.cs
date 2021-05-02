@@ -46,7 +46,8 @@ namespace Datafine
             ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("loggingSession", FileCreationMode.Private);
             ISharedPreferencesEditor editor = sharedPreferences.Edit();
 
-            editor.PutBoolean("firstStart", true);
+            //TODO: Release change: commented out since login is disabled for now
+           // editor.PutBoolean("firstStart", true);
 
             /*if (CredentialsAreValid())
             {

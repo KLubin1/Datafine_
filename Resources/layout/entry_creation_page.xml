@@ -57,15 +57,19 @@
              />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <ImageButton
         android:contentDescription="Done"
         android:id="@+id/addEdit_btnSave"
         android:src="@drawable/baseline_done_black_18dp"
         android:layout_width="283dp"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="60dp"
+        android:layout_centerInParent="true"
         android:layout_height="wrap_content"
         android:background="@color/theme_midnightBlue"/>
+        </RelativeLayout>
 
     
  

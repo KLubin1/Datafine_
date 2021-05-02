@@ -245,11 +245,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\table_creation_page.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\splash_screen_logo.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -334,6 +329,11 @@
   <ItemGroup>
     <AndroidResource Include="Resources\layout\content_main_gridview.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\table_creation_page.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

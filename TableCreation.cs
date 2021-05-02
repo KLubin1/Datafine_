@@ -56,6 +56,7 @@ namespace Datafine
             else
             {
                 Toast.MakeText(this, "Table name can't be empty!", ToastLength.Short).Show();
+                return;
             }
 
             if(tableDescription.Text.Length != 0)

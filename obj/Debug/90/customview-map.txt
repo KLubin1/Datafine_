@@ -100,6 +100,10 @@ PreferenceScreen;obj\Debug\90\res\xml\settings_screen.xml
 RelativeLayout;obj\Debug\90\res\layout\content_main.xml
 RelativeLayout;obj\Debug\90\res\layout\content_main_gridview.xml
 RelativeLayout;obj\Debug\90\res\layout\entries_listview.xml
+RelativeLayout;obj\Debug\90\res\layout\entry_creation_page.xml
+RelativeLayout;obj\Debug\90\res\layout\entry_view_layout.xml
+RelativeLayout;obj\Debug\90\res\layout\table_creation_page.xml
+RelativeLayout;obj\Debug\90\res\layout\table_creation_page2.xml
 resources;obj\Debug\90\res\values\array.xml
 resources;obj\Debug\90\res\values\colors.xml
 resources;obj\Debug\90\res\values\dimens.xml
