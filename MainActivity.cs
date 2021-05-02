@@ -18,7 +18,7 @@ using Xamarin.Essentials;
 
 namespace Datafine
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher =false)]
+    [Activity(Label = "My Tables", Theme = "@style/AppTheme.NoActionBar", MainLauncher =false)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
         //list that holds the list of databases
