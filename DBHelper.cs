@@ -97,13 +97,13 @@ namespace Datafine
             //get the selected table
             string table = GetPrefs("SelectedTable");
             //get said table from query...
-            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null, null);
             //...to retrieve said table's column names
             string[] columns = tableCursor.GetColumnNames();
 
 
             //now assemble the main query with the selected table name and columns
-            ICursor c = db.Query(table, columns, null, null, null, null, null); //can organize the retrieval with any values or way here
+            ICursor c = db.Query(table, columns, null, null, null, null, null, null); //can organize the retrieval with any values or way here
             var contacts = new List<EntryInfo>();
             while (c.MoveToNext())
             {
@@ -132,7 +132,7 @@ namespace Datafine
             //get the selected table
             string table = GetPrefs("SelectedTable");
             //get said table from query...
-            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null, null);
             //...to retrieve said table's column names
             string[] columns = tableCursor.GetColumnNames();
             string searchTermColumn = tableCursor.GetColumnName(1);
@@ -169,7 +169,7 @@ namespace Datafine
             //get the selected table
             string table = GetPrefs("SelectedTable");
             //get said table from query...
-            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null, null);
             //...to retrieve said table's column names
             string[] columns = tableCursor.GetColumnNames();
             string searchTermColumn = tableCursor.GetColumnName(2);
@@ -205,7 +205,7 @@ namespace Datafine
             //get the selected table
             string table = GetPrefs("SelectedTable");
             //get said table from query...
-            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null, null);
             //...to retrieve said table's column names
             string[] columns = tableCursor.GetColumnNames();
             string searchTermColumn = tableCursor.GetColumnName(3);
@@ -240,7 +240,7 @@ namespace Datafine
             //get the selected table
             string table = GetPrefs("SelectedTable");
             //get said table from query...
-            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null, null);
             //...to retrieve said table's column names
             string[] columns = tableCursor.GetColumnNames();
             string searchTermColumn = tableCursor.GetColumnName(3);
@@ -289,7 +289,7 @@ namespace Datafine
             //get the selected table
             string table = GetPrefs("SelectedTable");
             //get said table from query
-            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null, null);
             //retrieve said table's columns by index
             ContentValues contentValues = new ContentValues();
             contentValues.Put(tableCursor.GetColumnName(1), entry.column1);
@@ -326,7 +326,7 @@ namespace Datafine
             //get the selected table
             string table = GetPrefs("SelectedTable");
             //get said table from query...
-            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null, null);
             //...to retrieve said table's column names
             string[] columns = tableCursor.GetColumnNames();
             string searchTermColumn = tableCursor.GetColumnName(3);
@@ -367,7 +367,7 @@ namespace Datafine
             //get the selected table
             string table = GetPrefs("SelectedTable");
             //get said table from query...
-            ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+            ICursor tableCursor = db.Query(table, null, null, null, null, null, null, null);
             //...to retrieve said table's column names
             string[] columns = tableCursor.GetColumnNames();
 
@@ -431,6 +431,31 @@ namespace Datafine
             db.Close();
             return tables;
         }
+
+        //public string GetCurrentId(string domColName)
+        //{
+        //    SQLiteDatabase db = this.ReadableDatabase;
+
+        //    string table = GetPrefs("SelectedTable");
+        //    ICursor tableCursor = db.Query(table, null, null, null, null, null, null);
+        //    var firstColumn = tableCursor.GetColumnName(1);
+        //    ICursor c = db.RawQuery("SELECT id FROM " + table, null);
+
+        //    var ids = new List<int>();
+
+        //    while (c.MoveToNext())
+        //    {
+        //        ids.Add(c.GetString(0))
+        //        {
+        //            tableName = c.GetString(0)
+        //        });
+        //    }
+
+        //    c.Close();
+        //    db.Close();
+        //    return tables;
+
+        //}
 
         //will have to determine the type of function to get from the table depending on the type the user selected!
         //    public dynamic GetFunction(string dataTypeSelected)

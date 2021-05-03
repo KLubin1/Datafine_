@@ -105,7 +105,7 @@ namespace Datafine
                                 case Resource.Id.cc_Delete:
                                     //delete entry from position
                                     DeleteEntry(position);
-                                    
+
                                     break;
                                 case Resource.Id.cc_ViewInfo:
                                     //handle full data of entry
@@ -147,7 +147,7 @@ namespace Datafine
             string selTableDomCol = Preferences.Get(selTable + "_dom_col", null);
 
             //Size: 25, Style: bold
-            switch(selTableDomCol)
+            switch (selTableDomCol)
             {
                 case ("Column1"):
                     holder.column1.SetTextSize(Android.Util.ComplexUnitType.Sp, 20);
@@ -172,9 +172,9 @@ namespace Datafine
                     break;
 
             }
-            
 
-            
+
+
 
             return convertView;
         }

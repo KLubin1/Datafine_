@@ -39,6 +39,7 @@ foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 gradient;obj\Debug\90\res\drawable\side_nav_bar.xml
 GridView;obj\Debug\90\res\layout\content_main_gridview.xml
 group;obj\Debug\90\res\menu\activity_main_drawer.xml
+ImageButton;obj\Debug\90\res\layout\entries_listview.xml
 ImageButton;obj\Debug\90\res\layout\entry_creation_page.xml
 ImageButton;obj\Debug\90\res\layout\table_creation_page.xml
 ImageButton;obj\Debug\90\res\layout\table_creation_page2.xml

@@ -97,7 +97,7 @@ namespace Datafine
                 SQLiteDatabase column = sq.ReadableDatabase;
                 //query the selected table
                 string table = GetPrefs("SelectedTable");
-                ICursor c = column.Query(table, null, null, null, null, null, null);
+                ICursor c = column.Query(table, null, null, null, null, null, null, null);
             
                 
                 ICursor cData = db.GetContactById(int.Parse(contactId));
@@ -224,6 +224,10 @@ namespace Datafine
             }
         }
 
+        public void getId()
+        {
+
+        }
 
         public void CloseKeyboard()
         {

@@ -24,7 +24,7 @@ namespace Datafine
         IList<EntryInfo> itemList = null;
         TextView suchEmpty;
         SearchView search;
-        ImageView cc;
+        ImageButton cc;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -44,6 +44,11 @@ namespace Datafine
             listView = FindViewById<ListView>(Resource.Id.tableListView);
             suchEmpty = FindViewById<TextView>(Resource.Id.suchEmptyEntry);
 
+            //for the image button for cc
+            //TODO: for some reason this stays null. 
+            //this is the reason for the id looping issue.
+           // cc = FindViewById<ImageButton>(Resource.Id.lr_ccBtn);
+
             //search bar
             search = FindViewById<SearchView>(Resource.Id.entrySearchView);
             search.SetQueryHint("Search Entries");
@@ -52,10 +57,6 @@ namespace Datafine
             //load entries
             fab.Click += FabOnClick;
             LoadEntries();
-
-            //for the image button for cc
-            cc = FindViewById<ImageView>(Resource.Id.lr_ccBtn);
-
 
             //test out search term change effect
             string searchTerm = GetSetting("search_type", Application.Context);
@@ -66,12 +67,6 @@ namespace Datafine
             editor.PutBoolean("UpgradeFlag", false);
             editor.Apply();
 
-        }
-
-        private void Cc_ContextMenuCreated(object sender, View.CreateContextMenuEventArgs e)
-        {
-            throw new NotImplementedException();
-          
         }
 
 
@@ -91,21 +86,27 @@ namespace Datafine
             //set the lisy adapter
             listView.Adapter = new EntryListAdapter(this, itemList);
 
-            //long click event for items in list
-            listView.ItemLongClick += listView_ItemLongClick;
 
+            //long click event for items in list
+            //listView.ItemLongClick += listView_ItemLongClick;
+            listView.ItemClick += ListView_ItemClick;
+            
         }
 
-
-        //pulls up popup memu options for editing data in listview on long click
-        
-        private void listView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
+            //set and launch the popup menu 
+           
+
             var selectedItem = itemList[e.Position];
+
+            Preferences.Set("CurPos", e.Position);
+
+
             DBHelper db = new DBHelper(this);
 
             //disable the pop-up menu if read-only is enabled
-            
+
             ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
             bool readOnly = prefs.GetBoolean("read_only", false);
             //if read-only is false, then execute code like normal...
@@ -117,32 +118,30 @@ namespace Datafine
                 ISharedPreferencesEditor editor = sharedPreferences.Edit();
                 editor.PutBoolean("UpgradeFlag", false);
 
-                
-
-                //set and launch the popup menu 
                 var commandControl = new Android.Widget.PopupMenu(this, (View)sender);
                 commandControl.Inflate(Resource.Menu.command_control);
                 commandControl.Show();
+                Console.WriteLine(e.Position);
 
-                commandControl.MenuItemClick += (s, a) =>
+                commandControl.MenuItemClick += (se, ee) =>
                 {
-                    switch (a.Item.ItemId)
+                    switch (ee.Item.ItemId)
                     {
                         case Resource.Id.cc_Edit:
                             var intent = new Intent(this, typeof(EntryCreation));
 
-                        //this is "saving" the id so to refer back to this entry in the table creation page on update
-                        intent.PutExtra("Id", selectedItem.id.ToString());
-                        //set the flag to true to activate update functionality in table creation
-                        //testing with prefs
-                        Preferences.Set("OnEdit", selectedItem.id.ToString());
-                        editor.PutBoolean("UpgradeFlag", true);
+                            //this is "saving" the id so to refer back to this entry in the table creation page on update
+                            intent.PutExtra("Id", selectedItem.id.ToString());
+                            //set the flag to true to activate update functionality in table creation
+                            //testing with prefs
+                            Preferences.Set("OnEdit", selectedItem.id.ToString());
+                            editor.PutBoolean("UpgradeFlag", true);
                             editor.Apply();
                             StartActivity(intent);
                             break;
                         case Resource.Id.cc_Delete:
-                        //delete entry from position
-                        DeleteEntry(e.Position);
+                            //delete entry from position
+                            DeleteEntry(e.Position);
                             break;
                         case Resource.Id.cc_ViewInfo:
                             //handle full data of entry
@@ -158,7 +157,25 @@ namespace Datafine
                 //include a banner that says something along the lines of "read-only is enabled"
                 Toast.MakeText(this, "Read-Only is Enabled", ToastLength.Long).Show();
             }
+
         }
+
+    
+
+        //for cc testing
+        private void Cc_Click(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var f = listView.SelectedItemPosition;
+            Console.WriteLine(f);
+        }
+
+
+        //pulls up popup memu options for editing data in listview on long click
+
+        private void listView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+        }
+
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
@@ -183,6 +200,7 @@ namespace Datafine
         public void DeleteEntry(int position)
         {
             var selectedItem = itemList[position];
+            Console.WriteLine("Current position->" + itemList[position]);
             DBHelper db = new DBHelper(this);
             //alert dialog to confirm and execute deletion
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
