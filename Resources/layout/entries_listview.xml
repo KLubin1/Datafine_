@@ -57,19 +57,16 @@
             android:id="@+id/tableDateAdded"/>
         </TableRow>
     </TableLayout>
-
-
-  <!--Disabled until the "looping id" issue is fixed-->
-        <ImageButton
+    <!--Disabling because of the looping id issue-->
+        <ImageView
         android:id="@+id/lr_ccBtn"
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_more_vert_black_18dp"
         android:layout_alignParentRight="true"
-        android:clickable="true"
+        android:clickable="false"
         android:contentDescription="command_control"
-        android:background="@color/mtrl_btn_transparent_bg_color"
+        android:visibility="invisible"
 
         />
-
     </RelativeLayout>

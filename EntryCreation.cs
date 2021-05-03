@@ -259,19 +259,5 @@ namespace Datafine
         {
             return Preferences.Get(name, null);
         }
-
-        public override void OnBackPressed()
-        {
-            Console.WriteLine("Is this thing on?");
-            //make sure the upgrade is off
-            ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
-            var editor = sharedPreferences.Edit();
-            editor.PutBoolean("UpgradeFlag", false);
-            editor.Apply();
-            base.OnBackPressed();
-            
-        }
-
-        
     }
 }

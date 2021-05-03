@@ -46,6 +46,7 @@ namespace Datafine
             TableViewHolder holder = null;
             //the command control button
             ImageView cc;
+            
 
             //initialize the data
             if (convertView == null)
@@ -66,7 +67,14 @@ namespace Datafine
                 //code for cc adapted from EntryViewPage
                 cc.Click += (object sender, EventArgs e) =>
                 {
-                    var selectedItem = tableList[position];
+                    //set and launch the popup menu 
+                    var commandControl = new Android.Widget.PopupMenu(activity, (View)sender);
+                    commandControl.Inflate(Resource.Menu.command_control);
+                    commandControl.Show();
+
+                    Preferences.Set("CCHit", true);
+                    var realPos = Preferences.Get("CurPos", 0);
+                    var selectedItem = tableList[realPos];
                     DBHelper db = new DBHelper(activity);
 
                     //disable the pop-up menu if read-only is enabled
@@ -81,12 +89,7 @@ namespace Datafine
                         ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
                         ISharedPreferencesEditor editor = sharedPreferences.Edit();
                         editor.PutBoolean("UpgradeFlag", false);
-
-
-                        //set and launch the popup menu 
-                        var commandControl = new Android.Widget.PopupMenu(activity, (View)sender);
-                        commandControl.Inflate(Resource.Menu.command_control);
-                        commandControl.Show();
+                       
 
                         commandControl.MenuItemClick += (s, a) =>
                         {
@@ -104,7 +107,7 @@ namespace Datafine
                                     break;
                                 case Resource.Id.cc_Delete:
                                     //delete entry from position
-                                    DeleteEntry(position);
+                                    DeleteEntry(realPos);
 
                                     break;
                                 case Resource.Id.cc_ViewInfo:
@@ -172,9 +175,6 @@ namespace Datafine
                     break;
 
             }
-
-
-
 
             return convertView;
         }

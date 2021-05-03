@@ -148,7 +148,9 @@ namespace Datafine
             //create options menu
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             helloUser = FindViewById<TextView>(Resource.Id.hello_user);
-            helloUser.Text = "Hello, " + GetPrefs("hello_user");
+            //helloUser.Text = "Hello, " + GetPrefs("hello_user");
+            //TODO: release change
+            helloUser.Text = "Hello!";
             return true;
         }
 

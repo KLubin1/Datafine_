@@ -24,8 +24,6 @@ namespace Datafine
         IList<EntryInfo> itemList = null;
         TextView suchEmpty;
         SearchView search;
-        ImageButton cc;
-
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,16 +36,11 @@ namespace Datafine
 
             SupportActionBar.Title = GetPrefs("SelectedTable");
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            
+
             //floating action bar to add new entries
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.addEntryFab);
             listView = FindViewById<ListView>(Resource.Id.tableListView);
             suchEmpty = FindViewById<TextView>(Resource.Id.suchEmptyEntry);
-
-            //for the image button for cc
-            //TODO: for some reason this stays null. 
-            //this is the reason for the id looping issue.
-           // cc = FindViewById<ImageButton>(Resource.Id.lr_ccBtn);
 
             //search bar
             search = FindViewById<SearchView>(Resource.Id.entrySearchView);
@@ -58,6 +51,8 @@ namespace Datafine
             fab.Click += FabOnClick;
             LoadEntries();
 
+           
+
             //test out search term change effect
             string searchTerm = GetSetting("search_type", Application.Context);
 
@@ -67,6 +62,11 @@ namespace Datafine
             editor.PutBoolean("UpgradeFlag", false);
             editor.Apply();
 
+        }
+
+        private void Cc_ContextMenuCreated(object sender, View.CreateContextMenuEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
 
@@ -86,24 +86,33 @@ namespace Datafine
             //set the lisy adapter
             listView.Adapter = new EntryListAdapter(this, itemList);
 
-
             //long click event for items in list
-            //listView.ItemLongClick += listView_ItemLongClick;
-            listView.ItemClick += ListView_ItemClick;
-            
+            listView.ItemClick += listView_ItemClick;
+
+            listView.ItemSelected += ListView_ItemSelected;
         }
 
-        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        private void ListView_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            //set and launch the popup menu 
-           
+            Console.WriteLine("HOVER");
+        }
+
+
+        //pulls up popup memu options for editing data in listview on long click
+
+        private void listView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
 
             var selectedItem = itemList[e.Position];
+            DBHelper db = new DBHelper(this);
+
+            //for retrieving the actual list position
+
 
             Preferences.Set("CurPos", e.Position);
-
-
-            DBHelper db = new DBHelper(this);
+            Console.WriteLine("CURRPOS->" + e.Position);
+            //Preferences.Set("CCHit", false);
+            
 
             //disable the pop-up menu if read-only is enabled
 
@@ -118,14 +127,14 @@ namespace Datafine
                 ISharedPreferencesEditor editor = sharedPreferences.Edit();
                 editor.PutBoolean("UpgradeFlag", false);
 
-                var commandControl = new Android.Widget.PopupMenu(this, (View)sender);
+                //set and launch the popup menu 
+                var commandControl = new Android.Widget.PopupMenu(this, (View)sender, GravityFlags.Right);
                 commandControl.Inflate(Resource.Menu.command_control);
                 commandControl.Show();
-                Console.WriteLine(e.Position);
 
-                commandControl.MenuItemClick += (se, ee) =>
+                commandControl.MenuItemClick += (s, a) =>
                 {
-                    switch (ee.Item.ItemId)
+                    switch (a.Item.ItemId)
                     {
                         case Resource.Id.cc_Edit:
                             var intent = new Intent(this, typeof(EntryCreation));
@@ -157,25 +166,7 @@ namespace Datafine
                 //include a banner that says something along the lines of "read-only is enabled"
                 Toast.MakeText(this, "Read-Only is Enabled", ToastLength.Long).Show();
             }
-
         }
-
-    
-
-        //for cc testing
-        private void Cc_Click(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            var f = listView.SelectedItemPosition;
-            Console.WriteLine(f);
-        }
-
-
-        //pulls up popup memu options for editing data in listview on long click
-
-        private void listView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
-        {
-        }
-
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
@@ -184,7 +175,7 @@ namespace Datafine
             bool readOnly = prefs.GetBoolean("read_only", false);
 
             //if readonly isn't enabled execute like normal, otherwise let user know it's on readonly mode
-            if(readOnly == false)
+            if (readOnly == false)
             {
                 Intent intent = new Intent(this, typeof(EntryCreation));
                 StartActivity(intent);
@@ -193,14 +184,13 @@ namespace Datafine
             {
                 Toast.MakeText(this, "Read-Only is Enabled", ToastLength.Long).Show();
             }
-            
+
 
         }
 
         public void DeleteEntry(int position)
         {
             var selectedItem = itemList[position];
-            Console.WriteLine("Current position->" + itemList[position]);
             DBHelper db = new DBHelper(this);
             //alert dialog to confirm and execute deletion
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -237,7 +227,7 @@ namespace Datafine
             //get settings
             ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
             string searchType = prefs.GetString("search_type", null);
-            
+
             DBHelper dbVals = new DBHelper(this);
             string searchTerm = e.NewText.ToString();
             //switch between the columns searchTerm; by default it's based on column1
@@ -261,7 +251,7 @@ namespace Datafine
             }
 
             listView.Adapter = new EntryListAdapter(this, itemList);
-            listView.ItemLongClick += listView_ItemLongClick;
+            listView.ItemClick += listView_ItemClick;
 
         }
 
@@ -303,7 +293,7 @@ namespace Datafine
                     return base.OnOptionsItemSelected(item);
             }
         }
-       
+
         //for the back button function
         public override void OnBackPressed()
         {
@@ -334,5 +324,6 @@ namespace Datafine
         {
             return Preferences.Get(name, null);
         }
+
     }
 }
