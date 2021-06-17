@@ -1,6 +1,5 @@
-# Datafine_
+# Datafine
 Repository for the Datafine Android mobile app
-
 
 ## Last Major Update: 5/03/21
 
