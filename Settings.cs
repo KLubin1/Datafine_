@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using AndroidX.Preference;
-using AndroidX.Fragment;
 using Preference = Android.Preferences;
-using Android.Preferences;
 
 namespace Datafine
 {
@@ -65,8 +57,8 @@ namespace Datafine
             return prefs.GetString(key, null);
         }
         public void SetSetting(string key, string value)
-        {  
-            ISharedPreferences prefs = Application.Context.GetSharedPreferences( key, FileCreationMode.Private);
+        {
+            ISharedPreferences prefs = Application.Context.GetSharedPreferences(key, FileCreationMode.Private);
             ISharedPreferencesEditor editor = prefs.Edit();
             editor.PutString(key, value);
             editor.Commit();

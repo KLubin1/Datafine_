@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Android;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Preferences;
@@ -10,15 +7,15 @@ using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
-using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using AlertDialog = Android.Support.V7.App.AlertDialog;
+using System;
+using System.Collections.Generic;
 using Xamarin.Essentials;
 
 namespace Datafine
 {
-    [Activity(Label = "My Tables", Theme = "@style/AppTheme.NoActionBar", MainLauncher =false)]
+    [Activity(Label = "My Tables", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
         //list that holds the list of databases
@@ -63,7 +60,7 @@ namespace Datafine
 
         }
 
-       
+
         //should perform as LoadEntries, but for tables
         public void LoadTables()
         {
@@ -72,7 +69,7 @@ namespace Datafine
             tableList = dbVals.GetAllTables();
 
             if (tableList.Count == 0)
-            { 
+            {
                 //add a message saying the database is empty; make a entry to start 
                 suchEmpty.Visibility = ViewStates.Visible;
             }
@@ -88,7 +85,7 @@ namespace Datafine
             //tableGridView.ItemClick += TableListView_ItemClick;
         }
 
-        
+
         //same as what was for the table
         private void TableListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
@@ -96,23 +93,23 @@ namespace Datafine
             TableInfo table = tableList[e.Position];
             SetPrefs("SelectedTable", table.tableName.ToString());
             // if the null, itablename is ts empty; dont go to entries, it will crash
-            if (table.tableName.ToString() != null || table.tableName.Length !=0)
+            if (table.tableName.ToString() != null || table.tableName.Length != 0)
+            {
+                //if the modififiable password flag is true, ask for password first
+                ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
+                string password_viewable = prefs.GetString("set_password", null);
+                if (password_viewable == "3" || password_viewable == "4")
                 {
-                    //if the modififiable password flag is true, ask for password first
-                    ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context);
-                    string password_viewable = prefs.GetString("set_password", null);
-                    if (password_viewable == "3" || password_viewable == "4")
-                    {
-                        //open dialog
-                        PasswordRequest request = new PasswordRequest();
-                        request.Show(SupportFragmentManager, "Password Request");
-                    }
-                    else
-                    {
-                        //launch the table entry's page
-                        var intent = new Intent(this, typeof(EntryViewPage));
-                        StartActivity(intent);
-                    }
+                    //open dialog
+                    PasswordRequest request = new PasswordRequest();
+                    request.Show(SupportFragmentManager, "Password Request");
+                }
+                else
+                {
+                    //launch the table entry's page
+                    var intent = new Intent(this, typeof(EntryViewPage));
+                    StartActivity(intent);
+                }
             }
 
         }
@@ -134,7 +131,7 @@ namespace Datafine
 
             if (drawer.IsDrawerOpen(GravityCompat.Start))
             {
-                
+
                 drawer.CloseDrawer(GravityCompat.Start);
             }
             else
@@ -196,7 +193,7 @@ namespace Datafine
             Intent intent = new Intent(this, typeof(TableCreation));
             StartActivity(intent);
 
-            
+
 
         }
 
@@ -260,7 +257,7 @@ namespace Datafine
                 //handle the settings
                 StartActivity(typeof(Settings));
                 return true;
-                
+
             }
 
 

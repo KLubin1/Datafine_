@@ -11,6 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		PrefsKeys.txt = PrefsKeys.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{6D25A212-E37C-49AA-8C4E-BA5A6619FC7F}"
+	ProjectSection(SolutionItems) = preProject
+		NTS.txt = NTS.txt
+		PrefsKeys.txt = PrefsKeys.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +32,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6D25A212-E37C-49AA-8C4E-BA5A6619FC7F} = {434F923A-A429-4447-BE5A-3162483BDFAC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E28B595D-BD16-4142-8B15-855FADA14A0A}

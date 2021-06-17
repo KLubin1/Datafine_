@@ -25,20 +25,20 @@
 	.section	.rodata.map_aname.4,"aMS",%progbits,1
 	.type	.L.map_aname.4, %object
 .L.map_aname.4:
-	.asciz	"Xamarin.AndroidX.Activity"
-	.size	.L.map_aname.4, 26
+	.asciz	"Datafine"
+	.size	.L.map_aname.4, 9
 
 	.section	.rodata.map_aname.5,"aMS",%progbits,1
 	.type	.L.map_aname.5, %object
 .L.map_aname.5:
-	.asciz	"Xamarin.AndroidX.RecyclerView"
-	.size	.L.map_aname.5, 30
+	.asciz	"Xamarin.AndroidX.Activity"
+	.size	.L.map_aname.5, 26
 
 	.section	.rodata.map_aname.6,"aMS",%progbits,1
 	.type	.L.map_aname.6, %object
 .L.map_aname.6:
-	.asciz	"Datafine"
-	.size	.L.map_aname.6, 9
+	.asciz	"Xamarin.AndroidX.RecyclerView"
+	.size	.L.map_aname.6, 30
 
 	.section	.rodata.map_aname.7,"aMS",%progbits,1
 	.type	.L.map_aname.7, %object

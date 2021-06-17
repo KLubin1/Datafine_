@@ -299,8 +299,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entries\" />
-    <Folder Include="Tables\" />
-    <Folder Include="Toolbar\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-v21\baseline_help_black_18dp.png" />

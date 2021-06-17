@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
+using System;
+using System.Threading;
 using Xamarin.Essentials;
 
 namespace Datafine
 {
-    [Activity(Label = "LoginScreen", Theme ="@style/LoginTheme", NoHistory =true)]
+    [Activity(Label = "LoginScreen", Theme = "@style/LoginTheme", NoHistory = true)]
     public class LoginScreen : Activity
     {
         EditText userName, password;
@@ -47,7 +42,7 @@ namespace Datafine
             ISharedPreferencesEditor editor = sharedPreferences.Edit();
 
             //TODO: Release change: commented out since login is disabled for now
-           // editor.PutBoolean("firstStart", true);
+            // editor.PutBoolean("firstStart", true);
 
             /*if (CredentialsAreValid())
             {
@@ -75,15 +70,15 @@ namespace Datafine
         //handle what are and aren't correct credentials
         private bool CredentialsAreValid()
         {
-            string[] validUsernames = {"KSap20", "AtTina", "leroyjenkins", "TheNotoriousBIG" };
+            string[] validUsernames = { "KSap20", "AtTina", "leroyjenkins", "TheNotoriousBIG" };
             string[] validPasswords = { "ThisIsMyPassword", "Lolz34", "4myez!sland", "dj2wg47q%?wifua1!" };
             bool validate = false; //this would be basically making it false no matter what if is doesnt meet the following code conditions
             //if finished looping through and a username wasn't found, then return false
 
             //loop through the usernames to find a valid one; first check if there is input
-            for (int i = 0; i<validUsernames.Length; i++)
+            for (int i = 0; i < validUsernames.Length; i++)
             {
-                if(userName.Text.Length != 0)
+                if (userName.Text.Length != 0)
                 {
                     if (userName.Text == validUsernames[i] && password.Text == validPasswords[i])
                     {

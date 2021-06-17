@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.Database;
+﻿using Android.Content;
 using Android.Database.Sqlite;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using System;
 
 namespace Datafine
 {
@@ -31,7 +21,7 @@ namespace Datafine
 
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
-           
+
         }
     }
 }

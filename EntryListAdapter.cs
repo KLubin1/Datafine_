@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
-using Android.OS;
 using Android.Preferences;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System;
+using System.Collections.Generic;
 using Xamarin.Essentials;
 
 namespace Datafine
@@ -46,7 +41,7 @@ namespace Datafine
             TableViewHolder holder = null;
             //the command control button
             ImageView cc;
-            
+
 
             //initialize the data
             if (convertView == null)
@@ -89,7 +84,7 @@ namespace Datafine
                         ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("Upgrade", FileCreationMode.Private);
                         ISharedPreferencesEditor editor = sharedPreferences.Edit();
                         editor.PutBoolean("UpgradeFlag", false);
-                       
+
 
                         commandControl.MenuItemClick += (s, a) =>
                         {

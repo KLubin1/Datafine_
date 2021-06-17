@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Database.Sqlite;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
+using System;
+using System.Text.RegularExpressions;
 using Xamarin.Essentials;
 using AlertDialog = Android.App.AlertDialog;
 
@@ -145,7 +141,7 @@ namespace Datafine
             confirm.SetMessage(GetString(Resource.String.Dominant_Columnn_Info));
             confirm.SetButton("Got it!", (sender2, ev) =>
             {
-             
+
             });
 
             confirm.Show();
@@ -252,19 +248,19 @@ namespace Datafine
                         Snackbar snackbar = Snackbar.Make(view, "Columns names must be unique", Snackbar.LengthIndefinite);
                         snackbar.Show();
                         testPassed = false;
-                        break;                      
+                        break;
                     }
                 }
-                
+
             }
 
             //check if fields are empty
             if (testColumn1.Length <= 0 || testColumn2.Length <= 0 || testColumn3.Length <= 0 || testColumn4.Length <= 0)
-              {
+            {
                 Snackbar snackbar = Snackbar.Make(view, "Fields cannot be empty!", Snackbar.LengthIndefinite);
                 snackbar.Show();
                 testPassed = false;
-              }
+            }
             //if the columns have been replaced by being of onlu numbers
             //if(column1.Text == Regex.Replace(column1.Text, @"[0-9]+", "") ||
             //column2.Text == Regex.Replace(column2.Text, @"[0-9]+", "") ||
@@ -316,7 +312,7 @@ namespace Datafine
             //column4.Text = Regex.Replace(column4.Text, @"[0-9]+", "");
 
 
-            
+
 
         }
         public void CloseKeyboard()

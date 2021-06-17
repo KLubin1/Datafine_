@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
-using Android.Views.InputMethods;
 using Android.Widget;
+using System;
+using System.Text.RegularExpressions;
 using Xamarin.Essentials;
 
 namespace Datafine
@@ -51,7 +46,7 @@ namespace Datafine
             {
                 FixInput();
                 SetPrefs("table_name", tableName.Text);
-               
+
             }
             else
             {
@@ -59,7 +54,7 @@ namespace Datafine
                 return;
             }
 
-            if(tableDescription.Text.Length != 0)
+            if (tableDescription.Text.Length != 0)
             {
                 //set the description according to table name
                 SetPrefs(tableName.Text + "_table_description", tableDescription.Text);

@@ -136,6 +136,25 @@ map_modules:
 	/* java_map */
 	.long	0
 
+	/* module_uuid: 36b0ce4a-7545-47a4-85d1-60a8c7141688 */
+	.byte	0x4a, 0xce, 0xb0, 0x36, 0x45, 0x75, 0xa4, 0x47, 0x85, 0xd1, 0x60, 0xa8, 0xc7, 0x14, 0x16, 0x88
+	/* entry_count */
+	.long	22
+	/* duplicate_count */
+	.long	0
+	/* map */
+	.long	module4_managed_to_java
+	/* duplicate_map */
+	.long	0
+	/* assembly_name: Datafine */
+	.long	.L.map_aname.4
+	/* image */
+	.long	0
+	/* java_name_width */
+	.long	0
+	/* java_map */
+	.long	0
+
 	/* module_uuid: 296a8258-6f16-417c-8b5d-f8a2d51bad5f */
 	.byte	0x58, 0x82, 0x6a, 0x29, 0x16, 0x6f, 0x7c, 0x41, 0x8b, 0x5d, 0xf8, 0xa2, 0xd5, 0x1b, 0xad, 0x5f
 	/* entry_count */
@@ -143,11 +162,11 @@ map_modules:
 	/* duplicate_count */
 	.long	0
 	/* map */
-	.long	module4_managed_to_java
+	.long	module5_managed_to_java
 	/* duplicate_map */
 	.long	0
 	/* assembly_name: Xamarin.AndroidX.Activity */
-	.long	.L.map_aname.4
+	.long	.L.map_aname.5
 	/* image */
 	.long	0
 	/* java_name_width */
@@ -162,29 +181,10 @@ map_modules:
 	/* duplicate_count */
 	.long	10
 	/* map */
-	.long	module5_managed_to_java
-	/* duplicate_map */
-	.long	module5_managed_to_java_duplicates
-	/* assembly_name: Xamarin.AndroidX.RecyclerView */
-	.long	.L.map_aname.5
-	/* image */
-	.long	0
-	/* java_name_width */
-	.long	0
-	/* java_map */
-	.long	0
-
-	/* module_uuid: ad1f9e64-6b36-4104-902d-23667643cd1d */
-	.byte	0x64, 0x9e, 0x1f, 0xad, 0x36, 0x6b, 0x04, 0x41, 0x90, 0x2d, 0x23, 0x66, 0x76, 0x43, 0xcd, 0x1d
-	/* entry_count */
-	.long	22
-	/* duplicate_count */
-	.long	0
-	/* map */
 	.long	module6_managed_to_java
 	/* duplicate_map */
-	.long	0
-	/* assembly_name: Datafine */
+	.long	module6_managed_to_java_duplicates
+	/* assembly_name: Xamarin.AndroidX.RecyclerView */
 	.long	.L.map_aname.6
 	/* image */
 	.long	0
@@ -2006,7 +2006,7 @@ map_java:
 
 	/* #177 */
 	/* module_index */
-	.long	4
+	.long	5
 	/* type_token_id */
 	.long	33554435
 	/* java_name */
@@ -3194,7 +3194,7 @@ map_java:
 
 	/* #309 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554496
 	/* java_name */
@@ -3203,7 +3203,7 @@ map_java:
 
 	/* #310 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554497
 	/* java_name */
@@ -3212,7 +3212,7 @@ map_java:
 
 	/* #311 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554499
 	/* java_name */
@@ -3221,7 +3221,7 @@ map_java:
 
 	/* #312 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554502
 	/* java_name */
@@ -3230,7 +3230,7 @@ map_java:
 
 	/* #313 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554503
 	/* java_name */
@@ -3239,7 +3239,7 @@ map_java:
 
 	/* #314 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554504
 	/* java_name */
@@ -3248,7 +3248,7 @@ map_java:
 
 	/* #315 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554506
 	/* java_name */
@@ -3257,7 +3257,7 @@ map_java:
 
 	/* #316 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554507
 	/* java_name */
@@ -3266,7 +3266,7 @@ map_java:
 
 	/* #317 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554509
 	/* java_name */
@@ -3275,7 +3275,7 @@ map_java:
 
 	/* #318 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554511
 	/* java_name */
@@ -3284,7 +3284,7 @@ map_java:
 
 	/* #319 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554513
 	/* java_name */
@@ -3293,7 +3293,7 @@ map_java:
 
 	/* #320 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554514
 	/* java_name */
@@ -3302,7 +3302,7 @@ map_java:
 
 	/* #321 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554516
 	/* java_name */
@@ -3311,7 +3311,7 @@ map_java:
 
 	/* #322 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554518
 	/* java_name */
@@ -3320,7 +3320,7 @@ map_java:
 
 	/* #323 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554522
 	/* java_name */
@@ -3329,7 +3329,7 @@ map_java:
 
 	/* #324 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554525
 	/* java_name */
@@ -3338,7 +3338,7 @@ map_java:
 
 	/* #325 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554530
 	/* java_name */
@@ -3347,7 +3347,7 @@ map_java:
 
 	/* #326 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554532
 	/* java_name */
@@ -3356,7 +3356,7 @@ map_java:
 
 	/* #327 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554533
 	/* java_name */
@@ -3365,7 +3365,7 @@ map_java:
 
 	/* #328 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554535
 	/* java_name */
@@ -3374,7 +3374,7 @@ map_java:
 
 	/* #329 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554538
 	/* java_name */
@@ -3383,7 +3383,7 @@ map_java:
 
 	/* #330 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554539
 	/* java_name */
@@ -3392,7 +3392,7 @@ map_java:
 
 	/* #331 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554541
 	/* java_name */
@@ -3401,7 +3401,7 @@ map_java:
 
 	/* #332 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554542
 	/* java_name */
@@ -3410,7 +3410,7 @@ map_java:
 
 	/* #333 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554544
 	/* java_name */
@@ -3419,7 +3419,7 @@ map_java:
 
 	/* #334 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554558
 	/* java_name */
@@ -3653,7 +3653,7 @@ map_java:
 
 	/* #360 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554434
 	/* java_name */
@@ -3662,7 +3662,7 @@ map_java:
 
 	/* #361 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554462
 	/* java_name */
@@ -3671,7 +3671,7 @@ map_java:
 
 	/* #362 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554440
 	/* java_name */
@@ -3680,7 +3680,7 @@ map_java:
 
 	/* #363 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554453
 	/* java_name */
@@ -3689,7 +3689,7 @@ map_java:
 
 	/* #364 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554454
 	/* java_name */
@@ -3698,7 +3698,7 @@ map_java:
 
 	/* #365 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554484
 	/* java_name */
@@ -3707,7 +3707,7 @@ map_java:
 
 	/* #366 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554441
 	/* java_name */
@@ -3716,7 +3716,7 @@ map_java:
 
 	/* #367 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554463
 	/* java_name */
@@ -3725,7 +3725,7 @@ map_java:
 
 	/* #368 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554442
 	/* java_name */
@@ -3734,7 +3734,7 @@ map_java:
 
 	/* #369 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554445
 	/* java_name */
@@ -3743,7 +3743,7 @@ map_java:
 
 	/* #370 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554446
 	/* java_name */
@@ -3752,7 +3752,7 @@ map_java:
 
 	/* #371 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554447
 	/* java_name */
@@ -3761,7 +3761,7 @@ map_java:
 
 	/* #372 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554448
 	/* java_name */
@@ -3770,7 +3770,7 @@ map_java:
 
 	/* #373 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554449
 	/* java_name */
@@ -3779,7 +3779,7 @@ map_java:
 
 	/* #374 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554452
 	/* java_name */
@@ -3788,7 +3788,7 @@ map_java:
 
 	/* #375 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554436
 	/* java_name */
@@ -3797,7 +3797,7 @@ map_java:
 
 	/* #376 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554437
 	/* java_name */
@@ -3806,7 +3806,7 @@ map_java:
 
 	/* #377 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554438
 	/* java_name */
@@ -3815,7 +3815,7 @@ map_java:
 
 	/* #378 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554439
 	/* java_name */
@@ -3824,7 +3824,7 @@ map_java:
 
 	/* #379 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554458
 	/* java_name */
@@ -3833,7 +3833,7 @@ map_java:
 
 	/* #380 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554461
 	/* java_name */
@@ -3842,7 +3842,7 @@ map_java:
 
 	/* #381 */
 	/* module_index */
-	.long	6
+	.long	4
 	/* type_token_id */
 	.long	33554488
 	/* java_name */
@@ -5093,7 +5093,7 @@ map_java:
 
 	/* #520 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554521
 	/* java_name */
@@ -5102,7 +5102,7 @@ map_java:
 
 	/* #521 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554529
 	/* java_name */
@@ -5111,7 +5111,7 @@ map_java:
 
 	/* #522 */
 	/* module_index */
-	.long	5
+	.long	6
 	/* type_token_id */
 	.long	33554537
 	/* java_name */

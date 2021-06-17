@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Database;
 using Android.Database.Sqlite;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using Java.Util.Prefs;
-using Xamarin.Essentials;
+using System;
 using Preferences = Xamarin.Essentials.Preferences;
 
 namespace Datafine
@@ -62,11 +54,11 @@ namespace Datafine
 
             //set the description
             tableDescription = FindViewById<TextView>(Resource.Id.desc_ownerDescription);
-            
+
             tableDescription.Text = Preferences.Get(table + "_table_description", null);
 
             //if there wasnt an decription add some filler text
-            if(tableDescription.Text.Length == 0)
+            if (tableDescription.Text.Length == 0)
             {
                 tableDescription.Text = "No Added Description";
             }

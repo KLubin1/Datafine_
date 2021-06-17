@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Preferences;
-using Android.Runtime;
 using Android.Support.Design.Widget;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using Android.Support.V7.App;
-using AlertDialog = Android.App.AlertDialog;
+using System;
+using System.Collections.Generic;
 using Xamarin.Essentials;
+using AlertDialog = Android.App.AlertDialog;
 
 namespace Datafine
 {
@@ -51,7 +47,7 @@ namespace Datafine
             fab.Click += FabOnClick;
             LoadEntries();
 
-           
+
 
             //test out search term change effect
             string searchTerm = GetSetting("search_type", Application.Context);
@@ -112,7 +108,7 @@ namespace Datafine
             Preferences.Set("CurPos", e.Position);
             Console.WriteLine("CURRPOS->" + e.Position);
             //Preferences.Set("CCHit", false);
-            
+
 
             //disable the pop-up menu if read-only is enabled
 

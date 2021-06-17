@@ -1,14 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 
 namespace Datafine
 {
@@ -17,7 +7,7 @@ namespace Datafine
         public string tableName { get; set; }
         public string dateAdded { get; set; }
         public string description { get; set; }
-        
+
         public TableInfo() { }
         public TableInfo(string _tableName, string _dateAdded, string _description)
         {
