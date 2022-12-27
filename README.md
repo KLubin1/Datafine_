@@ -3,8 +3,10 @@ Repository for the Datafine Android mobile app
 
 ## Last Major Update: 5/03/21
 
+## [Google Play link to download app](https://play.google.com/store/apps/details?id=com.companyname.datafine)
+
 ## Description:
-Datafine is a simple Android database management app (DBMS). It uses SQLite to store, retrieve and configure data. 
+Datafine is a simple Android database management app (DBMS). It uses SQLite to store, retrieve and configure data. Developed with Xamarin.Android and C#.
 
 With it you can:
 * Create your own tables with up to 4 unique columns
@@ -13,6 +15,5 @@ With it you can:
 * Unlimited table entries
 * Search function for table entries
 
-**Note:** Not sure why GitHub is detecting the majority of code as Java. It's Android, which is Java-based, but this was developed with Xamarin.Android and C#.
 
 
